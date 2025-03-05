@@ -1,13 +1,14 @@
 from project.libs.orm.interface.dict import DictLike, DictLikeTable, DictQuery
 from project.libs.orm.interface.methods import (
     HasIor,
+    HasLen,
+    HasContains,
     HasGet,
     HasGetOne,
     HasPop,
     HasPopOne,
     HasValues,
     HasItems,
-    HasLen,
 )
 from project.libs.orm.interface.protocols import (
     HasGetitemProtocol,
@@ -36,11 +37,12 @@ __all__ = [
     'PopOneProtocol',
     'ValuesProtocol',
     'HasIor',
+    'HasLen',
+    'HasContains',
     'HasGet',
     'HasGetOne',
     'HasPop',
     'HasPopOne',
     'HasValues',
     'HasItems',
-    'HasLen',
 ]
