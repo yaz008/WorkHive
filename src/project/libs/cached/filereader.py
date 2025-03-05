@@ -20,7 +20,7 @@ class CachedFileReader:
         raise NotImplementedError
 
     def read(self, path: str, mode: Literal['r', 'rb']) -> str | bytes:
-        if path not in self.__cache.keys():
+        if path not in self.__cache:
             kwargs: dict[str, str] = {
                 'file': path,
                 'mode': mode,

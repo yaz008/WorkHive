@@ -14,7 +14,7 @@ class CachedMultiTable[Key: Hashable, Value: Stackable](
     @override
     def _update_cache(self, __different: dict[Key, Value], /) -> None:
         for key, value in __different.items():
-            if key in self._cache.keys():
+            if key in self._cache:
                 self._cache[key] |= {value.__sql_id__: value}
             else:
                 self._cache |= {key: {value.__sql_id__: value}}
