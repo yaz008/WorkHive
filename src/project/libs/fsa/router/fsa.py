@@ -14,14 +14,20 @@ from project.libs.fsa.imports import import_all
 from project.libs.fsa.router.content import TGContentType
 from project.libs.fsa.router.state import State, HasState
 from project.libs.fsa.serializer import serializer
+from project.libs.tgdraw import ButtonFactory, ButtonFactoryClosure
+
+
+class UserProtocol(HasState):
+    language: str
 
 
 @dataclass(slots=True)
-class FSA[Stateful: HasState, Ret]:
+class FSA[User: UserProtocol, Ret]:
     routs: str
+    button_factory: ButtonFactory
     initial_transition_state: str
     common_transitions: dict[str, str]
-    __states: dict[str, State[Stateful, Ret]] = field(default_factory=dict, init=False)
+    __states: dict[str, State[User, Ret]] = field(default_factory=dict, init=False)
     __acceptance_table: dict[str, frozenset[TGContentType]] = field(
         default_factory=dict, init=False
     )
@@ -33,19 +39,19 @@ class FSA[Stateful: HasState, Ret]:
             FSAState.Initial: State(
                 name=FSAState.Initial,
                 transitions={FSASymbol.Start: self.initial_transition_state},
-                action=cast(Callable[[Stateful, str], Ret], ()),
+                action=cast(Callable[[User, str], Ret], ()),
             )
         }
 
-    def shift(self, __stateful: Stateful, __transition_data: str, /) -> Ret:
+    def shift(self, __user: User, __transition_data: str, /) -> Ret:
         expected_state, symbol, args = serializer.unpack(__transition_data)
-        if expected_state != __stateful.state:
-            raise UnexpectedStateError(expected_state, __stateful.state)
-        state: State = self.__states[__stateful.state]
+        if expected_state != __user.state:
+            raise UnexpectedStateError(expected_state, __user.state)
+        state: State = self.__states[__user.state]
         if symbol in state.transitions:
             new_state: State = self.__states[state.transitions[symbol]]
-            __stateful.state = new_state.name
-            return cast(Ret, new_state.action(__stateful, args))
+            __user.state = new_state.name
+            return cast(Ret, new_state.action(__user, args))
         raise InvalidTransitionError(state.name, symbol)
 
     def add(
@@ -66,8 +72,16 @@ class FSA[Stateful: HasState, Ret]:
                 argtype.annotation for argtype in signature(func).parameters.values()
             )
 
-            def action(__stateful: Stateful, __args: str, /) -> Ret:
-                return func(__stateful, *serializer.deserialize(__args, argtypes))
+            def action(__user: User, __args: str, /) -> Ret:
+                return func(
+                    __user,
+                    ButtonFactoryClosure(
+                        state=__user.state,
+                        language=__user.language,
+                        factory=self.button_factory,
+                    ),
+                    *serializer.deserialize(__args, argtypes),
+                )
 
             self.__acceptance_table |= {
                 name: frozenset(accepts_types if accepts_types is not None else ())

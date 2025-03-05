@@ -50,7 +50,7 @@ class FSASerializer:
         return tuple(
             self.structure_hooks.get(argtype, lambda arg: arg)(arg)
             for arg, argtype in zip(
-                args.split(sep=FSAConfig.ArgDelimiter), argtypes[1:]
+                args.split(sep=FSAConfig.ArgDelimiter), argtypes[2:]
             )
         )
 
