@@ -78,7 +78,7 @@ class FSA[Stateful: HasState, Ret]:
                     transitions=(transitions if transitions is not None else {})
                     | (
                         self.common_transitions
-                        if registration
+                        if not registration
                         else {FSASymbol.Start: self.initial_transition_state}
                     ),
                     action=action,
