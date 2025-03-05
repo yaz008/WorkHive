@@ -17,7 +17,7 @@ def options_generator(
             text=ButtonConfig.CheckDelimiter.join(
                 chain(
                     (ButtonConfig.Checked,) if is_checked(index) else (),
-                    option.text,
+                    (option.text,),
                 )
             ),
             data=option.data,
