@@ -1,4 +1,4 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, field, asdict
 from typing import Callable, Any, cast
 
 from project.libs.cached import cache
@@ -27,6 +27,7 @@ class LoadInfo:
 @dataclass(slots=True)
 class ButtonFactory:
     serialize: Callable[[str, str, tuple[Any, ...] | None], str]
+    saved_buttons: dict[str, str] = field(default_factory=dict, init=False)
 
     @cache
     def create(
@@ -43,6 +44,9 @@ class ButtonFactory:
             data=self.serialize(state, symbol, args),
         )
 
+    def save(self, name: str, symbol: str) -> None:
+        self.saved_buttons |= {name: symbol}
+
 
 @dataclass(slots=True)
 class ButtonFactoryClosure:
@@ -54,12 +58,18 @@ class ButtonFactoryClosure:
         self,
         symbol: str,
         name: str,
-        load: bool = True,
         args: tuple[Any, ...] | None = None,
+        load: bool = True,
     ) -> ButtonInfo:
         return self.factory.create(
             state=self.state,
             symbol=symbol,
             info=LoadInfo(name=name, language=self.language) if load else name,
             args=args,
+        )
+
+    def saved(self, name: str) -> ButtonInfo:
+        return self.create(
+            symbol=self.factory.saved_buttons[name],
+            name=name,
         )
