@@ -79,8 +79,13 @@ class ButtonFactoryClosure:
             args=args,
         )
 
-    def saved(self, name: str) -> ButtonInfo:
+    def saved(
+        self,
+        name: str,
+        args: tuple[Any, ...] | None = None,
+    ) -> ButtonInfo:
         return self.create(
             symbol=self.factory.saved_buttons[name],
             name=name,
+            args=args,
         )
