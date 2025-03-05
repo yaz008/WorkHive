@@ -34,7 +34,7 @@ class SQLiteConverter:
                 float: 'REAL',
                 bytes: 'BLOB',
                 datetime: 'TIMESTAMP',
-            }[type],
+            }.get(type, 'BLOB'),
         )
 
     def convert[T](self, value: T) -> Any:
