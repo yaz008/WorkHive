@@ -3,6 +3,7 @@ from project.libs.tgdraw.types.info import (
     ButtonFactoryClosure,
     ButtonInfo,
     LoadInfo,
+    load_button,
 )
 from project.libs.tgdraw.types.keyboard import (
     TGKeyboard,
@@ -29,4 +30,5 @@ __all__ = [
     'ButtonFactoryClosure',
     'ButtonInfo',
     'LoadInfo',
+    'load_button',
 ]

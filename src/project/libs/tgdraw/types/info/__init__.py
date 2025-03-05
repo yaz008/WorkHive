@@ -4,6 +4,13 @@ from project.libs.tgdraw.types.info.factory import (
     ButtonInfo,
     LoadInfo,
 )
+from project.libs.tgdraw.types.info.load import load_button
 
 
-__all__ = ['ButtonFactory', 'ButtonFactoryClosure', 'ButtonInfo', 'LoadInfo']
+__all__ = [
+    'ButtonFactory',
+    'ButtonFactoryClosure',
+    'ButtonInfo',
+    'LoadInfo',
+    'load_button',
+]

@@ -13,6 +13,7 @@ from project.libs.tgdraw.types import (
     ButtonFactoryClosure,
     ButtonInfo,
     LoadInfo,
+    load_button,
 )
 
 
@@ -31,6 +32,7 @@ __all__ = [
     'ButtonFactoryClosure',
     'ButtonInfo',
     'LoadInfo',
+    'load_button',
     'keyboard',
     'choice',
     'checklist',
