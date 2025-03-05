@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field, asdict
 from typing import Callable, Any, cast
+from uuid import UUID, uuid4
 
 from project.libs.cached import cache
 from project.libs.tgdraw.types.info.load import load_button
@@ -18,7 +19,7 @@ class ButtonInfo:
         return cast(dict[str, str], asdict(self))
 
 
-@dataclass(slots=True)
+@dataclass(slots=True, unsafe_hash=True)
 class LoadInfo:
     name: str
     language: str
@@ -28,6 +29,16 @@ class LoadInfo:
 class ButtonFactory:
     serialize: Callable[[str, str, tuple[Any, ...] | None], str]
     saved_buttons: dict[str, str] = field(default_factory=dict, init=False)
+    __cache_id__: UUID = field(init=False)
+
+    def __post_init__(self) -> None:
+        self.__cache_id__ = uuid4()
+
+    def __hash__(self) -> int:
+        return hash(self.__cache_id__)
+
+    def __eq__(self, __other: object, /) -> bool:
+        return cast(bool, self.__cache_id__ == getattr(__other, '__cache_id__'))
 
     @cache
     def create(
