@@ -11,6 +11,7 @@ from project.libs.tgdraw.types import (
     MessageKind,
     ButtonFactory,
     ButtonFactoryClosure,
+    ButtonInfo,
     LoadInfo,
 )
 
@@ -28,6 +29,7 @@ __all__ = [
     'MessageKind',
     'ButtonFactory',
     'ButtonFactoryClosure',
+    'ButtonInfo',
     'LoadInfo',
     'keyboard',
     'choice',
