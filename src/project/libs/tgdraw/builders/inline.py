@@ -16,8 +16,9 @@ from project.libs.tgdraw.types import (
 def keyboard(
     buttons: tuple[ButtonInfo, ...],
     layout: tuple[int, ...],
+    next: ButtonInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
-    return TGKeyboard(
+    return optional_next(
         buttons=tuple(
             InlineTGButton(
                 text=button_info.text,
@@ -26,7 +27,7 @@ def keyboard(
             for button_info in buttons
         ),
         layout=layout,
-        cls=InlineKeyboardMarkup,
+        next=next,
     )
 
 
@@ -35,7 +36,7 @@ def choice(
     options: tuple[ButtonInfo, ...], checked: int, next: ButtonInfo | None = None
 ) -> TGKeyboard[InlineKeyboardMarkup]:
     return optional_next(
-        iterable=options_generator(options, lambda index: index == checked),
+        buttons=options_generator(options, lambda index: index == checked),
         layout=tuple(1 for _ in range(len(options))),
         next=next,
     )
@@ -48,7 +49,7 @@ def checklist(
     next: ButtonInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
     return optional_next(
-        iterable=options_generator(options, lambda index: flags[index]),
+        buttons=options_generator(options, lambda index: flags[index]),
         layout=tuple(1 for _ in range(len(options))),
         next=next,
     )
@@ -62,7 +63,7 @@ def numeric(
     next: ButtonInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
     return optional_next(
-        iterable=chain(
+        buttons=chain(
             (
                 InlineTGButton(
                     **factory.create(

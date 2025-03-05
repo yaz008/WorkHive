@@ -28,14 +28,14 @@ def options_generator(
 
 @cache
 def optional_next(
-    iterable: Iterable[InlineTGButton],
+    buttons: Iterable[InlineTGButton],
     layout: tuple[int, ...],
     next: ButtonInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
     return TGKeyboard(
         buttons=tuple(
             chain(
-                iterable,
+                buttons,
                 (
                     (
                         InlineTGButton(
