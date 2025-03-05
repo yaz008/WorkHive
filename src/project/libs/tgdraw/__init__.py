@@ -1,3 +1,4 @@
+from project.libs.tgdraw.builders import keyboard, choice, checklist, numeric
 from project.libs.tgdraw.driver import TGDriver
 from project.libs.tgdraw.exceptions import LayoutError, EmptyRowError
 from project.libs.tgdraw.types import (
@@ -28,4 +29,8 @@ __all__ = [
     'ButtonFactory',
     'ButtonFactoryClosure',
     'LoadInfo',
+    'keyboard',
+    'choice',
+    'checklist',
+    'numeric',
 ]
