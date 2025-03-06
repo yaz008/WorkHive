@@ -1,28 +1,10 @@
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field
 from typing import Callable, Any, cast
 from uuid import UUID, uuid4
 
 from project.libs.cached import cache
 from project.libs.tgdraw.types.info.load import load_button
-
-
-@dataclass(slots=True, unsafe_hash=True)
-class ButtonInfo:
-    text: str
-    data: str
-
-    def __iter__(self):
-        return iter([self.text, self.data])
-
-    @property
-    def asdict(self) -> dict[str, str]:
-        return cast(dict[str, str], asdict(self))
-
-
-@dataclass(slots=True, unsafe_hash=True)
-class LoadInfo:
-    name: str
-    language: str
+from project.libs.tgdraw.types.info.types import ButtonInfo, LoadInfo
 
 
 @dataclass(slots=True)
@@ -59,7 +41,7 @@ class ButtonFactory:
         self.saved_buttons |= {name: symbol}
 
 
-@dataclass(slots=True)
+@dataclass(slots=True, unsafe_hash=True)
 class ButtonFactoryClosure:
     state: str
     language: str

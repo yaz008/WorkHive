@@ -3,42 +3,49 @@ from itertools import chain
 from telebot.types import InlineKeyboardMarkup
 
 from project.libs.cached import cache
-from project.libs.tgdraw.builders.generators import options_generator, optional_next
 from project.libs.tgdraw.types import (
     TGKeyboard,
-    InlineTGButton,
     ButtonInfo,
+    KeyboardInfo,
     ButtonFactoryClosure,
 )
 
 
 @cache
 def keyboard(
-    buttons: tuple[ButtonInfo, ...],
-    layout: tuple[int, ...],
-    next: ButtonInfo | None = None,
+    keyboard: KeyboardInfo,
+    optional_keyboard: KeyboardInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
-    return optional_next(
+    return TGKeyboard(
         buttons=tuple(
-            InlineTGButton(
-                text=button_info.text,
-                data=button_info.data,
+            chain(
+                keyboard.render(),
+                optional_keyboard.render() if optional_keyboard is not None else (),
             )
-            for button_info in buttons
         ),
-        layout=layout,
-        next=next,
+        layout=tuple(
+            chain(
+                keyboard.layout,
+                optional_keyboard.layout if optional_keyboard is not None else (),
+            )
+        ),
+        cls=InlineKeyboardMarkup,
     )
 
 
 @cache
 def choice(
-    options: tuple[ButtonInfo, ...], checked: int, next: ButtonInfo | None = None
+    options: tuple[ButtonInfo, ...],
+    checked: int,
+    optional_keyboard: KeyboardInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
-    return optional_next(
-        buttons=options_generator(options, lambda index: index == checked),
-        layout=tuple(1 for _ in range(len(options))),
-        next=next,
+    return keyboard(
+        keyboard=KeyboardInfo(
+            buttons=options,
+            layout=tuple(1 for _ in range(len(options))),
+            is_checked=lambda index: index == checked,
+        ),
+        optional_keyboard=optional_keyboard,
     )
 
 
@@ -46,12 +53,15 @@ def choice(
 def checklist(
     options: tuple[ButtonInfo, ...],
     flags: tuple[bool, ...],
-    next: ButtonInfo | None = None,
+    optional_keyboard: KeyboardInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
-    return optional_next(
-        buttons=options_generator(options, lambda index: flags[index]),
-        layout=tuple(1 for _ in range(len(options))),
-        next=next,
+    return keyboard(
+        keyboard=KeyboardInfo(
+            buttons=options,
+            layout=tuple(1 for _ in range(len(options))),
+            is_checked=lambda index: flags[index],
+        ),
+        optional_keyboard=optional_keyboard,
     )
 
 
@@ -62,30 +72,38 @@ def numeric(
     back: ButtonInfo,
     next: ButtonInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
-    return optional_next(
-        buttons=chain(
-            (
-                InlineTGButton(
-                    **factory.create(
-                        symbol=symbol, name=str(n), load=False, args=(n,)
-                    ).asdict
-                )
-                for n in range(1, 10)
-            ),
-            (
-                InlineTGButton(text=back.text, data=back.data),
-                InlineTGButton(
-                    **factory.create(
-                        symbol=symbol, name='0', load=False, args=(0,)
-                    ).asdict
+    return keyboard(
+        keyboard=(
+            KeyboardInfo(
+                buttons=tuple(
+                    chain(
+                        (
+                            factory.create(
+                                symbol=symbol, name=str(n), args=(n,), load=False
+                            )
+                            for n in range(1, 10)
+                        ),
+                        (
+                            back,
+                            factory.create(
+                                symbol=symbol, name='0', load=False, args=(0,)
+                            ),
+                            factory.create(
+                                symbol=symbol, name='⌫', load=False, args=('<',)
+                            ),
+                        ),
+                    )
                 ),
-                InlineTGButton(
-                    **factory.create(
-                        symbol=symbol, name='⌫', load=False, args=('<',)
-                    ).asdict
+                layout=(3, 3, 3, 3),
+            )
+            if next is None
+            else KeyboardInfo(
+                buttons=(
+                    back,
+                    next,
+                    factory.create(symbol=symbol, name='⌫', load=False, args=('<',)),
                 ),
-            ),
-        ),
-        layout=(3, 3, 3, 3),
-        next=next,
+                layout=(3,),
+            )
+        )
     )
