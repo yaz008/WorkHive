@@ -3,8 +3,8 @@ from typing import Callable, Any, cast
 from uuid import UUID, uuid4
 
 from project.libs.cached import cache
+from project.libs.tgdraw.types.info.info import ButtonInfo, LoadInfo
 from project.libs.tgdraw.types.info.load import load_button
-from project.libs.tgdraw.types.info.types import ButtonInfo, LoadInfo
 
 
 @dataclass(slots=True)
