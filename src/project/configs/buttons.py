@@ -13,3 +13,7 @@ class ButtonConfig:
 class WorkHiveButton:
     Next: str = 'next'
     Back: str = 'back'
+    Register: str = 'register'
+    Worker: str = 'worker'
+    Owner: str = 'owner'
+    Concent: str = 'concent'

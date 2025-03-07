@@ -1,20 +1,26 @@
-from project.configs.buttons import ButtonConfig
+from project.configs.buttons import ButtonConfig, WorkHiveButton
 from project.configs.db import DBConfig
-from project.configs.fsa import FSAState, FSASymbol, FSAConfig
+from project.configs.fsa import FSAConfig, FSAState, FSASymbol
+from project.configs.language import Language
+from project.configs.media import MediaConfig, WorkHiveDocument
 from project.configs.session import SessionConfig
 from project.configs.tables import TableConfig, CacheSizeConfig
 from project.configs.tgdriver import TGDriverConfig, TGParseMode
 
 
 __all__ = [
-    'ButtonConfig',
-    'DBConfig',
-    'SessionConfig',
-    'TableConfig',
     'CacheSizeConfig',
-    'TGDriverConfig',
-    'TGParseMode',
+    'DBConfig',
+    'FSAConfig',
     'FSAState',
     'FSASymbol',
-    'FSAConfig',
+    'SessionConfig',
+    'TableConfig',
+    'TGDriverConfig',
+    'TGParseMode',
+    'ButtonConfig',
+    'WorkHiveButton',
+    'Language',
+    'MediaConfig',
+    'WorkHiveDocument',
 ]

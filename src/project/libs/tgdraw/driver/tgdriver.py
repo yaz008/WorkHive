@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any
+from typing import Any, Callable, cast
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.date import DateTrigger
@@ -12,7 +12,7 @@ from project.configs import TableConfig, CacheSizeConfig, SessionConfig, TGParse
 from project.libs.err import ignore_error
 from project.libs.orm import CachedSingleTable
 from project.libs.tgdraw.driver.session import Session
-from project.libs.tgdraw.types import TGMessage
+from project.libs.tgdraw.types import TGMessage, MessageKind
 
 
 @dataclass(slots=True)
@@ -66,9 +66,6 @@ class TGDriver(TeleBot):
         session.last_accessed = datetime.now()
         return session
 
-    def has_active_session(self, telegram_id: int) -> bool:
-        return telegram_id in self.__session_table.keys
-
     def update(self, telegram_id: int, message: TGMessage) -> None:
         maybe_session: Session | ApiTelegramException = self.__update_session(
             telegram_id, message
@@ -97,16 +94,25 @@ class TGDriver(TeleBot):
             )
 
     def create(self, telegram_id: int, message: TGMessage) -> Session:
-        session_message: Message = {
-            'Animation': self.send_animation,
-            'Document': self.send_document,
-            'Audio': self.send_audio,
-            'Photo': self.send_photo,
-            'Video': self.send_video,
-        }.get(message.kind, self.send_message)(
+        session_message: Message = cast(
+            dict[MessageKind, Callable[..., Message]],
+            {
+                'Animation': self.send_animation,
+                'Document': self.send_document,
+                'Audio': self.send_audio,
+                'Photo': self.send_photo,
+                'Video': self.send_video,
+                'Text': self.send_message,
+            },
+        )[message.kind](
             **(
-                {message.kind.lower(): message.media_bin, 'caption': message.text}
-                if message.media_bin
+                (
+                    {
+                        message.kind.lower(): message.tgmedia.file_id,
+                        'caption': message.text,
+                    }
+                )
+                if message.tgmedia is not None
                 else {'text': message.text}
             )
             | {

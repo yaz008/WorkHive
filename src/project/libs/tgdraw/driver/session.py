@@ -2,14 +2,13 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 from project.configs import SessionConfig
-from project.libs.tgdraw.types import MessageKind
 
 
 @dataclass
 class Session:
     telegram_id: int
     message_id: int
-    kind: MessageKind
+    kind: str
     sending_time: datetime = field(init=False)
     last_accessed: datetime = field(init=False)
 

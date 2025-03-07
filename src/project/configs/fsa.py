@@ -5,6 +5,14 @@ from project.core.config import config
 class FSAState:
     Initial: str = 'initial'
     ChooseLanguage: str = 'choose-language'
+    ChooseRole: str = 'choose-role'
+    Register: str = 'register'
+    FullName: str = 'full-name'
+    FullNameCheck: str = 'full-name-check'
+    BirthDate: str = 'birth-date'
+    PrivacyPolicyConcent: str = 'privacy-policy-concent'
+    AdReceiveingConcent: str = 'ad-receiveing-concent'
+    OfferAgreementConcent: str = 'offer-agreement-concent'
     MainMenu: str = 'main-menu'
 
 

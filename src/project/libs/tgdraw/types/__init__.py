@@ -16,6 +16,7 @@ from project.libs.tgdraw.types.message import (
     TGMessage,
     TGMedia,
     MessageKind,
+    MediaKind,
 )
 
 
@@ -27,6 +28,7 @@ __all__ = [
     'TGMessage',
     'TGMedia',
     'MessageKind',
+    'MediaKind',
     'ButtonFactory',
     'ButtonFactoryClosure',
     'ButtonInfo',
