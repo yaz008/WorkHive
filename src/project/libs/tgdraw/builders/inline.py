@@ -36,7 +36,7 @@ def keyboard(
 @cache
 def choice(
     options: tuple[ButtonInfo, ...],
-    checked: int,
+    checked: int | None = None,
     optional_keyboard: KeyboardInfo | None = None,
 ) -> TGKeyboard[InlineKeyboardMarkup]:
     return keyboard(
