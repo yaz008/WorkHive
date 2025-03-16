@@ -43,7 +43,7 @@ class DuplicateStateError(BaseWorkHiveException):
         super().__init__(f'Duplicate states: \"{state}\"')
 
 
-class StartNotUniversalError(BaseWorkHiveException):
+class StartNotCommonError(BaseWorkHiveException):
     def __init__(self) -> None:
         super().__init__(f'Symbol \"{FSASymbol.Start}\" must be universal')
 

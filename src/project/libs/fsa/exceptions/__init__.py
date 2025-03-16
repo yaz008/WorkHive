@@ -5,7 +5,7 @@ from project.libs.fsa.exceptions.errors import (
 from project.libs.fsa.exceptions.unrecoverable import (
     InvalidMainDelimiterCountError,
     DuplicateStateError,
-    StartNotUniversalError,
+    StartNotCommonError,
     InitialStateTransitionError,
 )
 
@@ -15,6 +15,6 @@ __all__ = [
     'UnexpectedStateError',
     'InvalidMainDelimiterCountError',
     'DuplicateStateError',
-    'StartNotUniversalError',
+    'StartNotCommonError',
     'InitialStateTransitionError',
 ]

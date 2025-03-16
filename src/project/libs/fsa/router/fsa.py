@@ -7,7 +7,7 @@ from project.libs.fsa.exceptions import (
     InvalidTransitionError,
     UnexpectedStateError,
     DuplicateStateError,
-    StartNotUniversalError,
+    StartNotCommonError,
     InitialStateTransitionError,
 )
 from project.libs.fsa.imports import import_all
@@ -26,15 +26,18 @@ class FSA[User: UserProtocol, Ret]:
     routs: str
     button_factory: ButtonFactory
     initial_transition_state: str
-    common_transitions: dict[str, str]
+    common_transitions: dict[str, dict[str, str]]
     __states: dict[str, State[User, Ret]] = field(default_factory=dict, init=False)
     __acceptance_table: dict[str, frozenset[TGContentType]] = field(
         default_factory=dict, init=False
     )
 
     def __post_init__(self) -> None:
-        if FSASymbol.Start not in self.common_transitions:
-            raise StartNotUniversalError
+        if not all(
+            FSASymbol.Start in transitions
+            for transitions in self.common_transitions.values()
+        ):
+            raise StartNotCommonError
         self.__states |= {
             FSAState.Initial: State(
                 name=FSAState.Initial,
@@ -57,9 +60,9 @@ class FSA[User: UserProtocol, Ret]:
     def add(
         self,
         name: str,
+        pipeline: str,
         transitions: dict[str, str] | None = None,
         accepts_types: tuple[TGContentType, ...] | None = None,
-        registration: bool = False,
     ) -> Callable[[Callable[..., Ret]], None]:
         def decorator(func: Callable[..., Ret]) -> None:
             if name in self.__states:
@@ -90,11 +93,7 @@ class FSA[User: UserProtocol, Ret]:
                 name: State(
                     name=name,
                     transitions=(transitions if transitions is not None else {})
-                    | (
-                        self.common_transitions
-                        if not registration
-                        else {FSASymbol.Start: self.initial_transition_state}
-                    ),
+                    | self.common_transitions[pipeline],
                     action=action,
                 )
             }
