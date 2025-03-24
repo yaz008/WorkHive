@@ -2,10 +2,6 @@ from dataclasses import dataclass
 from typing import Callable, Protocol
 
 
-class HasName(Protocol):
-    name: str
-
-
 class HasState(Protocol):
     state: str
 

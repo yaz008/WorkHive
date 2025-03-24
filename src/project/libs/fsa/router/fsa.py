@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from inspect import signature
-from typing import Callable, cast
+from typing import Callable, Protocol, cast
 
 from project.configs import FSAState, FSASymbol
 from project.libs.fsa.exceptions import (
@@ -17,7 +17,7 @@ from project.libs.fsa.serializer import serializer
 from project.libs.tgdraw import ButtonFactory, ButtonFactoryClosure
 
 
-class UserProtocol(HasState):
+class UserProtocol(HasState, Protocol):
     language: str
 
 
