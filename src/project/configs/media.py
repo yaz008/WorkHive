@@ -3,15 +3,15 @@ from project.core.config import config
 
 @config(filename='media')
 class MediaConfig:
-    AnimationFolder: str = 'assets\\media\\docs'
-    DocumentFolder: str = 'assets\\media\\docs'
-    AudioFolder: str = 'assets\\media\\docs'
-    PhotoFolder: str = 'assets\\media\\docs'
-    VideoFolder: str = 'assets\\media\\docs'
+    AnimationFolder: str = 'assets\\media\\animations'
+    DocumentFolder: str = 'assets\\media\\documents'
+    AudioFolder: str = 'assets\\media\\audios'
+    PhotoFolder: str = 'assets\\media\\photos'
+    VideoFolder: str = 'assets\\media\\videos'
 
 
 @config(filename='document-names')
 class WorkHiveDocument:
     PrivacyPolicy: str = 'privacy-policy'
-    AdAgreement: str = 'ad-agreement'
-    OfferAgreement: str = 'affer-agreement'
+    AdvertisingConsent: str = 'advertising-consent'
+    Offer: str = 'offer'

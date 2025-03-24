@@ -1,7 +1,6 @@
 from typing import Callable
 
-from project.configs.verbose import VerboseConfig
-from project.libs.verbose.level import VerboseLevel
+from project.configs import VerboseConfig, VerboseLevel
 
 
 def print_message(message: str | None) -> None:

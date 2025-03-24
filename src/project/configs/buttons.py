@@ -5,7 +5,6 @@ from project.core.config import config
 class ButtonConfig:
     ButtonsFolder: str = 'assets\\buttons'
     Checked: str = '✅'
-    NotChecked: str = '☑️'
     CheckDelimiter: str = ' '
 
 
@@ -16,4 +15,6 @@ class WorkHiveButton:
     Register: str = 'register'
     Worker: str = 'worker'
     Owner: str = 'owner'
-    Concent: str = 'concent'
+    Consent: str = 'consent'
+
+    NextErr: str = 'next-err'

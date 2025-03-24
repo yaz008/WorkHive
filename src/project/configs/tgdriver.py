@@ -11,3 +11,4 @@ class TGDriverConfig:
     DefaultParseMode: TGParseMode = 'HTML'
     SkipPending: bool = True
     Threads: int = 1
+    OnBotStart: str = 'Bot started'

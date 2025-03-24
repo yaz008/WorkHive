@@ -4,15 +4,23 @@ from typing import Any, Callable, cast
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.date import DateTrigger
-from telebot import TeleBot
+from telebot import TeleBot, logging
 from telebot.apihelper import ApiTelegramException
 from telebot.types import Message
 
-from project.configs import TableConfig, CacheSizeConfig, SessionConfig, TGParseMode
+from project.configs import (
+    TableConfig,
+    CacheSizeConfig,
+    TGDriverConfig,
+    VerboseConfig,
+    SessionConfig,
+    TGParseMode,
+)
 from project.libs.err import ignore_error
 from project.libs.orm import CachedSingleTable
 from project.libs.tgdraw.driver.session import Session
 from project.libs.tgdraw.types import TGMessage, MessageKind
+from project.libs.verbose import verbose
 
 
 @dataclass(slots=True)
@@ -128,3 +136,28 @@ class TGDriver(TeleBot):
     def revoke(self, session: Session) -> None:
         self.__session_table.remove(session.telegram_id)
         self.delete_message(chat_id=session.telegram_id, message_id=session.message_id)
+
+    @verbose(before=TGDriverConfig.OnBotStart, level=VerboseConfig.Level)
+    def infinity_polling(
+        self,
+        timeout=20,
+        skip_pending=False,
+        long_polling_timeout=20,
+        logger_level=logging.ERROR,
+        allowed_updates=None,
+        restart_on_change=False,
+        path_to_watch=None,
+        *args,
+        **kwargs,
+    ):
+        return super(TGDriver, self).infinity_polling(
+            timeout,
+            skip_pending,
+            long_polling_timeout,
+            logger_level,
+            allowed_updates,
+            restart_on_change,
+            path_to_watch,
+            *args,
+            **kwargs,
+        )
