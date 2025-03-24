@@ -1,0 +1,1 @@
+<b>Name parsing error:</b> The full name should consist of no less than 2 and no more than 6 words written only in Russian or only in English letters

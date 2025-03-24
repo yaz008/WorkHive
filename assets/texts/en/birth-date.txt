@@ -1,0 +1,1 @@
+Enter the date of your birthdaty (format: <code>dd.mm.yyyy</code>): <birth-date>__.__.____</birth-date>
