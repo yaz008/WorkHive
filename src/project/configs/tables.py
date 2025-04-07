@@ -19,12 +19,21 @@ def create_table(dct: dict[str, str]) -> _DBTable:
     hooks={_DBTable: lambda dct: create_table(dct=cast(dict[str, str], dct))},
 )
 class TableConfig:
+    # With Lifetime:
     Sessions: _DBTable = _DBTable(database='with-lifetime', table='sessions')
+
+    # Userdata:
     Users: _DBTable = _DBTable(database='userdata', table='users')
     WokhiveID: _DBTable = _DBTable(database='userdata', table='workhive_id')
     Role: _DBTable = _DBTable(database='userdata', table='role')
     State: _DBTable = _DBTable(database='userdata', table='state')
+
+    # Entities:
+    Points: _DBTable = _DBTable(database='entities', table='points')
+
+    # Temp:
     TempUsers: _DBTable = _DBTable(database='temp-objects', table='users')
+    TempPoints: _DBTable = _DBTable(database='temp-objects', table='points')
 
 
 @config(filename='cache')

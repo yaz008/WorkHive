@@ -2,8 +2,8 @@ from typing import Callable
 
 from telebot.types import Message, CallbackQuery
 
-from model.tables import workhive_id, temp_users
-from model.types import User, TempUser
+from model.tables import workhive_id, temp_users, role_table
+from model.types import User, TempUser, Owner, Worker
 from project.libs.orm import TempValue
 
 
@@ -13,7 +13,8 @@ def get_user(telegram_id: int) -> User | TempUser:
             temp_users.update({telegram_id: TempValue()})
             return TempUser(telegram_id, set_default=True)
         return TempUser(telegram_id)
-    return User(telegram_id=telegram_id)
+    role: str = role_table[workhive_id[telegram_id].value].role
+    return (Worker if role == 'worker' else Owner)(telegram_id=telegram_id)
 
 
 def register(

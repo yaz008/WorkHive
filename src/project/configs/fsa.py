@@ -19,6 +19,22 @@ class FSAState:
 
     # Owner
     OwnerMainMenu: str = 'owner-main-menu'
+    OwnerSettings: str = 'owner-settings'
+    OwnerPublish: str = 'owner-publish'
+    OwnerPoints: str = 'owner-points'
+    OwnerVacancies: str = 'owner-vacancies'
+    OwnerNotifications: str = 'owner-notifications'
+    OwnerSubstription: str = 'owner-subscription'
+
+    OwnerLanguage: str = 'owner-language'
+
+    OwnerPointAddress: str = 'owner-point-address'
+    OwnerPointPayload: str = 'owner-point-payload'
+    OwnerPointCharge: str = 'owner-point-charge'
+    OwnerPointChargePerOne: str = 'owner-point-charge-per-one'
+    OwnerPointName: str = 'owner-point-name'
+    OwnerPointDone: str = 'owner-point-done'
+    OwnerPointDelete: str = 'owner-point-delete'
 
     # Worker
     WorkerMainMenu: str = 'worker-main-menu'
@@ -31,6 +47,19 @@ class FSASymbol:
     Back: str = 'back'
     InputData: str = 'input-data'
     Error: str = 'error'
+
+    # Menus:
+    Settings: str = 'settings'
+    Publish: str = 'publish'
+    Points: str = 'points'
+    Vacancies: str = 'vacancies'
+    Notifications: str = 'notifications'
+    Subscription: str = 'subscription'
+    Language: str = 'language'
+
+    # Actions:
+    Add: str = 'add'
+    Delete: str = 'delete'
 
 
 @config(filename='fsa')

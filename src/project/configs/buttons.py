@@ -10,11 +10,36 @@ class ButtonConfig:
 
 @config(filename='button-names')
 class WorkHiveButton:
+    # Navigation:
     Next: str = 'next'
+    NextErr: str = 'next-err'
     Back: str = 'back'
+    Ok: str = 'ok'
+
+    # Actions:
     Register: str = 'register'
+    Consent: str = 'consent'
+    DeleteAccount: str = 'delete-account'
+    Post: str = 'post'
+    Add: str = 'add'
+    Delete: str = 'delete'
+    Edit: str = 'edit'
+    Hide: str = 'hide'
+    ShowContact: str = 'show-contact'
+    Accept: str = 'accept'
+    Decline: str = 'decline'
+    Subscribe: str = 'subscribe'
+    Publish: str = 'publish'
+
+    # Menus:
+    Settings: str = 'settings'
+    NotificationSettings: str = 'notification-settings'
+    Notifications: str = 'notifications'
+    MyPoints: str = 'my-points'
+    MyVacancies: str = 'my-vacancies'
+
+    # Other:
     Worker: str = 'worker'
     Owner: str = 'owner'
-    Consent: str = 'consent'
-
-    NextErr: str = 'next-err'
+    Language: str = 'language'
+    Subsrciption: str = 'subscription'
