@@ -1,13 +1,19 @@
 from model.tables import temp_users
 from model.types import User, TempUser, create_user
-from project.configs import FSAState, FSAPipeline
-from project.libs.tgdraw import TGMessage, ButtonFactoryClosure
+from project.configs import FSASymbol, FSAState, FSAPipeline, WorkHiveButton
+from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router.instance import router
 
 
-@router.add(name=FSAState.WorkerMainMenu, pipeline=FSAPipeline.Worker)
-def register(user: User | TempUser, _: ButtonFactoryClosure) -> TGMessage:
+@router.add(
+    name=FSAState.WorkerMainMenu,
+    pipeline=FSAPipeline.Worker,
+    transitions={
+        FSASymbol.Settings: FSAState.WorkerSettings,
+    },
+)
+def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
     if isinstance(user, TempUser):
         user = create_user(user)
         temp_users.remove(user.telegram_id)
@@ -15,5 +21,9 @@ def register(user: User | TempUser, _: ButtonFactoryClosure) -> TGMessage:
         text=render_file(
             language=user.language,
             state=user.state,
+        ),
+        keyboard=keyboard(
+            RowInfo(factory.saved(WorkHiveButton.Search)),
+            RowInfo(factory.saved(WorkHiveButton.Settings)),
         ),
     )

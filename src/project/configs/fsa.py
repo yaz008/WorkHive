@@ -42,6 +42,11 @@ class FSAState:
     # Worker
     WorkerMainMenu: str = 'worker-main-menu'
 
+    WorkerSettings: str = 'worker-settings'
+    WorkerLanguage: str = 'worker-language'
+
+    Search: str = 'search'
+
 
 @config(filename='fsa-symbols')
 class FSASymbol:
@@ -63,6 +68,7 @@ class FSASymbol:
     # Actions:
     Add: str = 'add'
     Delete: str = 'delete'
+    Search: str = 'search'
 
 
 @config(filename='fsa')

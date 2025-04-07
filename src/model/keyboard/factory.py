@@ -26,6 +26,7 @@ button_factory.save(name=WorkHiveButton.Delete, symbol=FSASymbol.Delete)
 # button_factory.save(name=WorkHiveButton.Decline, symbol=None)
 # button_factory.save(name=WorkHiveButton.Subscribe, symbol=None)
 button_factory.save(name=WorkHiveButton.Publish, symbol=FSASymbol.Publish)
+button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)
 
 # Menus:
 button_factory.save(name=WorkHiveButton.Settings, symbol=FSASymbol.Settings)
