@@ -1,6 +1,3 @@
-from uuid import UUID
-
-from model.tables import points_table, simple_vacancies_table
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -9,22 +6,14 @@ from router.instance import router
 
 
 @router.add(
-    name=FSAState.OwnerPointDelete,
+    name=FSAState.OwnerPublish,
     pipeline=FSAPipeline.Owner,
     transitions={
         FSASymbol.Back: FSAState.OwnerPoints,
-        FSASymbol.Delete: FSAState.OwnerPointDelete,
+        FSASymbol.Publish: FSAState.OwnerPublishDone,
     },
 )
-def owner_point_payload(
-    owner: Owner, factory: ButtonFactoryClosure, index: str
-) -> TGMessage:
-    if index != str():
-        point_id: UUID = list(owner.points.values())[int(index)].__sql_id__
-        points_table.remove_one(owner.workhive_id, point_id)
-        for vacancy in owner.simple_vacancies.values():
-            if vacancy.point_id == point_id:
-                simple_vacancies_table.remove_one(owner.workhive_id, vacancy.__sql_id__)
+def owner_point_payload(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -34,7 +23,7 @@ def owner_point_payload(
             *(
                 RowInfo(
                     factory.create(
-                        symbol=FSASymbol.Delete,
+                        symbol=FSASymbol.Publish,
                         name=point.name,
                         args=(list(owner.points.values()).index(point),),
                         load=False,

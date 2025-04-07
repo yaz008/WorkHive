@@ -30,7 +30,6 @@ def owner_point_address(
     point: TempPoint = get_temp_point(owner.telegram_id)
     if address != str():
         point.address = address
-        print(TempPoint(owner.telegram_id).address)
     return TGMessage(
         text=render_file(
             language=owner.language,

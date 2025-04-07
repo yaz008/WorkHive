@@ -1,6 +1,7 @@
 from model.tables.point import _Point, points_table
 from model.tables.temp import temp_users, temp_points
 from model.tables.user import _User, user_table
+from model.tables.vacancies import _VacancySimple, simple_vacancies_table
 from model.tables.wrappers import (
     _WorkHiveIDWrapper,
     _UserRoleWrapper,
@@ -14,6 +15,7 @@ from model.tables.wrappers import (
 __all__ = [
     '_User',
     'user_table',
+    'simple_vacancies_table',
     '_WorkHiveIDWrapper',
     '_UserRoleWrapper',
     '_UserStateWrapper',
@@ -22,6 +24,7 @@ __all__ = [
     'state_table',
     'temp_users',
     'temp_points',
+    '_VacancySimple',
     '_Point',
     'points_table',
 ]

@@ -9,11 +9,13 @@ from model.tables import (
     role_table,
     workhive_id,
     points_table,
+    simple_vacancies_table,
     _UserRoleWrapper,
     _UserStateWrapper,
     _WorkHiveIDWrapper,
     _User,
     _Point,
+    _VacancySimple,
 )
 from model.types.temp import TempUser
 from project.libs.orm import synced
@@ -43,6 +45,9 @@ def to_datetime(birth_date: str) -> datetime:
 @dataclass
 class Owner(User):
     points: dict[UUID, _Point] = synced(points_table, 'workhive_id')
+    simple_vacancies: dict[UUID, _VacancySimple] = synced(
+        simple_vacancies_table, 'workhive_id'
+    )
 
     def __init__(self, telegram_id: int) -> None:
         self.telegram_id = telegram_id

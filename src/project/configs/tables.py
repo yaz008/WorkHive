@@ -30,6 +30,7 @@ class TableConfig:
 
     # Entities:
     Points: _DBTable = _DBTable(database='entities', table='points')
+    VacanciesSimple: _DBTable = _DBTable(database='vacancies', table='simple')
 
     # Temp:
     TempUsers: _DBTable = _DBTable(database='temp-objects', table='users')

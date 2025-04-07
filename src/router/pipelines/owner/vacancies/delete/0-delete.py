@@ -1,6 +1,4 @@
-from uuid import UUID
-
-from model.tables import points_table, simple_vacancies_table
+from model.tables import simple_vacancies_table
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -9,22 +7,21 @@ from router.instance import router
 
 
 @router.add(
-    name=FSAState.OwnerPointDelete,
+    name=FSAState.OwnerVacancyDelete,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Back: FSAState.OwnerPoints,
-        FSASymbol.Delete: FSAState.OwnerPointDelete,
+        FSASymbol.Back: FSAState.OwnerVacancies,
+        FSASymbol.Delete: FSAState.OwnerVacancyDelete,
     },
 )
 def owner_point_payload(
     owner: Owner, factory: ButtonFactoryClosure, index: str
 ) -> TGMessage:
     if index != str():
-        point_id: UUID = list(owner.points.values())[int(index)].__sql_id__
-        points_table.remove_one(owner.workhive_id, point_id)
-        for vacancy in owner.simple_vacancies.values():
-            if vacancy.point_id == point_id:
-                simple_vacancies_table.remove_one(owner.workhive_id, vacancy.__sql_id__)
+        simple_vacancies_table.remove_one(
+            owner.workhive_id,
+            list(owner.simple_vacancies.values())[int(index)].__sql_id__,
+        )
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -35,12 +32,17 @@ def owner_point_payload(
                 RowInfo(
                     factory.create(
                         symbol=FSASymbol.Delete,
-                        name=point.name,
-                        args=(list(owner.points.values()).index(point),),
+                        name=' '.join(
+                            (
+                                f'{owner.points[vacancy.point_id].name}',
+                                f'({vacancy.__sql_id__})',
+                            )
+                        ),
+                        args=(list(owner.simple_vacancies.values()).index(vacancy),),
                         load=False,
                     )
                 )
-                for point in owner.points.values()
+                for vacancy in owner.simple_vacancies.values()
             ),
             RowInfo(factory.saved(WorkHiveButton.Back)),
         ),

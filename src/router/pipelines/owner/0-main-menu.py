@@ -10,7 +10,6 @@ from router.instance import router
     name=FSAState.OwnerMainMenu,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Publish: FSAState.OwnerPublish,
         FSASymbol.Points: FSAState.OwnerPoints,
         FSASymbol.Vacancies: FSAState.OwnerVacancies,
         FSASymbol.Notifications: FSAState.OwnerNotifications,
@@ -29,7 +28,6 @@ def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Publish),
                 factory.saved(WorkHiveButton.MyPoints),
                 factory.saved(WorkHiveButton.MyVacancies),
             ),
