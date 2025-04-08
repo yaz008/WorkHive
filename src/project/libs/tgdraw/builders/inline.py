@@ -21,7 +21,7 @@ def keyboard(
         layout=tuple(
             len(tuple(filter(lambda button: button is not None, row.buttons)))
             for row in rows
-            if row is not None
+            if row is not None and not all(button is None for button in row.buttons)
         ),
         cls=InlineKeyboardMarkup,
     )
