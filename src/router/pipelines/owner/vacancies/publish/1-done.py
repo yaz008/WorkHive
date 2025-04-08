@@ -12,7 +12,7 @@ from router.instance import router
     name=FSAState.OwnerPublishDone,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Next: FSAState.OwnerVacancies,
+        FSASymbol.Ok: FSAState.OwnerVacancies,
     },
 )
 def owner_point_payload(
@@ -21,6 +21,7 @@ def owner_point_payload(
     point: _Point = list(owner.points.values())[int(index)]
     vacancy: _VacancySimple = _VacancySimple(
         point_id=point.__sql_id__,
+        owner_id=owner.workhive_id,
         expiration_time=datetime.now() + timedelta(days=3),
     )
     owner.simple_vacancies |= {vacancy.__sql_id__: vacancy}

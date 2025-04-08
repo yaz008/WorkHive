@@ -9,6 +9,7 @@ from project.libs.orm import CachedMultiTable, Stackable
 @dataclass
 class _VacancySimple(Stackable):
     point_id: UUID
+    owner_id: UUID
     expiration_time: datetime
 
 

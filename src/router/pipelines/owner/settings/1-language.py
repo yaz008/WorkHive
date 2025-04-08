@@ -24,7 +24,8 @@ from router.instance import router
 def owner_language(
     user: User, factory: ButtonFactoryClosure, language: str
 ) -> TGMessage:
-    user.language = language
+    if language != str():
+        user.language = language
     return TGMessage(
         text=render_file(
             language=user.language,
@@ -42,10 +43,10 @@ def owner_language(
             Language.attrtuple('code').index(user.language),
             RowInfo(
                 ButtonInfo(
-                    text=load_button(name=WorkHiveButton.Next, language=user.language),
+                    text=load_button(name=WorkHiveButton.Back, language=user.language),
                     data=serializer.serialize(
-                        state=FSAState.ChooseLanguage,
-                        symbol=FSASymbol.Next,
+                        state=FSAState.OwnerLanguage,
+                        symbol=FSASymbol.Back,
                     ),
                 ),
             ),

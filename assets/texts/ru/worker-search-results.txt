@@ -1,0 +1,4 @@
+<address>____</address>
+<payload>____</payload>
+<minimal-charge>____</minimal-charge>
+<charge-per-one>____</charge-per-one>

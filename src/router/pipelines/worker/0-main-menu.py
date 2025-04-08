@@ -11,6 +11,7 @@ from router.instance import router
     pipeline=FSAPipeline.Worker,
     transitions={
         FSASymbol.Settings: FSAState.WorkerSettings,
+        FSASymbol.Search: FSAState.WorkerSearchResults,
     },
 )
 def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:

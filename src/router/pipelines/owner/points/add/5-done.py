@@ -10,7 +10,7 @@ from router.instance import router
     name=FSAState.OwnerPointDone,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Next: FSAState.OwnerPoints,
+        FSASymbol.Ok: FSAState.OwnerPoints,
     },
     accepts_types=('text',),
 )

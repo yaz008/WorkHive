@@ -3,6 +3,7 @@ from project.configs.db import DBConfig
 from project.configs.fsa import FSAConfig, FSAState, FSASymbol, FSAPipeline
 from project.configs.language import Language
 from project.configs.media import MediaConfig, WorkHiveDocument
+from project.configs.search import SearchConfig
 from project.configs.session import SessionConfig
 from project.configs.tables import TableConfig, CacheSizeConfig
 from project.configs.tgdriver import TGDriverConfig, TGParseMode
@@ -27,4 +28,5 @@ __all__ = [
     'WorkHiveDocument',
     'VerboseConfig',
     'VerboseLevel',
+    'SearchConfig',
 ]

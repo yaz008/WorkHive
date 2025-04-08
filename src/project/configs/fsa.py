@@ -46,6 +46,10 @@ class FSAState:
     WorkerLanguage: str = 'worker-language'
 
     Search: str = 'search'
+    WorkerSearch: str = 'worker-search'
+    WorkerSearchResults: str = 'worker-search-results'
+    WorkerSearchNoResults: str = 'worker-search-no-results'
+    Respond: str = 'respond'
 
 
 @config(filename='fsa-symbols')
@@ -69,6 +73,9 @@ class FSASymbol:
     Add: str = 'add'
     Delete: str = 'delete'
     Search: str = 'search'
+    Respond: str = 'respond'
+    View: str = 'view'
+    Ok: str = 'ok'
 
 
 @config(filename='fsa')

@@ -10,7 +10,7 @@ button_factory: ButtonFactory = ButtonFactory(serialize=serializer.serialize)
 button_factory.save(name=WorkHiveButton.Next, symbol=FSASymbol.Next)
 button_factory.save(name=WorkHiveButton.NextErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Back, symbol=FSASymbol.Back)
-button_factory.save(name=WorkHiveButton.Ok, symbol=FSASymbol.Next)
+button_factory.save(name=WorkHiveButton.Ok, symbol=FSASymbol.Ok)
 
 # Actions:
 button_factory.save(name=WorkHiveButton.Register, symbol=FSASymbol.Next)
@@ -27,6 +27,7 @@ button_factory.save(name=WorkHiveButton.Delete, symbol=FSASymbol.Delete)
 # button_factory.save(name=WorkHiveButton.Subscribe, symbol=None)
 button_factory.save(name=WorkHiveButton.Publish, symbol=FSASymbol.Publish)
 button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)
+button_factory.save(name=WorkHiveButton.Respond, symbol=FSASymbol.Respond)
 
 # Menus:
 button_factory.save(name=WorkHiveButton.Settings, symbol=FSASymbol.Settings)

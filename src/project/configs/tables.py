@@ -30,6 +30,13 @@ class TableConfig:
 
     # Entities:
     Points: _DBTable = _DBTable(database='entities', table='points')
+    SearchResults: _DBTable = _DBTable(database='entities', table='search_results')
+    Responses: _DBTable = _DBTable(database='entities', table='responses')
+
+    # Maps:
+    ResponseMap: _DBTable = _DBTable(database='maps', table='response')
+
+    # Vacancies:
     VacanciesSimple: _DBTable = _DBTable(database='vacancies', table='simple')
 
     # Temp:
