@@ -35,6 +35,7 @@ button_factory.save(name=WorkHiveButton.Settings, symbol=FSASymbol.Settings)
 button_factory.save(name=WorkHiveButton.Notifications, symbol=FSASymbol.Notifications)
 button_factory.save(name=WorkHiveButton.MyPoints, symbol=FSASymbol.Points)
 button_factory.save(name=WorkHiveButton.MyVacancies, symbol=FSASymbol.Vacancies)
+button_factory.save(name=WorkHiveButton.MyResponds, symbol=FSASymbol.Responds)
 
 # Other:
 button_factory.save(name=WorkHiveButton.Worker, symbol=FSASymbol.InputData)

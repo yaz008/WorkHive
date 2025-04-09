@@ -1,5 +1,5 @@
 from itertools import chain
-from uuid import UUID
+from uuid import uuid4, UUID
 
 from model.tables import (
     _VacancySimple,
@@ -38,18 +38,19 @@ def search(workhive_id: UUID) -> _SearchResult:
 
 
 def respond(vacancy: _VacancySimple, worker: Worker) -> None:
-    response_id: Stackable = Stackable()
+    response_id: UUID = uuid4()
     response: _Response = _Response(
+        response_id=response_id,
         vacancy_id=vacancy.__sql_id__,
         owner_id=vacancy.owner_id,
         worker_id=worker.workhive_id,
     )
-    response_map.update({response_id.__sql_id__: response})
+    response_map.update({response_id: response})
     responses_table.update(
         {
-            worker.workhive_id: response_id,
-            vacancy.owner_id: response_id,
-            vacancy.__sql_id__: response_id,
+            worker.workhive_id: Stackable(__sql_id__=response_id),
+            vacancy.owner_id: Stackable(__sql_id__=response_id),
+            vacancy.__sql_id__: Stackable(__sql_id__=response_id),
         }
     )
 
@@ -89,7 +90,6 @@ def owner_settings(
         if arg == 'respond':
             respond(vacancy, worker)
         point: _Point = points_table[vacancy.owner_id][vacancy.point_id]
-        print(vacancy.__sql_id__)
     return TGMessage(
         text=render_file(
             language=worker.language,

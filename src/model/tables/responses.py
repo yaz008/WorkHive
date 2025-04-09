@@ -7,6 +7,7 @@ from project.libs.orm import CachedSingleTable, CachedMultiTable, Stackable
 
 @dataclass
 class _Response:
+    response_id: UUID
     vacancy_id: UUID
     owner_id: UUID
     worker_id: UUID

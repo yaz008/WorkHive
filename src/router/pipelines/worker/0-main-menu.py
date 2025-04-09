@@ -12,6 +12,7 @@ from router.instance import router
     transitions={
         FSASymbol.Settings: FSAState.WorkerSettings,
         FSASymbol.Search: FSAState.WorkerSearchResults,
+        FSASymbol.Responds: FSAState.WorkerResponds,
     },
 )
 def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
@@ -25,6 +26,7 @@ def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Search)),
+            RowInfo(factory.saved(WorkHiveButton.MyResponds)),
             RowInfo(factory.saved(WorkHiveButton.Settings)),
         ),
     )

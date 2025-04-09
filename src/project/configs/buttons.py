@@ -39,6 +39,7 @@ class WorkHiveButton:
     Notifications: str = 'notifications'
     MyPoints: str = 'my-points'
     MyVacancies: str = 'my-vacancies'
+    MyResponds: str = 'my-responds'
 
     # Other:
     Worker: str = 'worker'

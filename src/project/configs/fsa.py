@@ -23,6 +23,7 @@ class FSAState:
     OwnerPoints: str = 'owner-points'
     OwnerVacancies: str = 'owner-vacancies'
     OwnerNotifications: str = 'owner-notifications'
+    OwnerNotification: str = 'owner-notification'
     OwnerSubstription: str = 'owner-subscription'
 
     OwnerLanguage: str = 'owner-language'
@@ -44,6 +45,8 @@ class FSAState:
 
     WorkerSettings: str = 'worker-settings'
     WorkerLanguage: str = 'worker-language'
+
+    WorkerResponds: str = 'worker-responds'
 
     Search: str = 'search'
     WorkerSearch: str = 'worker-search'
@@ -68,6 +71,7 @@ class FSASymbol:
     Notifications: str = 'notifications'
     Subscription: str = 'subscription'
     Language: str = 'language'
+    Responds: str = 'responds'
 
     # Actions:
     Add: str = 'add'
@@ -75,6 +79,7 @@ class FSASymbol:
     Search: str = 'search'
     Respond: str = 'respond'
     View: str = 'view'
+    Open: str = 'open'
     Ok: str = 'ok'
 
 
