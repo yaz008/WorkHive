@@ -9,8 +9,10 @@ from project.libs.orm import CachedSingleTable, CachedMultiTable, Stackable
 class _Response:
     response_id: UUID
     vacancy_id: UUID
+    # point_id: UUID
     owner_id: UUID
     worker_id: UUID
+    status: str = 'undefined'
 
 
 response_map: CachedSingleTable[UUID, _Response] = CachedSingleTable(

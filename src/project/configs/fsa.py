@@ -22,7 +22,6 @@ class FSAState:
     OwnerSettings: str = 'owner-settings'
     OwnerPoints: str = 'owner-points'
     OwnerVacancies: str = 'owner-vacancies'
-    OwnerNotifications: str = 'owner-notifications'
     OwnerNotification: str = 'owner-notification'
     OwnerSubstription: str = 'owner-subscription'
 
@@ -39,6 +38,9 @@ class FSAState:
     OwnerPublish: str = 'owner-publish'
     OwnerPublishDone: str = 'owner-publish-done'
     OwnerVacancyDelete: str = 'owner-vacancy-delete'
+
+    OwnerNotifications: str = 'owner-notifications'
+    OwnerNoNotifications: str = 'owner-no-notifications'
 
     # Worker
     WorkerMainMenu: str = 'worker-main-menu'
@@ -81,6 +83,8 @@ class FSASymbol:
     View: str = 'view'
     Open: str = 'open'
     Ok: str = 'ok'
+    Accept: str = 'accept'
+    Decline: str = 'decline'
 
 
 @config(filename='fsa')

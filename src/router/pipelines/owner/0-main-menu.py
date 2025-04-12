@@ -31,7 +31,7 @@ def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
                 factory.saved(WorkHiveButton.MyPoints),
                 factory.saved(WorkHiveButton.MyVacancies),
             ),
-            RowInfo(factory.saved(WorkHiveButton.Notifications)),
+            RowInfo(factory.saved(WorkHiveButton.Notifications, args=(str(), '0'))),
             RowInfo(
                 factory.saved(WorkHiveButton.Settings),
                 factory.saved(WorkHiveButton.Subsrciption),

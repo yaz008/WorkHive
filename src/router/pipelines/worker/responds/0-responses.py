@@ -20,6 +20,7 @@ def delete_response(worker: Worker, index: str) -> None:
         ][int(index)]
         responses_table.remove_one(response.owner_id, response.response_id)
         responses_table.remove_one(response.vacancy_id, response.response_id)
+        # responses_table.remove_one(response.point_id, response.response_id)
         responses_table.remove_one(response.worker_id, response.response_id)
         response_map.remove(response.response_id)
 

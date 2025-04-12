@@ -1,0 +1,4 @@
+Отклик от <telegram-tag>____</telegram-tag>
+Имя: <worker-name></worker-name>
+Дата рождения: <birth-date></birth-date>
+Вакансия: <point-name></point-name>
