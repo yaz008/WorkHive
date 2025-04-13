@@ -32,6 +32,7 @@ class TableConfig:
     Points: _DBTable = _DBTable(database='entities', table='points')
     SearchResults: _DBTable = _DBTable(database='entities', table='search_results')
     Responses: _DBTable = _DBTable(database='entities', table='responses')
+    Balance: _DBTable = _DBTable(database='entities', table='balance')
 
     # Maps:
     ResponseMap: _DBTable = _DBTable(database='maps', table='response')

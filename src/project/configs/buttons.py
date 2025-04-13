@@ -40,6 +40,7 @@ class WorkHiveButton:
     MyPoints: str = 'my-points'
     MyVacancies: str = 'my-vacancies'
     MyResponds: str = 'my-responds'
+    Promocode: str = 'promocode'
 
     # Other:
     Worker: str = 'worker'

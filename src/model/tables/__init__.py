@@ -1,3 +1,4 @@
+from model.tables.balance import _Balance, balance_table
 from model.tables.point import _Point, points_table
 from model.tables.responses import _Response, responses_table, response_map
 from model.tables.search import _SearchResult, search_results_table
@@ -34,4 +35,6 @@ __all__ = [
     '_Response',
     'responses_table',
     'response_map',
+    '_Balance',
+    'balance_table',
 ]

@@ -23,7 +23,6 @@ class FSAState:
     OwnerPoints: str = 'owner-points'
     OwnerVacancies: str = 'owner-vacancies'
     OwnerNotification: str = 'owner-notification'
-    OwnerSubstription: str = 'owner-subscription'
 
     OwnerLanguage: str = 'owner-language'
 
@@ -41,6 +40,11 @@ class FSAState:
 
     OwnerNotifications: str = 'owner-notifications'
     OwnerNoNotifications: str = 'owner-no-notifications'
+
+    OwnerSubstription: str = 'owner-subscription'
+    OwnerPromocode: str = 'owner-promocode'
+    OwnerCorrectPromocode: str = 'owner-correct-promocode'
+    OwnerIncorrectPromocode: str = 'owner-incorrect-promocode'
 
     # Worker
     WorkerMainMenu: str = 'worker-main-menu'
@@ -74,6 +78,7 @@ class FSASymbol:
     Subscription: str = 'subscription'
     Language: str = 'language'
     Responds: str = 'responds'
+    Promocode: str = 'promocode'
 
     # Actions:
     Add: str = 'add'

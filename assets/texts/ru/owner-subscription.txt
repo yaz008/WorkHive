@@ -1,0 +1,3 @@
+Подписка и токены
+Объявлений: <publications>____</publications>
+Токенов: <tokens>____</tokens>

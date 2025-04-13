@@ -10,12 +10,14 @@ from model.tables import (
     workhive_id,
     points_table,
     simple_vacancies_table,
+    balance_table,
     _UserRoleWrapper,
     _UserStateWrapper,
     _WorkHiveIDWrapper,
     _User,
     _Point,
     _VacancySimple,
+    _Balance,
 )
 from model.types.temp import TempUser
 from project.libs.orm import synced
@@ -48,6 +50,7 @@ class Owner(User):
     simple_vacancies: dict[UUID, _VacancySimple] = synced(
         simple_vacancies_table, 'workhive_id'
     )
+    balance: _Balance = synced(balance_table, 'workhive_id')
 
     def __init__(self, telegram_id: int) -> None:
         self.telegram_id = telegram_id
@@ -77,5 +80,6 @@ def create_user(temp_user: TempUser) -> Worker | Owner:
         case 'worker':
             return Worker(telegram_id=temp_user.telegram_id)
         case 'owner':
+            balance_table.update({id: _Balance(publications=0, tokens=0)})
             return Owner(telegram_id=temp_user.telegram_id)
     raise
