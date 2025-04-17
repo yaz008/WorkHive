@@ -1,4 +1,3 @@
-from datetime import datetime, timedelta
 from re import match
 
 from model.types import TempUser, to_datetime
@@ -6,20 +5,7 @@ from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, numeric
 from project.libs.tght import render_file
 from router.instance import router
-
-
-def render_birth_date(placeholder: str, birth_date: str) -> str:
-    result: str = placeholder
-    for digit in birth_date:
-        result = result.replace('_', digit, count=1)
-    return result
-
-
-def is_birth_date_valid(birth_date: datetime | None) -> bool:
-    if birth_date is None:
-        return False
-    age: timedelta = datetime.now() - birth_date
-    return timedelta(14 * 365 + 3) < age < timedelta(120 * 365 + 30)
+from router.pipelines.registration.utils import render_birth_date, is_birth_date_valid
 
 
 @router.add(
@@ -48,9 +34,20 @@ def birth_date(user: TempUser, factory: ButtonFactoryClosure, digit: str) -> TGM
             language=user.language,
             state=user.state,
             tag_handlers={
-                'birth-date': lambda placeholder: render_birth_date(
+                'role': lambda placeholder: (
+                    f'<code>{user.role if user.role != str() else placeholder}</code>'
+                ),
+                'full-name': lambda placeholder: (
+                    f'<code>{user.full_name}</code>'
+                    if user.full_name != str()
+                    else f'<code>{placeholder}</code>'
+                ),
+                'birth-date': lambda placeholder: f'<code>{render_birth_date(
                     placeholder, user.birth_date
-                )
+                )}</code>',
+                'consent-pp': lambda _: '✅' if user.concent_pp else '❌',
+                'consent-ad': lambda _: '✅' if user.concent_ad else '❌',
+                'consent-of': lambda _: '✅' if user.concent_of else '❌',
             },
         ),
         keyboard=numeric(

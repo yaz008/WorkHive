@@ -15,6 +15,7 @@ from project.libs.tgdraw import (
 )
 from project.libs.tght import render_file
 from router.instance import router
+from router.pipelines.registration.utils import render_birth_date
 
 
 @router.add(
@@ -34,6 +35,22 @@ def privacy_policy_concent(
         text=render_file(
             language=user.language,
             state=user.state,
+            tag_handlers={
+                'role': lambda placeholder: (
+                    f'<code>{user.role if user.role != str() else placeholder}</code>'
+                ),
+                'full-name': lambda placeholder: (
+                    f'<code>{user.full_name}</code>'
+                    if user.full_name != str()
+                    else f'<code>{placeholder}</code>'
+                ),
+                'birth-date': lambda placeholder: f'<code>{render_birth_date(
+                    placeholder, user.birth_date
+                )}</code>',
+                'consent-pp': lambda _: '✅' if user.concent_pp else '❌',
+                'consent-ad': lambda _: '✅' if user.concent_ad else '❌',
+                'consent-of': lambda _: '✅' if user.concent_of else '❌',
+            },
         ),
         tgmedia=TGMedia(
             name=WorkHiveDocument.AdvertisingConsent,
