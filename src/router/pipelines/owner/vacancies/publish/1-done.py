@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from model.tables import _VacancySimple, _Point
+from model.tables import _VacancySimple, _Point, _Balance
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -25,6 +25,9 @@ def owner_point_payload(
         expiration_time=datetime.now() + timedelta(days=3),
     )
     owner.simple_vacancies |= {vacancy.__sql_id__: vacancy}
+    owner.balance = _Balance(
+        publications=owner.balance.publications - 1, tokens=owner.balance.tokens
+    )
     return TGMessage(
         text=render_file(
             language=owner.language,

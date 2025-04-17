@@ -11,6 +11,7 @@ from router.instance import router
     transitions={
         FSASymbol.Back: FSAState.OwnerMainMenu,
         FSASymbol.Publish: FSAState.OwnerPublish,
+        FSASymbol.Error: FSAState.OwnerLowBalance,
         FSASymbol.Delete: FSAState.OwnerVacancyDelete,
     },
 )
@@ -39,7 +40,13 @@ def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
             },
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.Publish)),
+            RowInfo(
+                factory.saved(
+                    WorkHiveButton.Publish
+                    if owner.balance.publications > 0
+                    else WorkHiveButton.PublishErr
+                )
+            ),
             RowInfo(factory.saved(WorkHiveButton.Delete)),
             RowInfo(factory.saved(WorkHiveButton.Back)),
         ),

@@ -30,6 +30,7 @@ class WorkHiveButton:
     Decline: str = 'decline'
     Subscribe: str = 'subscribe'
     Publish: str = 'publish'
+    PublishErr: str = 'publish-err'
     Search: str = 'search'
     Respond: str = 'respond'
 

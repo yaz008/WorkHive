@@ -36,6 +36,7 @@ class FSAState:
 
     OwnerPublish: str = 'owner-publish'
     OwnerPublishDone: str = 'owner-publish-done'
+    OwnerLowBalance: str = 'owner-no-balance'
     OwnerVacancyDelete: str = 'owner-vacancy-delete'
 
     OwnerNotifications: str = 'owner-notifications'
