@@ -102,7 +102,7 @@ class FSA[User: UserProtocol, Ret]:
 
     def connect(self) -> None:
         import_all(self.routs)
-        # assert self.is_connected
+        assert self.is_connected
 
     def accepts(self, state: str, content_type: TGContentType) -> bool:
         return content_type in self.__acceptance_table[state]
