@@ -38,6 +38,7 @@ class WorkHiveButton:
     Settings: str = 'settings'
     NotificationSettings: str = 'notification-settings'
     Notifications: str = 'notifications'
+    NotificationsNew: str = 'notifications-new'
     MyPoints: str = 'my-points'
     MyVacancies: str = 'my-vacancies'
     MyResponds: str = 'my-responds'
