@@ -1,4 +1,5 @@
+<franchise>____</franchise>
 Адрес: <address>____</address>
 Среднее количество штрихкодов: <payload>____</payload> шт.
 Оплата за выход: <minimal-charge>____</minimal-charge> р.
-Опзата за штрихкод: <charge-per-one>____</charge-per-one> коп.
+Оплата за штрихкод: <charge-per-one>____</charge-per-one> р.

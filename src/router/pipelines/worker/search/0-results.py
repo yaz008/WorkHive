@@ -1,6 +1,8 @@
 from itertools import chain
 from uuid import uuid4, UUID
 
+from telebot.types import LinkPreviewOptions
+
 from model.tables import (
     _VacancySimple,
     _SearchResult,
@@ -99,7 +101,10 @@ def owner_settings(
                 else FSAState.WorkerSearchNoResults
             ),
             tag_handlers={
-                'address': lambda _: point.address,
+                'franchise': lambda _: point.franchise,
+                'address': lambda _: (
+                    f'<a href="{point.yandex_link}">{point.address}</a>'
+                ),
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),
                 'charge-per-one': lambda _: str(point.charge_per_one),
@@ -135,4 +140,5 @@ def owner_settings(
                 ),
             ),
         ),
+        link_preview=LinkPreviewOptions(prefer_small_media=True, show_above_text=True),
     )
