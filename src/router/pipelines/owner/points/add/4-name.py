@@ -1,3 +1,5 @@
+from telebot.types import LinkPreviewOptions
+
 from model.types import Owner, TempPoint
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -43,4 +45,5 @@ def owner_point_name(
                 factory.saved(WorkHiveButton.Next) if point.name != str() else None,
             ),
         ),
+        link_preview=LinkPreviewOptions(is_disabled=True),
     )

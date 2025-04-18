@@ -1,5 +1,7 @@
 from re import match
 
+from telebot.types import LinkPreviewOptions
+
 from model.types import Owner, TempPoint
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -45,4 +47,5 @@ def owner_point_charge(
                 factory.saved(WorkHiveButton.Back), factory.saved(WorkHiveButton.Next)
             ),
         ),
+        link_preview=LinkPreviewOptions(is_disabled=True),
     )

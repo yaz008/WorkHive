@@ -1,3 +1,5 @@
+from telebot.types import LinkPreviewOptions
+
 from model.tables import temp_points
 from model.types import Owner, TempPoint
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
@@ -58,4 +60,5 @@ def owner_point_address(
                 factory.saved(WorkHiveButton.Next) if point.address != str() else None,
             ),
         ),
+        link_preview=LinkPreviewOptions(prefer_small_media=True, show_above_text=True),
     )
