@@ -47,6 +47,26 @@ def on_callback(user: User | TempUser, callback: CallbackQuery) -> None:
     driver.update(telegram_id=user.telegram_id, message=response)
 
 
+@driver.message_handler(
+    content_types=[
+        'text',
+        'photo',
+        'audio',
+        'document',
+        'video',
+        'video_note',
+        'voice',
+        'sticker',
+        'location',
+        'contact',
+        'poll',
+    ]
+)
+@delete_message
+def _(_: Message) -> None:
+    pass
+
+
 if __name__ == '__main__':
     router.connect()
     driver.infinity_polling()
