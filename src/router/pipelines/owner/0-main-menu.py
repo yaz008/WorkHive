@@ -50,7 +50,7 @@ def register(owner: Owner | TempUser, factory: ButtonFactoryClosure) -> TGMessag
                 factory.saved(
                     (
                         WorkHiveButton.Notifications
-                        if len(get_notifications(owner))
+                        if len(get_notifications(owner)) == 0
                         else WorkHiveButton.NotificationsNew
                     ),
                     args=(str(), '0'),
