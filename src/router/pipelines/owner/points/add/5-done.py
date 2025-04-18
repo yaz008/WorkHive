@@ -17,7 +17,9 @@ from router.instance import router
 def owner_point_done(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     temp_point: TempPoint = TempPoint(owner.telegram_id)
     point: _Point = _Point(
+        franchise=temp_point.franchise,
         address=temp_point.address,
+        yandex_link=temp_point.yandex_link,
         name=temp_point.name,
         payload=temp_point.payload,
         minimal_charge=temp_point.minimal_charge,

@@ -7,7 +7,9 @@ from project.libs.orm import CachedMultiTable, Stackable
 
 @dataclass
 class _Point(Stackable):
+    franchise: str
     address: str
+    yandex_link: str
     name: str
     payload: int
     minimal_charge: int

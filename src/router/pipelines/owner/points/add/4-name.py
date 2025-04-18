@@ -25,10 +25,22 @@ def owner_point_name(
         text=render_file(
             language=owner.language,
             state=owner.state,
-            tag_handlers={'name': lambda default: name if name != str() else default},
+            tag_handlers={
+                'address': lambda _: (
+                    f'<a href=\"{point.yandex_link}\">{point.address}</a>'
+                ),
+                'payload': lambda _: str(point.payload),
+                'minimal-charge': lambda _: str(point.minimal_charge),
+                'charge-per-one': lambda _: str(point.charge_per_one),
+                'name': lambda placeholder: f'<code>{(
+                    point.name if point.name != str() else placeholder
+                )}</code>',
+            },
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.Back)),
-            RowInfo(factory.saved(WorkHiveButton.Next)) if name != str() else None,
+            RowInfo(
+                factory.saved(WorkHiveButton.Back),
+                factory.saved(WorkHiveButton.Next) if point.name != str() else None,
+            ),
         ),
     )

@@ -96,7 +96,7 @@ class FSASymbol:
 @config(filename='fsa')
 class FSAConfig:
     MainDelimiter: str = '$'
-    ArgDelimiter: str = ':'
+    ArgDelimiter: str = '#'
     InitialTransitionState: str = FSAState.ChooseLanguage
 
 

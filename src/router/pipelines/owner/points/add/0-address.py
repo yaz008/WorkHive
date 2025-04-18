@@ -25,21 +25,37 @@ def get_temp_point(telegram_id: int) -> TempPoint:
     accepts_types=('text',),
 )
 def owner_point_address(
-    owner: Owner, factory: ButtonFactoryClosure, address: str
+    owner: Owner, factory: ButtonFactoryClosure, share_info: str
 ) -> TGMessage:
     point: TempPoint = get_temp_point(owner.telegram_id)
-    if address != str():
-        point.address = address
+    if share_info != str():
+        point.franchise, point.address, point.yandex_link = share_info.split(
+            sep='\n', maxsplit=2
+        )
     return TGMessage(
         text=render_file(
             language=owner.language,
             state=owner.state,
             tag_handlers={
-                'address': lambda default: address if address != str() else default
+                'address': lambda placeholder: (
+                    f'<a href=\"{point.yandex_link}\">{point.address}</a>'
+                    if point.address != str()
+                    else f'<code>{placeholder}</code>'
+                ),
+                'payload': lambda _: str(point.payload),
+                'minimal-charge': lambda _: str(point.minimal_charge),
+                'charge-per-one': lambda _: (
+                    f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                ),
+                'name': lambda placeholder: f'<code>{(
+                    point.name if point.name != str() else placeholder
+                )}</code>',
             },
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.Back)),
-            RowInfo(factory.saved(WorkHiveButton.Next)) if address != str() else None,
+            RowInfo(
+                factory.saved(WorkHiveButton.Back),
+                factory.saved(WorkHiveButton.Next) if point.address != str() else None,
+            ),
         ),
     )
