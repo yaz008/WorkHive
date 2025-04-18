@@ -64,7 +64,13 @@ class TGDriver(TeleBot):
         }
         if message.kind == 'Text':
             if session.kind == 'Text':
-                self.edit_message_text(**{'text': message.text} | common_params)
+                self.edit_message_text(
+                    **{
+                        'text': message.text,
+                        'link_preview_options': message.link_preview,
+                    }
+                    | common_params
+                )
             else:
                 self.revoke(session)
                 return self.create(telegram_id, message)
@@ -121,7 +127,13 @@ class TGDriver(TeleBot):
                     }
                 )
                 if message.tgmedia is not None
-                else {'text': message.text}
+                else cast(
+                    dict[str, Any | None],
+                    {
+                        'text': message.text,
+                        'link_preview_options': message.link_preview,
+                    },
+                )
             )
             | {
                 'chat_id': telegram_id,

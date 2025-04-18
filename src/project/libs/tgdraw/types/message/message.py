@@ -5,6 +5,7 @@ from telebot.types import (
     InputMedia,
     InlineKeyboardMarkup,
     ReplyKeyboardMarkup,
+    LinkPreviewOptions,
 )
 
 from project.configs import TGDriverConfig
@@ -20,6 +21,7 @@ class TGMessage:
     text: str
     tgmedia: TGMedia | None = None
     keyboard: TGKeyboard | None = None
+    link_preview: LinkPreviewOptions | None = None
 
     @property
     def kind(self) -> MessageKind:
