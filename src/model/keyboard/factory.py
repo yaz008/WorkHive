@@ -31,6 +31,7 @@ button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)
 button_factory.save(name=WorkHiveButton.Respond, symbol=FSASymbol.Respond)
 
 # Menus:
+button_factory.save(name=WorkHiveButton.MainMenu, symbol=FSASymbol.MainMenu)
 button_factory.save(name=WorkHiveButton.Settings, symbol=FSASymbol.Settings)
 # button_factory.save(name=WorkHiveButton.NotificationSettings, symbol=None)
 button_factory.save(name=WorkHiveButton.Notifications, symbol=FSASymbol.Notifications)

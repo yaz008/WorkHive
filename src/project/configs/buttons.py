@@ -35,6 +35,7 @@ class WorkHiveButton:
     Respond: str = 'respond'
 
     # Menus:
+    MainMenu: str = 'main-menu'
     Settings: str = 'settings'
     NotificationSettings: str = 'notification-settings'
     Notifications: str = 'notifications'

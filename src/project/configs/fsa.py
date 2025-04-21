@@ -71,6 +71,7 @@ class FSASymbol:
     Error: str = 'error'
 
     # Menus:
+    MainMenu: str = 'main-menu'
     Settings: str = 'settings'
     Publish: str = 'publish'
     Points: str = 'points'

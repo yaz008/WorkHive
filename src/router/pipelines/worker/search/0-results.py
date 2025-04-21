@@ -77,6 +77,7 @@ def update_index(worker: Worker, result: _SearchResult, arg: str) -> None:
         FSASymbol.Next: FSAState.WorkerSearchResults,
         FSASymbol.Back: FSAState.WorkerSearchResults,
         FSASymbol.Ok: FSAState.WorkerMainMenu,
+        FSASymbol.MainMenu: FSAState.WorkerMainMenu,
     },
 )
 def owner_settings(
@@ -139,6 +140,7 @@ def owner_settings(
                     else None
                 ),
             ),
+            RowInfo(factory.saved(WorkHiveButton.MainMenu)),
         ),
         link_preview=LinkPreviewOptions(prefer_small_media=True, show_above_text=True),
     )

@@ -41,6 +41,7 @@ def delete_response(owner: Owner, index: str) -> None:
     name=FSAState.OwnerNotifications,
     pipeline=FSAPipeline.Owner,
     transitions={
+        FSASymbol.MainMenu: FSAState.OwnerMainMenu,
         FSASymbol.Accept: FSAState.OwnerNotifications,
         FSASymbol.Decline: FSAState.OwnerNotifications,
         FSASymbol.Next: FSAState.OwnerNotifications,
@@ -95,12 +96,17 @@ def owner_settings(
             ),
         ),
         keyboard=keyboard(
-            (
-                RowInfo(factory.saved(WorkHiveButton.Ok))
+            RowInfo(factory.saved(WorkHiveButton.MainMenu)),
+            *(
+                (RowInfo(factory.saved(WorkHiveButton.Ok)),)
                 if notification is None
-                else RowInfo(
-                    factory.saved(WorkHiveButton.Accept, args=('accept', index)),
-                    factory.saved(WorkHiveButton.Decline, args=('decline', index)),
+                else (
+                    RowInfo(
+                        factory.saved(WorkHiveButton.Accept, args=('accept', index)),
+                    ),
+                    RowInfo(
+                        factory.saved(WorkHiveButton.Decline, args=('decline', index)),
+                    ),
                 )
             ),
             (
