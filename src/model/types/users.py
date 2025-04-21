@@ -11,6 +11,7 @@ from model.tables import (
     points_table,
     simple_vacancies_table,
     balance_table,
+    metadata_table,
     _UserRoleWrapper,
     _UserStateWrapper,
     _WorkHiveIDWrapper,
@@ -18,6 +19,7 @@ from model.tables import (
     _Point,
     _VacancySimple,
     _Balance,
+    _Metadata,
 )
 from model.types.temp import TempUser
 from project.libs.orm import synced
@@ -25,6 +27,7 @@ from project.libs.orm import synced
 
 class User:
     telegram_id: int
+    metadata: dict[UUID, _Metadata] = synced(metadata_table, 'workhive_id')
     state: str = synced(state_table, 'workhive_id', 'state')
     language: str = synced(user_table, 'workhive_id', 'language')
     role: str = synced(role_table, 'workhive_id', 'role')

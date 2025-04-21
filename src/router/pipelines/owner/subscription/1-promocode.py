@@ -1,4 +1,4 @@
-from model.tables import _Balance, balance_table
+from model.tables import _Metadata, _Balance, balance_table
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -20,7 +20,10 @@ from router.instance import router
 def owner_settings(
     owner: Owner, factory: ButtonFactoryClosure, promocode: str
 ) -> TGMessage:
-    if promocode == 'WorkHive10':
+    if promocode == 'WorkHive10' and promocode not in [
+        metadata.value for metadata in owner.metadata.values()
+    ]:
+        owner.metadata |= {owner.workhive_id: _Metadata(promocode)}
         balance_table.update(
             {
                 owner.workhive_id: _Balance(

@@ -27,6 +27,7 @@ class TableConfig:
     WokhiveID: _DBTable = _DBTable(database='userdata', table='workhive_id')
     Role: _DBTable = _DBTable(database='userdata', table='role')
     State: _DBTable = _DBTable(database='userdata', table='state')
+    Metadata: _DBTable = _DBTable(database='userdata', table='metadata')
 
     # Entities:
     Points: _DBTable = _DBTable(database='entities', table='points')
