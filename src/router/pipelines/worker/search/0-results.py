@@ -108,7 +108,9 @@ def owner_settings(
                 ),
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),
-                'charge-per-one': lambda _: str(point.charge_per_one),
+                'charge-per-one': lambda _: (
+                    f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                ),
             },
         ),
         keyboard=keyboard(
