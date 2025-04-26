@@ -56,6 +56,7 @@ class FSAState:
     WorkerLanguage: str = 'worker-language'
 
     WorkerResponds: str = 'worker-responds'
+    WorkerNoResponds: str = 'worker-no-responds'
 
     Search: str = 'search'
     WorkerSearch: str = 'worker-search'

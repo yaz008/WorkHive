@@ -1,4 +1,5 @@
 from model.tables import (
+    _Point,
     _Response,
     points_table,
     simple_vacancies_table,
@@ -25,43 +26,87 @@ def delete_response(worker: Worker, index: str) -> None:
         response_map.remove(response.response_id)
 
 
+def get_responds(worker: Worker, index: str) -> _Response | None:
+    responds: list[_Response] = [
+        response_map[response.__sql_id__]
+        for response in responses_table[worker.workhive_id].values()
+    ]
+    if index == str():
+        index = '0'
+    return responds[int(index)] if len(responds) > 0 else None
+
+
+def get_current_response(responses: list[_Response], index: str) -> _Response | None:
+    return responses[int(index)] if len(responses) > 0 else None
+
+
 @router.add(
     name=FSAState.WorkerResponds,
     pipeline=FSAPipeline.Worker,
     transitions={
-        FSASymbol.Back: FSAState.WorkerMainMenu,
+        FSASymbol.MainMenu: FSAState.WorkerMainMenu,
+        FSASymbol.Next: FSAState.WorkerResponds,
+        FSASymbol.Back: FSAState.WorkerResponds,
         FSASymbol.Delete: FSAState.WorkerResponds,
     },
 )
 def owner_point_payload(
-    worker: Worker, factory: ButtonFactoryClosure, index: str
+    worker: Worker, factory: ButtonFactoryClosure, action: str, index: str
 ) -> TGMessage:
-    delete_response(worker, index)
+    if action == 'back':
+        index = str(int(index) - 1)
+    if action == 'next':
+        index = str(int(index) + 1)
+    if action == 'delete':
+        delete_response(worker, index)
     responses: list[_Response] = [
         response_map[id.__sql_id__]
         for id in responses_table[worker.workhive_id].values()
     ]
+    response: _Response | None = get_current_response(responses, index)
+    point: _Point | None = (
+        points_table[response.owner_id][
+            simple_vacancies_table[response.owner_id][response.vacancy_id].point_id
+        ]
+        if response is not None
+        else None
+    )
     return TGMessage(
         text=render_file(
             language=worker.language,
-            state=worker.state,
+            state=(worker.state if response is not None else FSAState.WorkerNoResponds),
+            tag_handlers=(
+                {
+                    'franchise': lambda _: point.franchise,
+                    'address': lambda _: (
+                        f'<a href="{point.yandex_link}">{point.address}</a>'
+                    ),
+                    'payload': lambda _: str(point.payload),
+                    'minimal-charge': lambda _: str(point.minimal_charge),
+                    'charge-per-one': lambda _: str(point.charge_per_one),
+                }
+                if point is not None
+                else None
+            ),
         ),
         keyboard=keyboard(
-            *(
-                RowInfo(
-                    factory.create(
-                        symbol=FSASymbol.Delete,
-                        name=points_table[response.owner_id][
-                            simple_vacancies_table[response.owner_id][
-                                response.vacancy_id
-                            ].point_id
-                        ].address[:25],
-                        args=(responses.index(response),),
-                        load=False,
-                    )
-                )
-                for response in responses
+            RowInfo(factory.saved(WorkHiveButton.MainMenu)),
+            (
+                RowInfo(factory.saved(WorkHiveButton.Delete, args=('delete', index)))
+                if response is not None
+                else None
             ),
-            RowInfo(factory.saved(WorkHiveButton.Back)),
+            RowInfo(
+                (
+                    factory.saved(WorkHiveButton.Back, args=('back', index))
+                    if int(index) > 0
+                    else None
+                ),
+                (
+                    factory.saved(WorkHiveButton.Next, args=('next', index))
+                    if len(responses) > int(index) + 1
+                    else None
+                ),
+            ),
         ),
     )

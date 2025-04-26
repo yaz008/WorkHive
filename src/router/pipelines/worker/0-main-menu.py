@@ -26,7 +26,7 @@ def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Search)),
-            RowInfo(factory.saved(WorkHiveButton.MyResponds)),
+            RowInfo(factory.saved(WorkHiveButton.MyResponds, args=(str(), '0'))),
             RowInfo(factory.saved(WorkHiveButton.Settings)),
         ),
     )
