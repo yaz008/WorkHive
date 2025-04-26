@@ -19,7 +19,7 @@ def get_notification(owner: Owner, index: str) -> _Response | None:
         for response in responses_table[owner.workhive_id].values()
         if response_map[response.__sql_id__].status == 'undefined'
     ]
-    if index != str():
+    if index == str():
         index = '0'
     return notifications[int(index)] if len(notifications) > 0 else None
 
@@ -35,6 +35,11 @@ def delete_response(owner: Owner, index: str) -> None:
         # responses_table.remove_one(response.point_id, response.response_id)
         responses_table.remove_one(response.worker_id, response.response_id)
         response_map.remove(response.response_id)
+
+
+def change_status(response: _Response, new_status: str) -> None:
+    response.status = new_status
+    response_map.update({response.response_id: response})
 
 
 @router.add(
@@ -56,23 +61,48 @@ def owner_settings(
     match action:
         case 'accept':
             assert notification is not None
-            response_map[notification.response_id].status = 'accepted'
-            delete_response(owner, index)
+            change_status(notification, 'accepted')
+            # simple_vacancies_table.remove_one(
+            #     owner.workhive_id, notification.vacancy_id
+            # )
         case 'decline':
             assert notification is not None
-            response_map[notification.response_id].status = 'declined'
-            delete_response(owner, index)
+            change_status(notification, 'declined')
         case 'next':
             index = str(int(index) + 1)
         case 'back':
             index = str(int(index) - 1)
-    return TGMessage(
+    notification = get_notification(owner, index)
+    print(
+        owner.state
+        if notification is not None
+        and response_map[notification.response_id].status == 'undefined'
+        else (
+            FSAState.OwnerNoNotifications
+            if notification is None
+            else (
+                FSAState.OwnerNotificationDeclined
+                if response_map[notification.response_id].status == 'declined'
+                else FSAState.OwnerNotificationAccepted
+            )
+        )
+    )
+    message: TGMessage = TGMessage(
         text=render_file(
             language=owner.language,
             state=(
                 owner.state
                 if notification is not None
-                else FSAState.OwnerNoNotifications
+                and response_map[notification.response_id].status == 'undefined'
+                else (
+                    FSAState.OwnerNoNotifications
+                    if notification is None
+                    else (
+                        FSAState.OwnerNotificationDeclined
+                        if response_map[notification.response_id].status == 'declined'
+                        else FSAState.OwnerNotificationAccepted
+                    )
+                )
             ),
             tag_handlers=(
                 {
@@ -89,22 +119,24 @@ def owner_settings(
                                 notification.vacancy_id
                             ].point_id
                         ].name
+                        if notification.vacancy_id  # TODO: Remove these 3 lines
+                        in simple_vacancies_table[notification.owner_id]
+                        else 'Removed'
                     ),
                 }
                 if notification is not None
+                and response_map[notification.response_id].status == 'undefined'
                 else None
             ),
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.MainMenu)),
             *(
                 (RowInfo(factory.saved(WorkHiveButton.Ok)),)
                 if notification is None
                 else (
+                    RowInfo(factory.saved(WorkHiveButton.MainMenu)),
                     RowInfo(
                         factory.saved(WorkHiveButton.Accept, args=('accept', index)),
-                    ),
-                    RowInfo(
                         factory.saved(WorkHiveButton.Decline, args=('decline', index)),
                     ),
                 )
@@ -138,3 +170,4 @@ def owner_settings(
             ),
         ),
     )
+    return message
