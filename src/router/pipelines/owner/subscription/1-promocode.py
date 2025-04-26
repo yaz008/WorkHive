@@ -12,7 +12,7 @@ from router.instance import router
     transitions={
         FSASymbol.InputData: FSAState.OwnerPromocode,
         FSASymbol.Back: FSAState.OwnerSubstription,
-        FSASymbol.Next: FSAState.OwnerCorrectPromocode,
+        FSASymbol.Apply: FSAState.OwnerCorrectPromocode,
         FSASymbol.Error: FSAState.OwnerIncorrectPromocode,
     },
     accepts_types=('text',),
@@ -43,9 +43,9 @@ def owner_settings(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Next)
+                factory.saved(WorkHiveButton.Apply)
                 if promocode == 'WorkHive10'
-                else factory.saved(WorkHiveButton.NextErr)
+                else factory.saved(WorkHiveButton.ApplyErr)
             ),
             RowInfo(factory.saved(WorkHiveButton.Back)),
         ),

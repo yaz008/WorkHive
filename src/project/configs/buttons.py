@@ -33,6 +33,8 @@ class WorkHiveButton:
     PublishErr: str = 'publish-err'
     Search: str = 'search'
     Respond: str = 'respond'
+    Apply: str = 'apply'
+    ApplyErr: str = 'apply-err'
 
     # Menus:
     MainMenu: str = 'main-menu'

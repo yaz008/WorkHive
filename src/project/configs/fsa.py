@@ -94,6 +94,7 @@ class FSASymbol:
     Ok: str = 'ok'
     Accept: str = 'accept'
     Decline: str = 'decline'
+    Apply: str = 'apply'
 
 
 @config(filename='fsa')

@@ -29,6 +29,8 @@ button_factory.save(name=WorkHiveButton.Publish, symbol=FSASymbol.Publish)
 button_factory.save(name=WorkHiveButton.PublishErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)
 button_factory.save(name=WorkHiveButton.Respond, symbol=FSASymbol.Respond)
+button_factory.save(name=WorkHiveButton.Apply, symbol=FSASymbol.Apply)
+button_factory.save(name=WorkHiveButton.ApplyErr, symbol=FSASymbol.Error)
 
 # Menus:
 button_factory.save(name=WorkHiveButton.MainMenu, symbol=FSASymbol.MainMenu)
