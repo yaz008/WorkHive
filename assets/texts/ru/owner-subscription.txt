@@ -1,3 +1,3 @@
-Подписка и токены
-Объявлений: <publications>____</publications>
-Токенов: <tokens>____</tokens>
+<b>Подписка</b>
+
+Доступно объявлений для публикации: <publications>____</publications>
