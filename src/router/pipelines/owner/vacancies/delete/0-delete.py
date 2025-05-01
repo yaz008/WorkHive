@@ -35,7 +35,7 @@ def owner_point_payload(
                         name=' '.join(
                             (
                                 f'{owner.points[vacancy.point_id].name}',
-                                f'({vacancy.__sql_id__})',
+                                f'({str(vacancy.__sql_id__)[:6]})',
                             )
                         ),
                         args=(list(owner.simple_vacancies.values()).index(vacancy),),

@@ -27,7 +27,7 @@ def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
                             (
                                 f'{index}:',
                                 f'{owner.points[vacancy.point_id].name}',
-                                f'({vacancy.__sql_id__})',
+                                f'({str(vacancy.__sql_id__)[:6]})',
                             )
                         )
                         for index, vacancy in enumerate(
