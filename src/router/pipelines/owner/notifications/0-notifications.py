@@ -1,4 +1,7 @@
+from telebot.types import LinkPreviewOptions
+
 from model.tables import (
+    _Point,
     _Response,
     response_map,
     responses_table,
@@ -73,6 +76,15 @@ def owner_settings(
         case 'back':
             index = str(int(index) - 1)
     notification = get_notification(owner, index)
+    point: _Point | None = (
+        points_table[notification.owner_id][
+            simple_vacancies_table[notification.owner_id][
+                notification.vacancy_id
+            ].point_id
+        ]
+        if notification is not None
+        else None
+    )
     if notification is not None:
         notification.is_read_by_owner = True
         response_map.update({notification.response_id: notification})
@@ -95,25 +107,29 @@ def owner_settings(
             ),
             tag_handlers=(
                 {
-                    'telegram-tag': lambda _: '@no_tag_provided',
+                    'point-name': lambda _: f'<b>{point.name}</b>',
+                    'address': lambda _: (
+                        f'<a href=\"{point.yandex_link}\">{point.address}</a>'
+                    ),
+                    'payload': lambda _: str(point.payload),
+                    'minimal-charge': lambda _: str(point.minimal_charge),
+                    'charge-per-one': lambda _: (
+                        f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                    ),
                     'worker-name': lambda _: str(
                         user_table[notification.worker_id].full_name
                     ),
                     'birth-date': lambda _: str(
                         user_table[notification.worker_id].birth_date
                     ),
-                    'point-name': lambda _: str(
-                        points_table[notification.owner_id][
-                            simple_vacancies_table[notification.owner_id][
-                                notification.vacancy_id
-                            ].point_id
-                        ].name
-                        if notification.vacancy_id  # TODO: Remove these 3 lines
-                        in simple_vacancies_table[notification.owner_id]
-                        else 'Removed'
+                    'mention': lambda placeholder: (
+                        f'<a href=\"tg://user?id={
+                            notification.worker_id
+                        }\">{placeholder}</a>'
                     ),
                 }
                 if notification is not None
+                and point is not None
                 and response_map[notification.response_id].status == 'undefined'
                 else None
             ),
@@ -158,5 +174,6 @@ def owner_settings(
                 else None
             ),
         ),
+        link_preview=LinkPreviewOptions(is_disabled=True),
     )
     return message
