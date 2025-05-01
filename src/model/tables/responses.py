@@ -13,6 +13,8 @@ class _Response:
     owner_id: UUID
     worker_id: UUID
     status: str = 'undefined'
+    is_read_by_owner: bool = False
+    is_read_by_worker: bool = False
 
 
 response_map: CachedSingleTable[UUID, _Response] = CachedSingleTable(

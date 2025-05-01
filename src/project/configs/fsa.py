@@ -58,6 +58,9 @@ class FSAState:
     WorkerResponds: str = 'worker-responds'
     WorkerNoResponds: str = 'worker-no-responds'
 
+    WorkerAcceptedResponds: str = 'worker-accepted-responds'
+    WorkerNoAcceptedResponds: str = 'worker-no-accepted-responds'
+
     Search: str = 'search'
     WorkerSearch: str = 'worker-search'
     WorkerSearchResults: str = 'worker-search-results'
@@ -83,6 +86,7 @@ class FSASymbol:
     Subscription: str = 'subscription'
     Language: str = 'language'
     Responds: str = 'responds'
+    AcceptedResponses: str = 'accepted-responses'
     Promocode: str = 'promocode'
 
     # Actions:

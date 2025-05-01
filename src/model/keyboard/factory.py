@@ -43,6 +43,12 @@ button_factory.save(
 button_factory.save(name=WorkHiveButton.MyPoints, symbol=FSASymbol.Points)
 button_factory.save(name=WorkHiveButton.MyVacancies, symbol=FSASymbol.Vacancies)
 button_factory.save(name=WorkHiveButton.MyResponds, symbol=FSASymbol.Responds)
+button_factory.save(
+    name=WorkHiveButton.AcceptedResponses, symbol=FSASymbol.AcceptedResponses
+)
+button_factory.save(
+    name=WorkHiveButton.AcceptedResponsesNew, symbol=FSASymbol.AcceptedResponses
+)
 button_factory.save(name=WorkHiveButton.Promocode, symbol=FSASymbol.Promocode)
 
 # Other:
