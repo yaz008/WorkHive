@@ -49,9 +49,12 @@ def register(owner: Owner | TempUser, factory: ButtonFactoryClosure) -> TGMessag
             RowInfo(
                 factory.saved(
                     (
-                        WorkHiveButton.Notifications
-                        if len(get_notifications(owner)) == 0
-                        else WorkHiveButton.NotificationsNew
+                        WorkHiveButton.NotificationsNew
+                        if any(
+                            not notification.is_read_by_owner
+                            for notification in get_notifications(owner)
+                        )
+                        else WorkHiveButton.Notifications
                     ),
                     args=(str(), '0'),
                 )

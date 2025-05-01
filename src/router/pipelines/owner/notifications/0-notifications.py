@@ -73,20 +73,9 @@ def owner_settings(
         case 'back':
             index = str(int(index) - 1)
     notification = get_notification(owner, index)
-    print(
-        owner.state
-        if notification is not None
-        and response_map[notification.response_id].status == 'undefined'
-        else (
-            FSAState.OwnerNoNotifications
-            if notification is None
-            else (
-                FSAState.OwnerNotificationDeclined
-                if response_map[notification.response_id].status == 'declined'
-                else FSAState.OwnerNotificationAccepted
-            )
-        )
-    )
+    if notification is not None:
+        notification.is_read_by_owner = True
+        response_map.update({notification.response_id: notification})
     message: TGMessage = TGMessage(
         text=render_file(
             language=owner.language,
