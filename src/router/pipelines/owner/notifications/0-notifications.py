@@ -119,12 +119,12 @@ def owner_settings(
                     'worker-name': lambda _: str(
                         user_table[notification.worker_id].full_name
                     ),
-                    'birth-date': lambda _: str(
-                        user_table[notification.worker_id].birth_date
-                    ),
+                    'birth-date': lambda _: user_table[
+                        notification.worker_id
+                    ].birth_date.strftime('%d-%m-%Y'),
                     'mention': lambda placeholder: (
                         f'<a href=\"tg://user?id={
-                            notification.worker_id
+                            notification.worker_telegram_id
                         }\">{placeholder}</a>'
                     ),
                 }

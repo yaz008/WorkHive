@@ -46,6 +46,7 @@ def respond(vacancy: _VacancySimple, worker: Worker) -> None:
         vacancy_id=vacancy.__sql_id__,
         owner_id=vacancy.owner_id,
         worker_id=worker.workhive_id,
+        worker_telegram_id=worker.telegram_id,
     )
     response_map.update({response_id: response})
     responses_table.update(

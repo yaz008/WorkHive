@@ -12,6 +12,7 @@ class _Response:
     # point_id: UUID
     owner_id: UUID
     worker_id: UUID
+    worker_telegram_id: int
     status: str = 'undefined'
     is_read_by_owner: bool = False
     is_read_by_worker: bool = False
