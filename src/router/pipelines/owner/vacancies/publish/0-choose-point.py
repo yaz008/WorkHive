@@ -9,7 +9,7 @@ from router.instance import router
     name=FSAState.OwnerPublish,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Back: FSAState.OwnerPoints,
+        FSASymbol.Back: FSAState.OwnerVacancies,
         FSASymbol.Publish: FSAState.OwnerPublishDone,
     },
 )
