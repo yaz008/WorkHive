@@ -9,7 +9,7 @@ from router.instance import router
     name=FSAState.OwnerVacancies,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Back: FSAState.OwnerMainMenu,
+        FSASymbol.MainMenu: FSAState.OwnerMainMenu,
         FSASymbol.Publish: FSAState.OwnerPublish,
         FSASymbol.Error: FSAState.OwnerLowBalance,
         FSASymbol.Delete: FSAState.OwnerVacancyDelete,
@@ -48,6 +48,6 @@ def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
                 )
             ),
             RowInfo(factory.saved(WorkHiveButton.Delete)),
-            RowInfo(factory.saved(WorkHiveButton.Back)),
+            RowInfo(factory.saved(WorkHiveButton.MainMenu)),
         ),
     )

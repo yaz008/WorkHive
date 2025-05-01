@@ -9,7 +9,7 @@ from router.instance import router
     name=FSAState.WorkerSettings,
     pipeline=FSAPipeline.Worker,
     transitions={
-        FSASymbol.Back: FSAState.WorkerMainMenu,
+        FSASymbol.MainMenu: FSAState.WorkerMainMenu,
         FSASymbol.Language: FSAState.WorkerLanguage,
     },
 )
@@ -21,6 +21,6 @@ def owner_settings(worker: Worker, factory: ButtonFactoryClosure) -> TGMessage:
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Language)),
-            RowInfo(factory.saved(WorkHiveButton.Back)),
+            RowInfo(factory.saved(WorkHiveButton.MainMenu)),
         ),
     )
