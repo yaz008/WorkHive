@@ -20,7 +20,6 @@ class FSAState:
     # Owner
     OwnerMainMenu: str = 'owner-main-menu'
     OwnerSettings: str = 'owner-settings'
-    OwnerPoints: str = 'owner-points'
     OwnerVacancies: str = 'owner-vacancies'
     OwnerNotification: str = 'owner-notification'
 
@@ -33,6 +32,10 @@ class FSAState:
     OwnerPointName: str = 'owner-point-name'
     OwnerPointDone: str = 'owner-point-done'
     OwnerPointDelete: str = 'owner-point-delete'
+
+    OwnerPoints: str = 'owner-points'
+    OwnerPoint: str = 'owner-point'
+    OwnerPointDeleted: str = 'owner-point-deleted'
 
     OwnerPublish: str = 'owner-publish'
     OwnerPublishDone: str = 'owner-publish-done'

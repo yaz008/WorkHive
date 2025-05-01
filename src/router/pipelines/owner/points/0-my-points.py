@@ -9,9 +9,9 @@ from router.instance import router
     name=FSAState.OwnerPoints,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Back: FSAState.OwnerMainMenu,
+        FSASymbol.Open: FSAState.OwnerPoint,
         FSASymbol.Add: FSAState.OwnerPointAddress,
-        FSASymbol.Delete: FSAState.OwnerPointDelete,
+        FSASymbol.MainMenu: FSAState.OwnerMainMenu,
     },
 )
 def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
@@ -19,20 +19,22 @@ def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
         text=render_file(
             language=owner.language,
             state=owner.state,
-            tag_handlers={
-                'points': lambda default: (
-                    '\n'.join(
-                        f'{index}: {point.name}'
-                        for index, point in enumerate(owner.points.values(), start=1)
-                    )
-                    if len(owner.points) > 0
-                    else default
-                ),
-            },
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.Add)),
-            RowInfo(factory.saved(WorkHiveButton.Delete)),
-            RowInfo(factory.saved(WorkHiveButton.Back)),
+            *(
+                RowInfo(
+                    factory.create(
+                        symbol=FSASymbol.Open,
+                        name=point.name,
+                        args=(list(owner.points.values()).index(point), False),
+                        load=False,
+                    )
+                )
+                for point in owner.points.values()
+            ),
+            RowInfo(
+                factory.saved(WorkHiveButton.MainMenu),
+                factory.saved(WorkHiveButton.Add),
+            ),
         ),
     )
