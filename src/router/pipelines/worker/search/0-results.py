@@ -116,7 +116,7 @@ def owner_settings(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Ok)
+                None
                 if len(result.vacancies) == 0
                 else (
                     factory.saved(WorkHiveButton.Respond, args=('respond',))
