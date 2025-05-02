@@ -9,7 +9,7 @@ from router.instance import router
     name=FSAState.OwnerIncorrectPromocode,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Ok: FSAState.OwnerSubstription,
+        FSASymbol.Ok: FSAState.OwnerPromocode,
     },
 )
 def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
