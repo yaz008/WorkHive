@@ -102,17 +102,32 @@ def owner_settings(
                 if len(result.vacancies) > 0
                 else FSAState.WorkerSearchNoResults
             ),
-            tag_handlers={
-                'franchise': lambda _: point.franchise,
-                'address': lambda _: (
-                    f'<a href="{point.yandex_link}">{point.address}</a>'
-                ),
-                'payload': lambda _: str(point.payload),
-                'minimal-charge': lambda _: str(point.minimal_charge),
-                'charge-per-one': lambda _: (
-                    f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
-                ),
-            },
+            tag_handlers=(
+                {
+                    'franchise': lambda _: point.franchise,
+                    'address': lambda _: (
+                        f'<a href="{point.yandex_link}">{point.address}</a>'
+                    ),
+                    'payload': lambda _: str(point.payload),
+                    'minimal-charge': lambda _: str(point.minimal_charge),
+                    'charge-per-one': lambda _: (
+                        f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                    ),
+                    'expected-payment': lambda _: (
+                        f'{
+                            (
+                                payment := (
+                                    point.minimal_charge * 100 + (
+                                        point.charge_per_one * point.payload
+                                    )
+                                )
+                            ) // 100}.{payment % 100}'
+                    ),
+                    'vacancy-id': lambda _: f'<i>{str(vacancy.__sql_id__)[:6]}</i>',
+                }
+                if vacancy is not None
+                else None
+            ),
         ),
         keyboard=keyboard(
             RowInfo(

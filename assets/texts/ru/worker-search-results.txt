@@ -3,3 +3,6 @@
 Среднее количество штрихкодов: <payload>____</payload> шт.
 Оплата за выход: <minimal-charge>____</minimal-charge> р.
 Оплата за штрихкод: <charge-per-one>____</charge-per-one> р.
+
+Ожидаемая оплата: <expected-payment>____</expected-payment> р.
+id: <vacancy-id>____</vacancy-id>
