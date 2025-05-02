@@ -31,6 +31,7 @@ def owner_point_done(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
         text=render_file(
             language=owner.language,
             state=owner.state,
+            tag_handlers={'point-name': lambda _: f'<code>{point.name}</code>'},
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Ok)),

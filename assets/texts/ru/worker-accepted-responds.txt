@@ -4,4 +4,4 @@
 Оплата за выход: <minimal-charge>____</minimal-charge> р.
 Оплата за штрихкод: <charge-per-one>____</charge-per-one> р.
 
-🔥Отклик принят🔥
+🔥 Отклик принят 🔥
