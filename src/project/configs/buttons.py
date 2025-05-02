@@ -35,6 +35,7 @@ class WorkHiveButton:
     Respond: str = 'respond'
     Apply: str = 'apply'
     ApplyErr: str = 'apply-err'
+    Skip: str = 'skip'
 
     # Menus:
     MainMenu: str = 'main-menu'
