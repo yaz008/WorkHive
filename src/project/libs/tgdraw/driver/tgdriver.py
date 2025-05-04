@@ -25,6 +25,7 @@ from project.libs.verbose import verbose
 
 @dataclass(slots=True)
 class TGDriver(TeleBot):
+    on_session_expiration: Callable[[Session], None]
     __session_table: CachedSingleTable[int, Session] = field(init=False)
     __scheduler: BackgroundScheduler = field(init=False)
 
@@ -33,8 +34,11 @@ class TGDriver(TeleBot):
         token: str,
         parse_mode: TGParseMode,
         skip_pending: bool,
+        is_threaded: bool,
         threads: int,
+        on_session_expiration: Callable[[Session], None] = lambda _: None,
     ) -> None:
+        self.on_session_expiration = on_session_expiration
         self.__session_table = CachedSingleTable(
             database=TableConfig.Sessions.database,
             table=TableConfig.Sessions.table,
@@ -49,7 +53,7 @@ class TGDriver(TeleBot):
             parse_mode=parse_mode,
             skip_pending=skip_pending,
             num_threads=threads,
-            threaded=(threads > 1),
+            threaded=is_threaded,
         )
 
     @ignore_error(ApiTelegramException, return_error=True)
@@ -102,7 +106,7 @@ class TGDriver(TeleBot):
                         session.expiration_time,
                     )
                 ),
-                args=[session],
+                args=[session, True],
                 id=str(telegram_id),
                 replace_existing=True,
             )
@@ -145,9 +149,11 @@ class TGDriver(TeleBot):
         )
 
     @ignore_error(ApiTelegramException)
-    def revoke(self, session: Session) -> None:
+    def revoke(self, session: Session, is_expired: bool = False) -> None:
         self.__session_table.remove(session.telegram_id)
         self.delete_message(chat_id=session.telegram_id, message_id=session.message_id)
+        if is_expired:
+            self.on_session_expiration(session)
 
     @verbose(before=TGDriverConfig.OnBotStart, level=VerboseConfig.Level)
     def infinity_polling(
