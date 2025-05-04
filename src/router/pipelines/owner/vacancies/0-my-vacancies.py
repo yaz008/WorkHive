@@ -21,7 +21,7 @@ def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
             language=owner.language,
             state=owner.state,
             tag_handlers={
-                'vacancies': lambda default: (
+                'vacancies': lambda placeholder: (
                     '\n'.join(
                         ' '.join(
                             (
@@ -35,7 +35,7 @@ def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
                         )
                     )
                     if len(owner.simple_vacancies) > 0
-                    else default
+                    else f'<i>{placeholder}</i>'
                 )
             },
         ),
