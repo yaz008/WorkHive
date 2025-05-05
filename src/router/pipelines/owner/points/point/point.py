@@ -39,6 +39,7 @@ def delete_response(response: _Response) -> None:
         FSASymbol.Back: FSAState.OwnerPoints,
         FSASymbol.Delete: FSAState.OwnerPoint,
         FSASymbol.Publish: FSAState.OwnerPublishDone,
+        FSASymbol.Error: FSAState.OwnerLowBalance,
     },
 )
 def owner_settings(
@@ -82,7 +83,11 @@ def owner_settings(
             ),
             RowInfo(
                 factory.saved(
-                    WorkHiveButton.Publish,
+                    (
+                        WorkHiveButton.Publish
+                        if owner.balance.publications > 0
+                        else WorkHiveButton.PublishErr
+                    ),
                     args=(list(owner.points.values()).index(point),),
                 )
                 if point is not None
