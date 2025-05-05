@@ -4,7 +4,13 @@ from model.tables import temp_points
 from model.types import Owner, TempPoint
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.orm import TempValue
-from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
+from project.libs.tgdraw import (
+    TGMessage,
+    TGMedia,
+    ButtonFactoryClosure,
+    RowInfo,
+    keyboard,
+)
 from project.libs.tght import render_file
 from router.instance import router
 
@@ -53,6 +59,11 @@ def owner_point_address(
                     point.name if point.name != str() else placeholder
                 )}</code>',
             },
+        ),
+        tgmedia=TGMedia(
+            name='share-instruction',
+            kind='Video',
+            language=owner.language,
         ),
         keyboard=keyboard(
             RowInfo(
