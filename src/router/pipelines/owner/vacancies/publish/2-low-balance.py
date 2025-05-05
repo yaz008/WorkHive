@@ -9,7 +9,7 @@ from router.instance import router
     name=FSAState.OwnerLowBalance,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Subscription: FSAState.OwnerSubstription,
+        FSASymbol.Promocode: FSAState.OwnerPromocode,
         FSASymbol.Ok: FSAState.OwnerVacancies,
     },
 )
@@ -24,7 +24,7 @@ def owner_point_payload(owner: Owner, factory: ButtonFactoryClosure) -> TGMessag
             },
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.Subsrciption)),
+            RowInfo(factory.saved(WorkHiveButton.Promocode)),
             RowInfo(factory.saved(WorkHiveButton.Ok)),
         ),
     )
