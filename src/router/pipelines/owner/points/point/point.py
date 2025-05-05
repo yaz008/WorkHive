@@ -38,6 +38,7 @@ def delete_response(response: _Response) -> None:
     transitions={
         FSASymbol.Back: FSAState.OwnerPoints,
         FSASymbol.Delete: FSAState.OwnerPoint,
+        FSASymbol.Publish: FSAState.OwnerPublishDone,
     },
 )
 def owner_settings(
@@ -77,6 +78,14 @@ def owner_settings(
             RowInfo(
                 factory.saved(WorkHiveButton.Delete, args=(index, True))
                 if not delete
+                else None
+            ),
+            RowInfo(
+                factory.saved(
+                    WorkHiveButton.Publish,
+                    args=(list(owner.points.values()).index(point),),
+                )
+                if point is not None
                 else None
             ),
             RowInfo(factory.saved(WorkHiveButton.Back)),
