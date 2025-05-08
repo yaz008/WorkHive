@@ -1,1 +1,9 @@
-Enter the date of your birthdaty (format: <code>dd.mm.yyyy</code>): <birth-date>__.__.____</birth-date>
+<b>Регистрация</b>
+Роль: <role>____</role>
+ФИО: <full-name>____</full-name>
+👉Дата рождения: <birth-date>__.__.____</birth-date>
+Согласие с политикой конфеденциальности: <consent-pp>_</consent-pp>
+Согласие на обработку персональных данных: <consent-ad>_</consent-ad>
+Согласие c офертой: <consent-of>_</consent-of>
+
+Введите свою дату рождения или отправьте её текстовым сообщением в формате <code>дд.мм.гггг</code> (Например, если вы родились 1 Января 2000 года — <code>01.12.2000</code>)

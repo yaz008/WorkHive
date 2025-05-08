@@ -1,1 +1,9 @@
-Enter your full name: `<full-name>________________</full-name>`
+<b>Регистрация</b>
+Роль: <role>____</role>
+👉ФИО: <full-name>____</full-name>
+Дата рождения: <birth-date>__.__.____</birth-date>
+Согласие с политикой конфеденциальности: <consent-pp>_</consent-pp>
+Согласие на обработку персональных данных: <consent-ad>_</consent-ad>
+Согласие c офертой: <consent-of>_</consent-of>
+
+Введите своё ФИО и отправьте его боту текстовым сообщением
