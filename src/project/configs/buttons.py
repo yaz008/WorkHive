@@ -15,6 +15,8 @@ class WorkHiveButton:
     NextErr: str = 'next-err'
     Back: str = 'back'
     Ok: str = 'ok'
+    Yes: str = 'yes'
+    No: str = 'no'
 
     # Actions:
     Register: str = 'register'

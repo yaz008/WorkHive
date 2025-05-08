@@ -37,13 +37,13 @@ def delete_response(response: _Response) -> None:
     pipeline=FSAPipeline.Owner,
     transitions={
         FSASymbol.Back: FSAState.OwnerPoints,
-        FSASymbol.Delete: FSAState.OwnerPoint,
+        FSASymbol.Delete: FSAState.OwnerPointDeletionConfirm,
         FSASymbol.Publish: FSAState.OwnerPublishDone,
         FSASymbol.Error: FSAState.OwnerLowBalance,
     },
 )
 def owner_settings(
-    owner: Owner, factory: ButtonFactoryClosure, index: str, delete: bool
+    owner: Owner, factory: ButtonFactoryClosure, index: str, delete: bool = False
 ) -> TGMessage:
     point: _Point | None = (
         list(owner.points.values())[int(index)] if index != str() else None
@@ -77,7 +77,7 @@ def owner_settings(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Delete, args=(index, True))
+                factory.saved(WorkHiveButton.Delete, args=(index, False))
                 if not delete
                 else None
             ),

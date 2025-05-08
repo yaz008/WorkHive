@@ -36,6 +36,7 @@ class FSAState:
     OwnerPoints: str = 'owner-points'
     OwnerPoint: str = 'owner-point'
     OwnerPointDeleted: str = 'owner-point-deleted'
+    OwnerPointDeletionConfirm: str = 'owner-point-deletion-confirm'
 
     OwnerPublish: str = 'owner-publish'
     OwnerPublishDone: str = 'owner-publish-done'
@@ -78,6 +79,8 @@ class FSASymbol:
     Back: str = 'back'
     InputData: str = 'input-data'
     Error: str = 'error'
+    Yes: str = 'yes'
+    No: str = 'no'
 
     # Menus:
     MainMenu: str = 'main-menu'

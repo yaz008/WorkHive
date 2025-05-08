@@ -11,6 +11,8 @@ button_factory.save(name=WorkHiveButton.Next, symbol=FSASymbol.Next)
 button_factory.save(name=WorkHiveButton.NextErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Back, symbol=FSASymbol.Back)
 button_factory.save(name=WorkHiveButton.Ok, symbol=FSASymbol.Ok)
+button_factory.save(name=WorkHiveButton.Yes, symbol=FSASymbol.Yes)
+button_factory.save(name=WorkHiveButton.No, symbol=FSASymbol.No)
 
 # Actions:
 button_factory.save(name=WorkHiveButton.Register, symbol=FSASymbol.Next)
