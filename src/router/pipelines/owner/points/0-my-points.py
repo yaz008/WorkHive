@@ -1,3 +1,4 @@
+from model.tables import simple_vacancies_table
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -25,7 +26,16 @@ def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
                 RowInfo(
                     factory.create(
                         symbol=FSASymbol.Open,
-                        name=point.name,
+                        name=(
+                            f'⏱️ {point.name}'
+                            if any(
+                                vacancy.point_id == point.__sql_id__
+                                for vacancy in simple_vacancies_table[
+                                    owner.workhive_id
+                                ].values()
+                            )
+                            else point.name
+                        ),
                         args=(list(owner.points.values()).index(point), False),
                         load=False,
                     )
