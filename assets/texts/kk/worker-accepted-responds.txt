@@ -1,0 +1,7 @@
+<franchise>____</franchise>
+Мекен-жайы: <address>____</address>
+Штрихкодтардың орташа саны: <payload>____</payload> дана.
+Шығу үшін төлем: <minimal-charge>____</minimal-charge> тг.
+Штрихкод үшін төлем: <charge-per-one>____</charge-per-one> тг.
+
+🔥 Жауап қабылданды 🔥

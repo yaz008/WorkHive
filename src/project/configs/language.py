@@ -22,6 +22,7 @@ def create_language(dct: dict[str, str]) -> _Language:
 class Language:
     Russian: _Language = _Language(code='ru', native_name='Русский')
     English: _Language = _Language(code='en', native_name='English')
+    Kazakh: _Language = _Language(code='kk', native_name='Kazakh')
     DefaultCode: str = 'ru'
     NoLanguage: str = 'no-language'
 

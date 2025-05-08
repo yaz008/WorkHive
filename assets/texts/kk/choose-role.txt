@@ -1,0 +1,7 @@
+<b>Тіркеу</b>
+👉Рөл: <role>____</role>
+Аты-жөні: <full-name>____</full-name>
+Туған күні: <birth-date>__.__.____</birth-date>
+Құпиялылық саясатымен келісім: <consent-pp>_</consent-pp>
+Жарнамалық хабарламаларды алуға келісім: <consent-ad>_</consent-ad>
+Офертамен келісім: <consent-of>_</consent-of>

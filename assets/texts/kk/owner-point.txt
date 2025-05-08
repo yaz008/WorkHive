@@ -1,0 +1,5 @@
+<point-name>____</point-name>
+Мекенжайы: <address>____</address>
+Штрих-кодтардың орташа саны: <payload>____</payload> дана.
+Шығу құны: <minimal-charge>____</minimal-charge> тг.
+Штрих-код үшін төлем: <charge-per-one>____</charge-per-one> тг.

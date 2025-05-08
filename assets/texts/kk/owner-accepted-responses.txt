@@ -1,0 +1,13 @@
+<point-name>____</point-name>
+Мекенжайы: <address>____</address>
+Штрих-кодтардың орташа саны: <payload>____</payload> дана.
+Нүктеге шығу ақысы: <minimal-charge>____</minimal-charge> тг.
+Бір штрих-код үшін төлем: <charge-per-one>_.__</charge-per-one> тг.
+
+id: <id>____</id>
+
+<b>Іздеуші:</b>
+Аты-жөні: <worker-name>____</worker-name>
+Туған күні: <birth-date>____</birth-date>
+
+🔥 <mention>Іздеушінің</mention> өтінімі қабылданды! 🔥

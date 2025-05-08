@@ -1,0 +1,13 @@
+<point-name>____</point-name>
+Мекенжайы: <address>____</address>
+Штрихкодтардың орташа саны: <payload>____</payload> дана.
+Нүктеге шығу ақысы: <minimal-charge>____</minimal-charge> тг.
+Бір штрихкод үшін төлем: <charge-per-one>_.__</charge-per-one> тг.
+
+id: <id>____</id>
+
+<b>Үміткер:</b>
+Аты: <worker-name>____</worker-name>
+Туған күні: <birth-date>____</birth-date>
+
+<mention>Үміткермен</mention> келісіңіз, содан кейін оның өтінімін <b>қабылдаңыз</b> немесе <b>кері қайтарыңыз</b>
