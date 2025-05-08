@@ -1,0 +1,9 @@
+<b>Roʻyxatdan oʻtish</b>
+Rol: <role>____</role>
+👉F.I.Sh.: <full-name>____</full-name>
+Tugʻilgan sana: <birth-date>__.__.____</birth-date>
+Maxfiylik siyosatiga rozilik: <consent-pp>_</consent-pp>
+Reklama xabarlarini olishga rozilik: <consent-ad>_</consent-ad>
+Oferta bilan rozilik: <consent-of>_</consent-of>
+
+Oʻz F.I.Sh.ingizni kiriting va botga matnli xabar orqali yuboring

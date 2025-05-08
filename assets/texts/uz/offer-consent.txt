@@ -1,0 +1,9 @@
+<b>Roʻyxatdan oʻtish</b>
+Rol: <role>____</role>
+FIO: <full-name>____</full-name>
+Tugʻilgan sana: <birth-date>__.__.____</birth-date>
+Maxfiylik siyosatiga rozilik: <consent-pp>_</consent-pp>
+Reklama xabarnomalarini olishga rozilik: <consent-ad>_</consent-ad>
+👉Oferta bilan kelishish: <consent-of>_</consent-of>
+
+Roʻyxatdan oʻtishni yakunlash uchun siz <b>Oferta</b> bilan kelishishingiz kerak

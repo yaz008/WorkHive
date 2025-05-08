@@ -1,0 +1,9 @@
+<b>Ro'yxatdan o'tish</b>
+Rol: <role>____</role>
+FIO: <full-name>____</full-name>
+Tug'ilgan sana: <birth-date>__.__.____</birth-date>
+Maxfiylik siyosatiga rozilik: <consent-pp>_</consent-pp>
+👉Reklama xabarlarini olishga rozilik: <consent-ad>_</consent-ad>
+Oferta bilan rozilik: <consent-of>_</consent-of>
+
+Davom ettirish uchun, siz <b>Reklama xabarlarini olishga rozilik</b> berishingiz kerak

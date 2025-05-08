@@ -1,0 +1,8 @@
+<franchise>____</franchise>
+Manzil: <address>____</address>
+O'rtacha shtrixkodlar soni: <payload>____</payload> dona.
+Chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
+Bitta shtrixkod uchun to'lov: <charge-per-one>____</charge-per-one> so'm.
+
+Kutilayotgan to'lov: <expected-payment>____</expected-payment> so'm.
+id: <vacancy-id>____</vacancy-id>
