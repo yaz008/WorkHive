@@ -62,6 +62,7 @@ def owner_point_payload(
     responses: list[_Response] = [
         response_map[id.__sql_id__]
         for id in responses_table[worker.workhive_id].values()
+        if response_map[id.__sql_id__].status == 'undefined'
     ]
     response: _Response | None = get_current_response(responses, index)
     point: _Point | None = (
