@@ -4,6 +4,8 @@
 Оплата за выход на точку: <minimal-charge>____</minimal-charge> р.
 Оплата за один штрихкод: <charge-per-one>_.__</charge-per-one> р.
 
+id: <id>____</id>
+
 <b>Соискатель:</b>
 Имя: <worker-name>____</worker-name>
 Дата рождения: <birth-date>____</birth-date>

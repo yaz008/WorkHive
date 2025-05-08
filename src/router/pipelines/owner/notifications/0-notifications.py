@@ -116,6 +116,7 @@ def owner_settings(
                     'charge-per-one': lambda _: (
                         f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
                     ),
+                    'id': lambda _: f'<i>{str(notification.vacancy_id)[:6]}</i>',
                     'worker-name': lambda _: str(
                         user_table[notification.worker_id].full_name
                     ),
