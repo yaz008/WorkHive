@@ -148,12 +148,12 @@ def owner_settings(
             ),
             RowInfo(
                 (
-                    factory.saved(WorkHiveButton.Back, args=('back',))
+                    factory.saved(WorkHiveButton.LeftArrow, args=('back',))
                     if result.current_index > 0
                     else None
                 ),
                 (
-                    factory.saved(WorkHiveButton.Next, args=('next',))
+                    factory.saved(WorkHiveButton.RightArrow, args=('next',))
                     if result.current_index < len(result.vacancies) - 1
                     else None
                 ),

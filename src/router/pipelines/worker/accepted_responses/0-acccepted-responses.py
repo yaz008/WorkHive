@@ -98,12 +98,12 @@ def owner_point_payload(
             ),
             RowInfo(
                 (
-                    factory.saved(WorkHiveButton.Back, args=('back', index))
+                    factory.saved(WorkHiveButton.LeftArrow, args=('back', index))
                     if int(index) > 0
                     else None
                 ),
                 (
-                    factory.saved(WorkHiveButton.Next, args=('next', index))
+                    factory.saved(WorkHiveButton.RightArrow, args=('next', index))
                     if len(responses) > int(index) + 1
                     else None
                 ),

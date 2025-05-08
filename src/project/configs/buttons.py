@@ -17,6 +17,8 @@ class WorkHiveButton:
     Ok: str = 'ok'
     Yes: str = 'yes'
     No: str = 'no'
+    LeftArrow: str = 'left-arrow'
+    RightArrow: str = 'right-arrow'
 
     # Actions:
     Register: str = 'register'
