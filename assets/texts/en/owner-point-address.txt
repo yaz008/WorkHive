@@ -5,4 +5,4 @@ Payment for attending the point: <minimal-charge>____</minimal-charge> rub.
 Payment per barcode: <charge-per-one>__.__</charge-per-one> rub.
 Point name: <name>____</name>
 
-Share your pickup point from the <a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Yandex.Maps</a> app with the bot
+Share your pickup point from the <a href="https://maps.yandex.com/">Yandex.Maps</a> app with the bot
