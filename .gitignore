@@ -9,3 +9,4 @@ src/__test__.py
 configs/*.json
 database/*.db
 blacklist/*.json
+notebooks/*.ipynb
