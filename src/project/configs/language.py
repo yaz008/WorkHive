@@ -23,6 +23,7 @@ class Language:
     Russian: _Language = _Language(code='ru', native_name='Русский')
     English: _Language = _Language(code='en', native_name='English')
     Kazakh: _Language = _Language(code='kk', native_name='Kazakh')
+    Belarusian: _Language = _Language(code='be', native_name='Belarusian')
     DefaultCode: str = 'ru'
     NoLanguage: str = 'no-language'
 

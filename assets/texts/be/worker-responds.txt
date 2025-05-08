@@ -1,0 +1,5 @@
+<franchise>____</franchise>
+Адрас: <address>____</address>
+Сярэдняя колькасць штрыхкодаў: <payload>____</payload> шт.
+Аплата за выхад: <minimal-charge>____</minimal-charge> р.
+Аплата за штрыхкод: <charge-per-one>____</charge-per-one> р.
