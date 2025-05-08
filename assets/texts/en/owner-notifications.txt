@@ -1,13 +1,13 @@
 <point-name>____</point-name>
-Адрес: <address>____</address>
-Среднее количество штрихкодов: <payload>____</payload> шт.
-Оплата за выход на точку: <minimal-charge>____</minimal-charge> р.
-Оплата за один штрихкод: <charge-per-one>_.__</charge-per-one> р.
+Address: <address>____</address>
+Average number of barcodes: <payload>____</payload> pcs.
+Minimum charge per location visit: <minimal-charge>____</minimal-charge> rub.
+Charge per barcode: <charge-per-one>_.__</charge-per-one> rub.
 
 id: <id>____</id>
 
-<b>Соискатель:</b>
-Имя: <worker-name>____</worker-name>
-Дата рождения: <birth-date>____</birth-date>
+<b>Applicant:</b>
+Name: <worker-name>____</worker-name>
+Date of birth: <birth-date>____</birth-date>
 
-Договоритесь с <mention>соискателем</mention>, а затем <b>примите</b> или <b>отклините</b> его заявку
+Agree with the <mention>applicant</mention>, and then <b>accept</b> or <b>reject</b> their application

@@ -1,5 +1,5 @@
-🎯 <b>Ваши ПВЗ</b>
+<b>Points</b>
 
-Добавьте сюда все Ваши ПВЗ, чтобы иметь возможность удобно управлять своим бизнесом
+Add all your pickup points here to conveniently manage your business.
 
-<i>Нажмите на кнопку с интересующим ПВЗ 🎯, чтобы посмотреть более подробную информацию ℹ️ или удалить 🗑 его</i>
+<i>Click on the 🎯 button of the pickup point you're interested in to see more detailed information ℹ️ or delete 🗑 it</i>

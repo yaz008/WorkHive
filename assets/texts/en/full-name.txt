@@ -1,9 +1,9 @@
-<b>Регистрация</b>
-Роль: <role>____</role>
-👉ФИО: <full-name>____</full-name>
-Дата рождения: <birth-date>__.__.____</birth-date>
-Согласие с политикой конфеденциальности: <consent-pp>_</consent-pp>
-Согласие на получение рекламной рассылки: <consent-ad>_</consent-ad>
-Согласие c офертой: <consent-of>_</consent-of>
+<b>Registration</b>
+Role: <role>____</role>
+👉Full Name: <full-name>____</full-name>
+Date of Birth: <birth-date>__.__.____</birth-date>
+Consent to Privacy Policy: <consent-pp>_</consent-pp>
+Consent to Receive Advertising: <consent-ad>_</consent-ad>
+Consent to the Offer: <consent-of>_</consent-of>
 
-Введите своё ФИО и отправьте его боту текстовым сообщением
+Enter your Full Name and send it to the bot as a text message

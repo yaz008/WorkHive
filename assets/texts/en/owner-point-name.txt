@@ -1,8 +1,8 @@
-<b>Пункт Выдачи Заказов</b>
-Адрес: <address>____</address>
-Среднее количество штрихкодов: <payload>____</payload> штю
-Оплата за выход на точку: <minimal-charge>____</minimal-charge> р.
-Оплата за один штрихкод: <charge-per-one>_.__</charge-per-one> р.
-👉Имя точки: <name>____</name>
+<b>Order Pickup Point</b>
+Address: <address>____</address>
+Average number of barcodes: <payload>____</payload> pcs.
+Payment per shift at the point: <minimal-charge>____</minimal-charge> rub.
+Payment per one barcode: <charge-per-one>_.__</charge-per-one> rub.
+👉Point name: <name>____</name>
 
-Введите имя точки (Например, <code>WB на Павлова</code>) — это имя будет видно только Вам
+Enter the point name (For example, <code>WB on Pavlova</code>) — this name will only be visible to you

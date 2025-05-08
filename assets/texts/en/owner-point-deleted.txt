@@ -1,1 +1,1 @@
-Точка <point-name>____</point-name> удалена ✅
+Point <point-name>____</point-name> deleted ✅

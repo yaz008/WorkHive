@@ -1,7 +1,7 @@
 <franchise>____</franchise>
-Адрес: <address>____</address>
-Среднее количество штрихкодов: <payload>____</payload> шт.
-Оплата за выход: <minimal-charge>____</minimal-charge> р.
-Оплата за штрихкод: <charge-per-one>____</charge-per-one> р.
+Address: <address>____</address>
+Average number of barcodes: <payload>____</payload> pcs.
+Minimum charge: <minimal-charge>____</minimal-charge> rub.
+Charge per barcode: <charge-per-one>____</charge-per-one> rub.
 
-🔥 Отклик принят 🔥
+🔥 Response accepted 🔥

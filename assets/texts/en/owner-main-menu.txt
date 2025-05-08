@@ -1,8 +1,8 @@
-<b>Главное меню</b>
+<b>Main Menu</b>
 
-Управляйте сетью своих ПВЗ:
-- Добавляйте новые ПВЗ 🎯
-- Размещайте объявления 💼
-- Нанимайте соискателей 👨‍💼
+Manage your pickup point network:
+- Add new pickup points 🎯
+- Post ads 💼
+- Hire applicants 👨‍💼
 
-И всё это с помощью <b>WorkHive</b>!
+And all this with <b>WorkHive</b>!

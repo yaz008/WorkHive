@@ -1,1 +1,1 @@
-<b>Ошибка валидации даты рождения:</b> дата рождения должна быть действительно существующей датой, а так же Ваш возраст должен быть не менее 14 и не более 120 лет включительно 😅
+<b>Date of birth validation error:</b> the date of birth must be a valid date, and your age must be at least 14 and no more than 120 years old inclusive 😅

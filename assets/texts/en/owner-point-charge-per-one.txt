@@ -1,8 +1,8 @@
-<b>Пункт Выдачи Заказов</b>
-Адрес: <address>____</address>
-Среднее количество штрихкодов: <payload>____</payload> шт.
-Оплата за выход на точку: <minimal-charge>____</minimal-charge> р.
-👉Оплата за один штрихкод: <charge-per-one>__.__</charge-per-one> р.
-Имя точки: <name>____</name>
+<b>Order Pickup Point</b>
+Address: <address>____</address>
+Average number of barcodes: <payload>____</payload> pcs.
+Payment for going to the point: <minimal-charge>____</minimal-charge> rub.
+👉Payment per barcode: <charge-per-one>__.__</charge-per-one> rub.
+Point name: <name>____</name>
 
-Введите оплату за 1 штрихкод в формате <code>руб.коп</code> (Например, <code>1.25</code>)
+Enter the payment per barcode in the format <code>rub.cop</code> (For example, <code>1.25</code>)

@@ -1,3 +1,3 @@
-🎯 <b>Ваши опубликованные объявления:</b>
+🎯 <b>Your published ads:</b>
 
-<vacancies>Здесь будут отображаться опубликованные объявления</vacancies>
+<vacancies>Published ads will be displayed here</vacancies>
