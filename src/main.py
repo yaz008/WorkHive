@@ -3,6 +3,7 @@ from typing import cast
 from telebot.types import Message, CallbackQuery
 
 from driver import driver
+from model.blacklist import blacklist
 from model.deco import delete_message, register, with_user
 from model.types import User, TempUser
 from project.configs import FSASymbol
@@ -11,7 +12,11 @@ from project.libs.tgdraw import TGMessage
 from router import router
 
 
+BLACKLIST: str = 'blacklist\\banned.json'
+
+
 @driver.message_handler(commands=['start'])
+@blacklist(path=BLACKLIST)
 @delete_message
 @register
 def on_start(user: User | TempUser) -> None:
@@ -27,6 +32,7 @@ def on_start(user: User | TempUser) -> None:
 
 
 @driver.message_handler(content_types=['text'])
+@blacklist(path=BLACKLIST)
 @delete_message
 @with_user
 def on_text(user: User | TempUser, message: Message) -> None:
@@ -62,6 +68,7 @@ def on_callback(user: User | TempUser, callback: CallbackQuery) -> None:
         'poll',
     ]
 )
+@blacklist(path=BLACKLIST)
 @delete_message
 def _(_: Message) -> None:
     pass
