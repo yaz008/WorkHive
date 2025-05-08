@@ -28,6 +28,7 @@ def get_notifications(owner: Owner) -> list[_Response]:
         FSASymbol.Points: FSAState.OwnerPoints,
         FSASymbol.Vacancies: FSAState.OwnerVacancies,
         FSASymbol.Notifications: FSAState.OwnerNotifications,
+        FSASymbol.AcceptedResponses: FSAState.OwnerAcceptedResponses,
         FSASymbol.Settings: FSAState.OwnerSettings,
         FSASymbol.Subscription: FSAState.OwnerSubstription,
     },
@@ -59,6 +60,7 @@ def register(owner: Owner | TempUser, factory: ButtonFactoryClosure) -> TGMessag
                     args=(str(), '0'),
                 )
             ),
+            RowInfo(factory.saved(WorkHiveButton.AcceptedResponses, args=(str(), '0'))),
             RowInfo(
                 factory.saved(WorkHiveButton.Settings),
                 factory.saved(WorkHiveButton.Subsrciption),

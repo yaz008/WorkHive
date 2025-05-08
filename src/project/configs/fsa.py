@@ -48,6 +48,9 @@ class FSAState:
     OwnerNotificationDeclined: str = 'owner-notification-declined'
     OwnerNotificationAccepted: str = 'owner-notification-accepted'
 
+    OwnerAcceptedResponses: str = 'owner-accepted-responses'
+    OwnerNoAcceptedResponses: str = 'owner-no-accepted-responses'
+
     OwnerSubstription: str = 'owner-subscription'
     OwnerPromocode: str = 'owner-promocode'
     OwnerCorrectPromocode: str = 'owner-correct-promocode'
