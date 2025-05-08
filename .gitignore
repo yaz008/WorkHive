@@ -10,3 +10,4 @@ configs/*.json
 database/*.db
 blacklist/*.json
 notebooks/*.ipynb
+notebooks/prompts/*.txt
