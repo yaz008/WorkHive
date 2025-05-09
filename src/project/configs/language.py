@@ -25,6 +25,7 @@ class Language:
     Kazakh: _Language = _Language(code='kk', native_name='Қазақ')
     Belarusian: _Language = _Language(code='be', native_name='Беларуская')
     Uzbek: _Language = _Language(code='uz', native_name='Оʻzbek')
+    Kyrgyz: _Language = _Language(code='ky', native_name='Кыргыз')
     DefaultCode: str = 'ru'
     NoLanguage: str = 'no-language'
 

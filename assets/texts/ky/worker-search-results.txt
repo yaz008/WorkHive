@@ -1,0 +1,8 @@
+<franchise>____</franchise>
+Дарек: <address>____</address>
+Штрихкоддордун орточо саны: <payload>____</payload> шт.
+Чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> р.
+Бир штрихкод үчүн төлөм: <charge-per-one>____</charge-per-one> р.
+
+Күтүлгөн төлөм: <expected-payment>____</expected-payment> р.
+id: <vacancy-id>____</vacancy-id>
