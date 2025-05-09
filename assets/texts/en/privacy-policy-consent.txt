@@ -3,7 +3,7 @@ Role: <role>____</role>
 Full Name: <full-name>____</full-name>
 Date of Birth: <birth-date>__.__.____</birth-date>
 👉Consent to the Privacy Policy: <consent-pp>_</consent-pp>
-Consent to the Processing of Personal Data: <consent-ad>_</consent-ad>
-Agreement with the Offer: <consent-of>_</consent-of>
+Consent to receiving promotional mailings: <consent-ad>_</consent-ad>
+Acceptance of the Offer: <consent-of>_</consent-of>
 
-To continue registration, you need to agree with the <b>Privacy Policy</b>
+To continue registration, you must agree to the <b>Privacy Policy</b>
