@@ -1,5 +1,5 @@
-<b>Points</b>
+🎯 <b>Your Pickup Points</b>
 
-Add all your pickup points here to conveniently manage your business.
+Add all your pickup points here to conveniently manage your business
 
-<i>Click on the 🎯 button of the pickup point you're interested in to see more detailed information ℹ️ or delete 🗑 it</i>
+<i>Click on the 🎯 button for the pickup point you're interested in to see detailed information ℹ️, post a job opening ⬆️, or delete 🗑 it</i>
