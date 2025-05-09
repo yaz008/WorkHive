@@ -1,0 +1,7 @@
+<franchise>____</franchise>
+Հասցե՝ <address>____</address>
+Միջին քանակը շտրիխկոդերի՝ <payload>____</payload> հատ:
+Վճարը ելքի համար՝ <minimal-charge>____</minimal-charge> ռ:
+Վճարը մեկ շտրիխկոդի համար՝ <charge-per-one>____</charge-per-one> ռ:
+
+🔥 Արձագանքն ընդունված է 🔥

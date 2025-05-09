@@ -1,0 +1,5 @@
+<point-name>____</point-name>
+Հասցե՝ <address>____</address>
+Միջին քանակը շտրիխ կոդերի։ <payload>____</payload> հատ։
+Վճար մեկ ելքի համար՝ <minimal-charge>____</minimal-charge> ռ․
+Վճար մեկ շտրիխ կոդի համար՝ <charge-per-one>____</charge-per-one> ռ․

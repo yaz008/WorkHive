@@ -26,6 +26,7 @@ class Language:
     Belarusian: _Language = _Language(code='be', native_name='Беларуская')
     Uzbek: _Language = _Language(code='uz', native_name='Оʻzbek')
     Kyrgyz: _Language = _Language(code='ky', native_name='Кыргыз')
+    Armenian: _Language = _Language(code='hy', native_name='հայերեն')
     DefaultCode: str = 'ru'
     NoLanguage: str = 'no-language'
 

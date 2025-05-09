@@ -1,0 +1,13 @@
+<point-name>____</point-name>
+Հասցե՝ <address>____</address>
+Միջին քանակը շտրիխ կոդերի՝ <payload>____</payload> հատ։
+Վճար կետ գնալու համար՝ <minimal-charge>____</minimal-charge> ռ։
+Վճար մեկ շտրիխ կոդի համար՝ <charge-per-one>_.__</charge-per-one> ռ։
+
+id՝ <id>____</id>
+
+<b>Հայցորդ՝</b>
+Անուն՝ <worker-name>____</worker-name>
+Ծննդյան ամսաթիվ՝ <birth-date>____</birth-date>
+
+🔥 <mention>Հայցորդի</mention> արձագանքն ընդունված է! 🔥
