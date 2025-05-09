@@ -37,6 +37,7 @@ class TableConfig:
 
     # Maps:
     ResponseMap: _DBTable = _DBTable(database='maps', table='response')
+    TGID: _DBTable = _DBTable(database='maps', table='tgid')
 
     # Vacancies:
     VacanciesSimple: _DBTable = _DBTable(database='vacancies', table='simple')

@@ -148,6 +148,10 @@ class TGDriver(TeleBot):
             telegram_id=telegram_id, message_id=session_message.id, kind=message.kind
         )
 
+    def notify(self, target_id: int, message: TGMessage) -> None:
+        if target_id not in self.__session_table.keys:
+            self.update(telegram_id=target_id, message=message)
+
     @ignore_error(ApiTelegramException)
     def revoke(self, session: Session, is_expired: bool = False) -> None:
         self.__session_table.remove(session.telegram_id)

@@ -3,6 +3,7 @@ from uuid import uuid4, UUID
 
 from telebot.types import LinkPreviewOptions
 
+from driver import driver
 from model.tables import (
     _VacancySimple,
     _SearchResult,
@@ -13,13 +14,14 @@ from model.tables import (
     responses_table,
     response_map,
     simple_vacancies_table,
+    tgid_table,
 )
 from model.types import Worker
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.orm import Stackable
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
-from router.instance import router
+from router import router
 
 
 def search(workhive_id: UUID) -> _SearchResult:
@@ -55,6 +57,16 @@ def respond(vacancy: _VacancySimple, worker: Worker) -> None:
             vacancy.owner_id: Stackable(__sql_id__=response_id),
             vacancy.__sql_id__: Stackable(__sql_id__=response_id),
         }
+    )
+    driver.notify(
+        target_id=tgid_table[response.owner_id].value,
+        message=TGMessage(
+            text=f'Отклик на <code>{
+                points_table[vacancy.owner_id][vacancy.point_id].name
+            }</code> <i>({
+                str(vacancy.__sql_id__)[:6]
+            })</i>! Нажмите /start, чтобы посмотреть',
+        ),
     )
 
 

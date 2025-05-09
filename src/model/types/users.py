@@ -12,6 +12,7 @@ from model.tables import (
     simple_vacancies_table,
     balance_table,
     metadata_table,
+    tgid_table,
     _UserRoleWrapper,
     _UserStateWrapper,
     _WorkHiveIDWrapper,
@@ -20,6 +21,7 @@ from model.tables import (
     _VacancySimple,
     _Balance,
     _Metadata,
+    _TGID,
 )
 from model.types.temp import TempUser
 from project.libs.orm import synced
@@ -67,6 +69,7 @@ class Worker(User):
 
 def create_user(temp_user: TempUser) -> Worker | Owner:
     id: UUID = uuid4()
+    tgid_table.update({id: _TGID(value=temp_user.telegram_id)})
     workhive_id.update({temp_user.telegram_id: _WorkHiveIDWrapper(value=id)})
     state_table.update({id: _UserStateWrapper(state=temp_user.state)})
     role_table.update({id: _UserRoleWrapper(role=temp_user.role)})

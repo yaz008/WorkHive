@@ -60,10 +60,14 @@ def owner_point_address(
                 )}</code>',
             },
         ),
-        tgmedia=TGMedia(
-            name='share-instruction',
-            kind='Video',
-            language=owner.language,
+        tgmedia=(
+            TGMedia(
+                name='share-instruction',
+                kind='Video',
+                language=owner.language,
+            )
+            if point.address == str()
+            else None
         ),
         keyboard=keyboard(
             RowInfo(
