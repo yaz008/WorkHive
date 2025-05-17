@@ -1,0 +1,3 @@
+<b>Sessiya yakunlandi!</b>
+
+Botni faollashtirish uchun /start ni bosing

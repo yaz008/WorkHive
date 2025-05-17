@@ -1,0 +1,3 @@
+<b>Session finished!</b>
+
+Click /start to activate the bot
