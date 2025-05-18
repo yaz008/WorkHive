@@ -31,7 +31,15 @@ class FSAState:
     OwnerPointChargePerOne: str = 'owner-point-charge-per-one'
     OwnerPointName: str = 'owner-point-name'
     OwnerPointDone: str = 'owner-point-done'
+
     OwnerPointDelete: str = 'owner-point-delete'
+
+    OwnerPointAddressEdit: str = 'owner-point-address-edit'
+    OwnerPointPayloadEdit: str = 'owner-point-payload-edit'
+    OwnerPointChargeEdit: str = 'owner-point-charge-edit'
+    OwnerPointChargePerOneEdit: str = 'owner-point-charge-per-one-edit'
+    OwnerPointNameEdit: str = 'owner-point-name-edit'
+    OwnerPointDoneEdit: str = 'owner-point-done-edit'
 
     OwnerPoints: str = 'owner-points'
     OwnerPoint: str = 'owner-point'
@@ -110,6 +118,7 @@ class FSASymbol:
     Decline: str = 'decline'
     Apply: str = 'apply'
     Skip: str = 'skip'
+    Edit: str = 'edit'
 
 
 @config(filename='fsa')

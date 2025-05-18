@@ -1,0 +1,8 @@
+<b>Order Pickup Point</b>
+Address: <address>____</address>
+👉Average number of barcodes: <payload>____</payload> pcs.
+Payment per shift at the point: <minimal-charge>____</minimal-charge> rub.
+Payment per barcode: <charge-per-one>_.__</charge-per-one> rub.
+Point name: <name>____</name>
+
+Enter the average number of barcodes per day

@@ -1,0 +1,8 @@
+<b>Buyurtmalarni berish punkti</b>
+Manzil: <address>____</address>
+👉Oʻrtacha shtrix-kodlar soni: <payload>____</payload> dona.
+Nuqtaga chiqish uchun toʻlov: <minimal-charge>____</minimal-charge> soʻm.
+Bitta shtrix-kod uchun toʻlov: <charge-per-one>_.__</charge-per-one> soʻm.
+Nuqta nomi: <name>____</name>
+
+Kuniga oʻrtacha shtrix-kodlar sonini kiriting

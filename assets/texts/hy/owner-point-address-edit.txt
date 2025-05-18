@@ -1,0 +1,8 @@
+<b>Պատվերների տրման կետ</b>
+👉Հասցե՝ <address>____</address>
+Շտրիխկոդերի միջին քանակը՝ <payload>____</payload> հատ:
+Կետում աշխատելու վճար՝ <minimal-charge>____</minimal-charge> ռ.:
+Մեկ շտրիխկոդի վճար՝ <charge-per-one>__.__</charge-per-one> ռ.:
+Կետի անունը՝ <name>____</name>
+
+Կիսվե՛ք բոտի հետ Ձեր ՊՏԿ-ով <a href="https://maps.yandex.com/">Yandex.Maps</a> հավելվածից։

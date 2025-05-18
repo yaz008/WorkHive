@@ -1,0 +1,8 @@
+<b>Пункт Выдачы Заказаў</b>
+👉Адрас: <address>____</address>
+Сярэдняя колькасць штрыхкодаў: <payload>____</payload> шт.
+Аплата за выхад на пункт: <minimal-charge>____</minimal-charge> р.
+Аплата за адзін штрыхкод: <charge-per-one>__.__</charge-per-one> р.
+Назва пункта: <name>____</name>
+
+Падзяліцеся з ботам Вашым ПВЗ з дадатку <a href="https://maps.yandex.com/">Яндекс.Карты</a>

@@ -38,6 +38,7 @@ def delete_response(response: _Response) -> None:
     transitions={
         FSASymbol.Back: FSAState.OwnerPoints,
         FSASymbol.Delete: FSAState.OwnerPointDeletionConfirm,
+        FSASymbol.Edit: FSAState.OwnerPointAddressEdit,
         FSASymbol.Publish: FSAState.OwnerPublishDone,
         FSASymbol.Error: FSAState.OwnerLowBalance,
     },
@@ -77,9 +78,19 @@ def owner_settings(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Delete, args=(index, False))
-                if not delete
-                else None
+                (
+                    factory.saved(WorkHiveButton.Delete, args=(index, False))
+                    if not delete
+                    else None
+                ),
+                (
+                    factory.saved(
+                        WorkHiveButton.Edit,
+                        args=(str(point.__sql_id__), str()),
+                    )
+                    if point is not None and not delete
+                    else None
+                ),
             ),
             RowInfo(
                 factory.saved(
