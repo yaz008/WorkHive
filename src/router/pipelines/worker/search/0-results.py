@@ -22,6 +22,7 @@ from project.libs.orm import Stackable
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router import router
+from router.pipelines.utils import in_metadata, add_metadata
 
 
 def search(workhive_id: UUID) -> _SearchResult:
@@ -96,6 +97,8 @@ def update_index(worker: Worker, result: _SearchResult, arg: str) -> None:
 def owner_settings(
     worker: Worker, factory: ButtonFactoryClosure, arg: str
 ) -> TGMessage:
+    if not in_metadata(worker, 'has-searched'):
+        add_metadata(worker, 'has-searched')
     result: _SearchResult = search(worker.workhive_id)
     update_index(worker, result, arg)
     assert result.current_index is not None

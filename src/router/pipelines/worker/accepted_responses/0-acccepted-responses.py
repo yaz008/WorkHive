@@ -11,6 +11,7 @@ from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router.instance import router
+from router.pipelines.utils import in_metadata, add_metadata
 
 
 def delete_response(worker: Worker, index: str) -> None:
@@ -43,6 +44,8 @@ def get_current_response(responses: list[_Response], index: str) -> _Response | 
 def owner_point_payload(
     worker: Worker, factory: ButtonFactoryClosure, action: str, index: str
 ) -> TGMessage:
+    if not in_metadata(worker, 'has-opened-accepted'):
+        add_metadata(worker, 'has-opened-accepted')
     if action == 'back':
         index = str(int(index) - 1)
     if action == 'next':
