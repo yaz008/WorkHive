@@ -4,6 +4,7 @@ from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router.instance import router
+from router.pipelines.utils import add_metadata
 
 
 @router.add(
@@ -26,6 +27,7 @@ def owner_point_done(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
         charge_per_one=temp_point.charge_per_one,
     )
     owner.points |= {point.__sql_id__: point}
+    add_metadata(owner, 'has-added-point')
     temp_points.remove(temp_point.telegram_id)
     return TGMessage(
         text=render_file(

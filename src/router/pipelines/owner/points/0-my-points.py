@@ -4,6 +4,7 @@ from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router.instance import router
+from router.pipelines.utils import in_metadata
 
 
 @router.add(
@@ -19,7 +20,11 @@ def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,
-            state=owner.state,
+            state=(
+                owner.state
+                if in_metadata(owner, 'has-added-point')
+                else 'owner-points-fst'
+            ),
         ),
         keyboard=keyboard(
             *(
