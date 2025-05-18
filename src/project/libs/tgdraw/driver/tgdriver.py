@@ -168,7 +168,7 @@ class TGDriver(TeleBot):
                 )
             )
         ):
-            if workhive_id[session.telegram_id].value in user_table:
+            if session.telegram_id not in temp_users:
                 metadata_table.update(
                     {
                         workhive_id[session.telegram_id].value: _Metadata(
