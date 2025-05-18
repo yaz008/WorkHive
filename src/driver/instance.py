@@ -1,4 +1,4 @@
-from model.tables import user_table, workhive_id, temp_users
+from model.tables import user_table, workhive_id, temp_users, role_table
 from project.configs import TGDriverConfig
 from project.core.env import Env
 from project.libs.tgdraw import TGDriver
@@ -20,6 +20,15 @@ driver: TGDriver = TGDriver(
                 else temp_users[session.telegram_id].value['language']
             ),
             state='driver-on-session-expiration',
+            tag_handlers={
+                'channel': lambda placeholder: (
+                    f'{placeholder}_for_{(
+                        role_table[workhive_id[session.telegram_id].value].role
+                        if session.telegram_id not in temp_users
+                        else 'temp_user'
+                    )}s'
+                )
+            },
         ),
     ),
 )
