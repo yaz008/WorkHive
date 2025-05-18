@@ -43,8 +43,12 @@ def register(owner: Owner | TempUser, factory: ButtonFactoryClosure) -> TGMessag
             language=owner.language,
             state=(
                 owner.state
-                if in_metadata(owner, 'has-added-point')
-                else 'owner-main-menu-fst'
+                if in_metadata(owner, 'has-published-vacancy')
+                else (
+                    'owner-main-menu-snd'
+                    if in_metadata(owner, 'has-added-point')
+                    else 'owner-main-menu-fst'
+                )
             ),
         ),
         keyboard=keyboard(

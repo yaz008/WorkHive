@@ -3,6 +3,7 @@ from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router.instance import router
+from router.pipelines.utils import in_metadata, add_metadata
 
 
 @router.add(
@@ -16,6 +17,8 @@ from router.instance import router
     },
 )
 def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+    if not in_metadata(owner, 'has-published-vacancy'):
+        add_metadata(owner, 'has-published-vacancy')
     return TGMessage(
         text=render_file(
             language=owner.language,
