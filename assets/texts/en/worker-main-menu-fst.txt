@@ -1,0 +1,9 @@
+<b>Main menu</b>
+
+Press the "🔍 Search" button to find a suitable job and apply for it
+
+In the "✉️ Applications" section, you will see the jobs you have already applied for
+
+The "💯 Accepted" section will contain the places where you have been hired
+
+Apply for vacancies 🔍, arrange to start work 💬 and start earning 💰 with <b>WorkHive</b> right now!

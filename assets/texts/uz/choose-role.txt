@@ -1,7 +1,3 @@
-<b>Ro'yxatdan o'tish</b>
-👉Rol: <role>____</role>
-FIO: <full-name>____</full-name>
-Tug'ilgan sana: <birth-date>__.__.____</birth-date>
-Maxfiylik siyosatiga rozilik: <consent-pp>_</consent-pp>
-Reklama xabarnomalarini olishga rozilik: <consent-ad>_</consent-ad>
-Oferta bilan kelishuv: <consent-of>_</consent-of>
+<b>Roʻyxatdan oʻtish</b>
+
+Siz Egasi 💼 misiz yoki Ish izlovchimi 👨?

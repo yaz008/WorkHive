@@ -1,8 +1,5 @@
-<b>Buyurtma berish punkti</b>
-Manzil: <address>____</address>
-O'rtacha shtrixkodlar soni: <payload>____</payload> dona.
-Punktga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
-👉Bitta shtrixkod uchun to'lov: <charge-per-one>__.__</charge-per-one> so'm.
-Punkt nomi: <name>____</name>
+<b>Buyurtmalarni berish punkti</b>
 
-1 ta shtrixkod uchun to'lovni <code>so'm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code>)
+1 ta shtrix-kod uchun toʻlovni <code>soʻm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code> — bu 1 soʻm 25 tiyin) va keyin "<i>↪️ Keyingi</i>" tugmasini bosing
+
+Bir shtrix-kod uchun toʻlov: <charge-per-one>__.__</charge-per-one> soʻm.

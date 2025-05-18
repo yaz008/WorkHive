@@ -1,8 +1,5 @@
-<b>Buyurtma berish punkti</b>
-Manzil: <address>____</address>
-O'rtacha shtrixkodlar soni: <payload>____</payload> dona
-Nuqtaga chiqish to'lovi: <minimal-charge>____</minimal-charge> so'm.
-Bitta shtrixkod uchun to'lov: <charge-per-one>_.__</charge-per-one> so'm.
-👉Nuqta nomi: <name>____</name>
+<b>Buyurtma Berish пункти</b>
 
-Nuqta nomini kiriting (Masalan, <code>WB Pavlova ko'chasida</code>) - bu nom faqat sizga ko'rinadi
+Punkt nomi kiriting (Masalan, <code>WB Pavlovda</code>) — bu nom faqat Sizga ko'rinadi, u faqat Sizning PBBlaringizni boshqarish qulayligi uchun kerak — va keyin "<i>↪️ Keyingi</i>" tugmasini bosing
+
+Punkt nomi: <name>____</name>

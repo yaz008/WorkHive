@@ -1,7 +1,3 @@
 <b>Registration</b>
-👉Role: <role>____</role>
-Full Name: <full-name>____</full-name>
-Date of Birth: <birth-date>__.__.____</birth-date>
-Privacy Policy Consent: <consent-pp>_</consent-pp>
-Consent to receive advertising: <consent-ad>_</consent-ad>
-Acceptance of the offer: <consent-of>_</consent-of>
+
+Are you an Owner 💼 or an Applicant 👨?

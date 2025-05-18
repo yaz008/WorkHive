@@ -1,8 +1,5 @@
-<b>Buyurtma berish punkti</b>
-👉Manzil: <address>____</address>
-Shtrix-kodlarning o'rtacha soni: <payload>____</payload> dona.
-Punktga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
-Bitta shtrix-kod uchun to'lov: <charge-per-one>__.__</charge-per-one> so'm.
-Punkt nomi: <name>____</name>
+<b>Buyurtma berish punktlari</b>
 
-Bot bilan <a href="https://maps.yandex.com/">Yandex.Maps</a> ilovasidan o'z PVZ (Buyurtma berish punktini) ulashing
+Botga <a href="https://maps.yandex.com/">Yandex.Maps</a> ilovasidan olingan Buyurtma berish punktini ulashing va keyin "<i>↪️ Keyingi</i>" tugmasini bosing
+
+<b>Buyurtma berish punkti manzili:</b> <address>____</address>

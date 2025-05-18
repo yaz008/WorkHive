@@ -1,9 +1,7 @@
-<b>Ro'yxatdan o'tish</b>
-Rol: <role>____</role>
-FIO: <full-name>____</full-name>
-👉Tug'ilgan sana: <birth-date>__.__.____</birth-date>
-Maxfiylik siyosatiga rozilik: <consent-pp>_</consent-pp>
-Reklama xabarlarini olishga rozilik: <consent-ad>_</consent-ad>
-Oferta bilan rozilik: <consent-of>_</consent-of>
+<b>Roʻyxatdan oʻtish</b>
 
-Tug'ilgan sanangizni kiriting yoki uni <code>kk.oo.yyyy</code> formatida matnli xabar orqali yuboring (Masalan, agar siz 2000-yil 1-Dekabrda tug'ilgan bo'lsangiz — <code>01.12.2000</code>)
+<b>Klaviatura orqali</b> tugʻilgan kuningizni kiriting yoki uni <code>kk.oo.yyyy</code> formatida <b>SMS xabar</b> orqali yuboring (misol uchun, agar siz 2000-yil 1-Dekabrda tugʻilgan boʻlsangiz — <code>01.12.2000</code>)
+
+<b>Tugʻilgan kuningiz:</b> <birth-date>__.__.____</birth-date>
+
+Tugʻilgan kuningiz toʻgʻri kiritilganligiga ishonch hosil qiling va "<i>↪️ Keyingi</i>" tugmasini bosing

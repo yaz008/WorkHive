@@ -1,0 +1,9 @@
+<b>Asosiy menyu</b>
+
+Munosib vakansiyani topish va unga javob berish uchun "🔍 Qidiruv" tugmasini bosing
+
+"✉️ Javoblar" bo'limida siz javob bergan vakansiyalar ko'rsatiladi
+
+"💯 Qabul qilinganlar" bo'limida siz ishga qabul qilingan joylar ko'rsatiladi
+
+Vakansiyalarga javob bering 🔍, ishga chiqish haqida kelishib oling 💬 va <b>WorkHive</b> bilan hoziroq pul ishlashni boshlang 💰!

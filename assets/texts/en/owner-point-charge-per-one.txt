@@ -1,8 +1,5 @@
 <b>Order Pickup Point</b>
-Address: <address>____</address>
-Average number of barcodes: <payload>____</payload> pcs.
-Payment for going to the point: <minimal-charge>____</minimal-charge> rub.
-👉Payment per barcode: <charge-per-one>__.__</charge-per-one> rub.
-Point name: <name>____</name>
 
-Enter the payment per barcode in the format <code>rub.cop</code> (For example, <code>1.25</code>)
+Enter the payment for 1 barcode in the format <code>rub.kop</code> (For example, <code>1.25</code> is 1 ruble 25 kopecks) and then press the "<i>↪️ Next</i>" button.
+
+Payment per barcode: <charge-per-one>__.__</charge-per-one> ₽.

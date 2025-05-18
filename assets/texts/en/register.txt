@@ -1,7 +1,5 @@
 Welcome to <b>WorkHive</b> 🐝
 
-Our network connects pickup point owners and job seekers for part-time or permanent work across the country!
-💼 <b>Pickup Point Owner</b> — can post job openings in a few clicks
-👨 <b>Job Seeker</b> — can apply for vacancies in their city
+<b>WorkHive</b> is a hive 🐝 where work is buzzing! We connect owners of order pick-up points (PUP) 📦 with those who are looking for a part-time job or permanent employment 🧑‍💼. The PUP owner can quickly post a job advertisement 📝, and the job seeker can easily find a job near their home 🏡 and respond immediately 🚀. <b>It's all simple and convenient!</b>
 
 <i>Registration will take no more than 2 minutes!</i>

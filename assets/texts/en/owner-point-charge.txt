@@ -1,8 +1,5 @@
 <b>Order Pickup Point</b>
-Address: <address>____</address>
-Average number of barcodes: <payload>____</payload> pcs.
-👉Payment per shift at the point: <minimal-charge>____</minimal-charge> rub.
-Payment per barcode: <charge-per-one>_.__</charge-per-one> rub.
-Point name: <name>____</name>
 
-Enter the payment per shift at the point
+Enter the payment for coming to the location (e.g., <code>600</code>) and then press the "<i>↪️ Next</i>" button.
+
+Payment for coming to the location: <minimal-charge>____</minimal-charge> rub.

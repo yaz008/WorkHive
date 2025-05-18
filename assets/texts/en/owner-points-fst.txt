@@ -1,0 +1,3 @@
+🎯 <b>Your Pickup Points</b>
+
+Click the "➕ Add" button to add a Pickup Point
