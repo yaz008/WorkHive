@@ -23,7 +23,7 @@ class SQLTable[Key: Hashable, Value, Ret](DictLikeTable[Key, Value, Ret]):
     query: DictQuery = field(init=False)
 
     def __post_init__(self) -> None:
-        self.database = f'{DBConfig.BasePath}\\{self.database}.db'
+        self.database = f'{DBConfig.BasePath}/{self.database}.db'
         with connect(database=self.database) as connection:
             cursor: Cursor = connection.cursor()
             cursor.execute(self.query.create)

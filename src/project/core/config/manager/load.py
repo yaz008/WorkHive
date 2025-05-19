@@ -10,7 +10,7 @@ def load_config(filename: str) -> dict[str, JSON]:
     if f'{filename}.json' not in listdir('configs'):
         return dict()
     with open(
-        file=f'configs\\{filename}.json', mode='r', encoding='UTF-8'
+        file=f'configs/{filename}.json', mode='r', encoding='UTF-8'
     ) as config_file:
         content: str = config_file.read()
         if len(content.strip()) == 0:

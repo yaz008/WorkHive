@@ -3,7 +3,7 @@ from project.core.config import config
 
 @config(filename='buttons')
 class ButtonConfig:
-    ButtonsFolder: str = 'assets\\buttons'
+    ButtonsFolder: str = 'assets/buttons'
     Checked: str = '✅'
     CheckDelimiter: str = ' '
 

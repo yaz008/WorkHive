@@ -12,7 +12,7 @@ from project.libs.tgdraw import TGMessage
 from router import router
 
 
-BLACKLIST: str = 'blacklist\\banned.json'
+BLACKLIST: str = 'blacklist/banned.json'
 
 
 @driver.message_handler(commands=['start'])

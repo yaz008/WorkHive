@@ -21,7 +21,7 @@ def load_media_id(name: str, kind: MediaKind, language: str | None) -> str:
         },
     )[kind]
     with open(
-        file=f'{folder}\\{name}.json',
+        file=f'{folder}/{name}.json',
         mode='r',
         encoding='UTF-8',
     ) as button_info:

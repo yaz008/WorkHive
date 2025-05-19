@@ -8,7 +8,7 @@ from project.libs.cached import cache
 @cache
 def load_button(name: str, language: str) -> str:
     with open(
-        file=f'{ButtonConfig.ButtonsFolder}\\{name}.json',
+        file=f'{ButtonConfig.ButtonsFolder}/{name}.json',
         mode='r',
         encoding='UTF-8',
     ) as button_info:

@@ -9,6 +9,4 @@ class MultilingualFileReader:
     __reader: CachedFileReader = field(default_factory=CachedFileReader)
 
     def read(self, language: str, state: str) -> str:
-        return self.__reader.read(
-            path=f'{self.texts}\\{language}\\{state}.txt', mode='r'
-        )
+        return self.__reader.read(path=f'{self.texts}/{language}/{state}.txt', mode='r')
