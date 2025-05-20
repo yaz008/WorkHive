@@ -75,5 +75,11 @@ def owner_point_address(
                 factory.saved(WorkHiveButton.Next) if point.address != str() else None,
             ),
         ),
-        link_preview=LinkPreviewOptions(prefer_small_media=True, show_above_text=True),
+        link_preview=(
+            LinkPreviewOptions(
+                url=point.yandex_link, prefer_small_media=True, show_above_text=True
+            )
+            if point.yandex_link != str()
+            else None
+        ),
     )
