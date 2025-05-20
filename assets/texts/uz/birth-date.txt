@@ -1,7 +1,7 @@
 <b>Roʻyxatdan oʻtish</b>
 
-<b>Klaviatura orqali</b> tugʻilgan kuningizni kiriting yoki uni <code>kk.oo.yyyy</code> formatida <b>SMS xabar</b> orqali yuboring (misol uchun, agar siz 2000-yil 1-Dekabrda tugʻilgan boʻlsangiz — <code>01.12.2000</code>)
+Botga tugʻilgan kuningizni <code>dd.mm.yyyy</code> formatida <b>matnli xabar</b> bilan yuboring (masalan, agar siz 2000-yil 1-Dekabrda tugʻilgan boʻlsangiz — <code>01.12.2000</code>)
 
-<b>Tugʻilgan kuningiz:</b> <birth-date>__.__.____</birth-date>
+<b>Tugʻilgan sanangiz:</b> <birth-date>__.__.____</birth-date>
 
-Tugʻilgan kuningiz toʻgʻri kiritilganligiga ishonch hosil qiling va "<i>↪️ Keyingi</i>" tugmasini bosing
+Tugʻilgan sana toʻgʻri kiritilganligiga ishonch hosil qiling va "<i>↪️ Keyingi</i>" tugmasini bosing.

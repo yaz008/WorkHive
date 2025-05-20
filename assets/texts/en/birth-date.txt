@@ -1,7 +1,7 @@
 <b>Registration</b>
 
-<b>Enter</b> your date of birth using the keyboard or send it as a <b>text message</b> in the format <code>dd.mm.yyyy</code> (for example, if you were born on December 1, 2000 — <code>01.12.2000</code>)
+Send the bot your date of birth as a <b>text message</b> in the format <code>dd.mm.yyyy</code> (for example, if you were born on December 1, 2000 — <code>01.12.2000</code>)
 
-<b>Your date of birth:</b> <birth-date>__.__.____</birth-date>
+<b>Your Date of Birth:</b> <birth-date>__.__.____</birth-date>
 
 Make sure the Date of Birth is correct and press the "<i>↪️ Next</i>" button

@@ -2,7 +2,7 @@ from re import match
 
 from model.types import TempUser, to_datetime
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
-from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, numeric
+from project.libs.tgdraw import TGMessage, RowInfo, ButtonFactoryClosure, keyboard
 from project.libs.tght import render_file
 from router.instance import router
 from router.pipelines.registration.utils import render_birth_date, is_birth_date_valid
@@ -50,18 +50,18 @@ def birth_date(user: TempUser, factory: ButtonFactoryClosure, digit: str) -> TGM
                 'consent-of': lambda _: '✅' if user.concent_of else '❌',
             },
         ),
-        keyboard=numeric(
-            factory=factory,
-            symbol=FSASymbol.InputData,
-            back=factory.saved(WorkHiveButton.Back),
-            next=(
+        keyboard=keyboard(
+            RowInfo(
+                factory.saved(WorkHiveButton.Back),
                 (
-                    factory.saved(WorkHiveButton.Next, args=(user.concent_pp,))
-                    if is_birth_date_valid(birth_date=to_datetime(user.birth_date))
-                    else factory.saved(WorkHiveButton.NextErr)
-                )
-                if len(user.birth_date) == 8
-                else None
+                    (
+                        factory.saved(WorkHiveButton.Next, args=(user.concent_pp,))
+                        if is_birth_date_valid(birth_date=to_datetime(user.birth_date))
+                        else factory.saved(WorkHiveButton.NextErr)
+                    )
+                    if len(user.birth_date) == 8
+                    else None
+                ),
             ),
         ),
     )
