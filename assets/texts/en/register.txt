@@ -1,5 +1,7 @@
 Welcome to <b>WorkHive</b> 🐝
 
-<b>WorkHive</b> is a hive 🐝 where work is buzzing! We connect owners of order pick-up points (PUP) 📦 with those who are looking for a part-time job or permanent employment 🧑‍💼. The PUP owner can quickly post a job advertisement 📝, and the job seeker can easily find a job near their home 🏡 and respond immediately 🚀. <b>It's all simple and convenient!</b>
+<b>WorkHive</b> is a hive 🐝 buzzing with work!
+
+We connect owners of order pickup points (OPPs) 📦 and those looking for part-time or full-time work 🧑‍💼. The OPP owner can quickly post a job advertisement 📝, and the applicant can easily find a job near home 🏡 and immediately respond 🚀 – <b>Connect and buzz!</b>
 
 <i>Registration will take no more than 2 minutes!</i>
