@@ -77,7 +77,11 @@ def create_user(temp_user: TempUser) -> Worker | Owner:
         {
             id: _User(
                 language=temp_user.language,
-                birth_date=to_datetime(temp_user.birth_date),
+                birth_date=(
+                    to_datetime(temp_user.birth_date)
+                    if temp_user.role == 'worker'
+                    else datetime.now()
+                ),
                 full_name=temp_user.full_name,
             )
         }

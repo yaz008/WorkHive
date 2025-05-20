@@ -2,7 +2,15 @@ from itertools import chain
 
 from model.types import TempUser
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
-from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
+from project.libs.fsa import serializer
+from project.libs.tgdraw import (
+    TGMessage,
+    ButtonFactoryClosure,
+    RowInfo,
+    ButtonInfo,
+    keyboard,
+    load_button,
+)
 from project.libs.tght import render_file
 from router.instance import router
 from router.pipelines.registration.utils import render_birth_date
@@ -40,6 +48,7 @@ def is_valid_name(normalized_name: str) -> bool:
         FSASymbol.Next: FSAState.BirthDate,
         FSASymbol.InputData: FSAState.FullName,
         FSASymbol.Error: FSAState.FullNameErr,
+        FSASymbol.Skip: FSAState.PrivacyPolicyConsent,
     },
     accepts_types=('text',),
 )
@@ -73,7 +82,20 @@ def full_name(user: TempUser, factory: ButtonFactoryClosure, name: str) -> TGMes
                 factory.saved(WorkHiveButton.Back, args=(user.role,)),
                 (
                     (
-                        factory.saved(WorkHiveButton.Next)
+                        (
+                            factory.saved(WorkHiveButton.Next)
+                            if user.role == 'worker'
+                            else ButtonInfo(
+                                text=load_button(
+                                    name=WorkHiveButton.Next,
+                                    language=user.language,
+                                ),
+                                data=serializer.serialize(
+                                    state=FSAState.ChooseLanguage,
+                                    symbol=FSASymbol.Next,
+                                ),
+                            )
+                        )
                         if is_valid_name(user.full_name)
                         else factory.saved(WorkHiveButton.NextErr)
                     )
