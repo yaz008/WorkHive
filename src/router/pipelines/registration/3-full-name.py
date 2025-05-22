@@ -91,8 +91,8 @@ def full_name(user: TempUser, factory: ButtonFactoryClosure, name: str) -> TGMes
                                     language=user.language,
                                 ),
                                 data=serializer.serialize(
-                                    state=FSAState.ChooseLanguage,
-                                    symbol=FSASymbol.Next,
+                                    state=FSAState.FullName,
+                                    symbol=FSASymbol.Skip,
                                 ),
                             )
                         )
