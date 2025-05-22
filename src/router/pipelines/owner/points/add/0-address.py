@@ -5,8 +5,8 @@ from model.types import Owner, TempPoint
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.orm import TempValue
 from project.libs.tgdraw import (
-    TGMessage,
     TGMedia,
+    TGMessage,
     ButtonFactoryClosure,
     RowInfo,
     keyboard,
@@ -36,10 +36,14 @@ def owner_point_address(
     owner: Owner, factory: ButtonFactoryClosure, share_info: str
 ) -> TGMessage:
     point: TempPoint = get_temp_point(owner.telegram_id)
+    is_error: bool = False
     if share_info != str():
-        point.franchise, point.address, point.yandex_link = share_info.split(
-            sep='\n', maxsplit=2
-        )
+        try:
+            point.franchise, point.address, point.yandex_link = share_info.split(
+                sep='\n', maxsplit=2
+            )
+        except ValueError:
+            is_error = True
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -58,6 +62,13 @@ def owner_point_address(
                 'name': lambda placeholder: f'<code>{(
                     point.name if point.name != str() else placeholder
                 )}</code>',
+                'on-error': lambda _: (
+                    render_file(
+                        language=owner.language, state='owner-point-address-error'
+                    )
+                    if is_error
+                    else str()
+                ),
             },
         ),
         tgmedia=(

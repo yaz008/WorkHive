@@ -3,3 +3,5 @@
 Botga <a href="https://maps.yandex.com/">Yandex.Maps</a> ilovasidan olingan Buyurtma berish punktini ulashing va keyin "<i>↪️ Keyingi</i>" tugmasini bosing
 
 <b>Buyurtma berish punkti manzili:</b> <address>____</address>
+
+<on-error></on-error>

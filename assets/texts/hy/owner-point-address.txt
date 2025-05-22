@@ -3,3 +3,5 @@
 Կիսվե՛ք բոտի հետ ձեր ՊՀԿ-ով <a href="https://maps.yandex.com/">Yandex.Maps</a> հավելվածից և հետո սեղմե՛ք "<i>↪️ Առաջ</i>" կոճակը։
 
 <b>ՊՀԿ-ի հասցե՝</b> <address>____</address>
+
+<on-error></on-error>
