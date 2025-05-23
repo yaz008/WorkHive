@@ -53,6 +53,7 @@ class WorkHiveButton:
     AcceptedResponses: str = 'accepted-responses'
     AcceptedResponsesNew: str = 'accepted-responses-new'
     Promocode: str = 'promocode'
+    AboutProject: str = 'about-project'
 
     # Other:
     Worker: str = 'worker'

@@ -20,6 +20,7 @@ class FSAState:
     # Owner
     OwnerMainMenu: str = 'owner-main-menu'
     OwnerSettings: str = 'owner-settings'
+    OwnerAboutProject: str = 'owner-about-project'
     OwnerVacancies: str = 'owner-vacancies'
     OwnerNotification: str = 'owner-notification'
 
@@ -68,6 +69,7 @@ class FSAState:
     WorkerMainMenu: str = 'worker-main-menu'
 
     WorkerSettings: str = 'worker-settings'
+    WorkerAboutProject: str = 'worker-about-project'
     WorkerLanguage: str = 'worker-language'
 
     WorkerResponds: str = 'worker-responds'
@@ -105,6 +107,7 @@ class FSASymbol:
     Responds: str = 'responds'
     AcceptedResponses: str = 'accepted-responses'
     Promocode: str = 'promocode'
+    AboutProject: str = 'about-project'
 
     # Actions:
     Add: str = 'add'

@@ -55,6 +55,7 @@ button_factory.save(
     name=WorkHiveButton.AcceptedResponsesNew, symbol=FSASymbol.AcceptedResponses
 )
 button_factory.save(name=WorkHiveButton.Promocode, symbol=FSASymbol.Promocode)
+button_factory.save(name=WorkHiveButton.AboutProject, symbol=FSASymbol.AboutProject)
 
 # Other:
 button_factory.save(name=WorkHiveButton.Worker, symbol=FSASymbol.InputData)
