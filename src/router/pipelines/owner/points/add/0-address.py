@@ -74,7 +74,7 @@ def owner_point_address(
         tgmedia=(
             TGMedia(
                 name='share-instruction',
-                kind='Video',
+                kind='Photo',
                 language=owner.language,
             )
             if point.address == str()
