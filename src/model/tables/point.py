@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime
 from uuid import UUID
 
 from project.configs import TableConfig
@@ -14,6 +15,10 @@ class _Point(Stackable):
     payload: int
     minimal_charge: int
     charge_per_one: int
+    creation_time: datetime = field(init=False)
+
+    def __post_init__(self) -> None:
+        self.creation_time = datetime.now()
 
 
 points_table: CachedMultiTable[UUID, _Point] = CachedMultiTable(

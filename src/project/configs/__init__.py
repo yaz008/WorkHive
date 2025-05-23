@@ -7,6 +7,7 @@ from project.configs.search import SearchConfig
 from project.configs.session import SessionConfig
 from project.configs.tables import TableConfig, CacheSizeConfig
 from project.configs.tgdriver import TGDriverConfig, TGParseMode
+from project.configs.vacancies import VacanciesSimpleConfig
 from project.configs.verbose import VerboseConfig, VerboseLevel
 
 
@@ -29,4 +30,5 @@ __all__ = [
     'VerboseConfig',
     'VerboseLevel',
     'SearchConfig',
+    'VacanciesSimpleConfig',
 ]

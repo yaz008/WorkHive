@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime
 from uuid import UUID
 
 from project.configs import TableConfig
@@ -16,6 +17,10 @@ class _Response:
     status: str = 'undefined'
     is_read_by_owner: bool = False
     is_read_by_worker: bool = False
+    creation_time: datetime = field(init=False)
+
+    def __post_init__(self) -> None:
+        self.creation_time = datetime.now()
 
 
 response_map: CachedSingleTable[UUID, _Response] = CachedSingleTable(

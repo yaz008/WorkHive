@@ -13,6 +13,7 @@ from model.tables import (
     balance_table,
     metadata_table,
     tgid_table,
+    datetime_table,
     _UserRoleWrapper,
     _UserStateWrapper,
     _WorkHiveIDWrapper,
@@ -22,6 +23,7 @@ from model.tables import (
     _Balance,
     _Metadata,
     _TGID,
+    _Datetime,
 )
 from model.types.temp import TempUser
 from project.libs.orm import synced
@@ -35,6 +37,7 @@ class User:
     role: str = synced(role_table, 'workhive_id', 'role')
     full_name: str = synced(user_table, 'workhive_id', 'full_name')
     birth_date: str = synced(user_table, 'workhive_id', 'birth_date')
+    registration_datetime: datetime = synced(datetime_table, 'workhive_id', 'value')
 
     @property
     def workhive_id(self) -> UUID:
@@ -73,6 +76,7 @@ def create_user(temp_user: TempUser) -> Worker | Owner:
     workhive_id.update({temp_user.telegram_id: _WorkHiveIDWrapper(value=id)})
     state_table.update({id: _UserStateWrapper(state=temp_user.state)})
     role_table.update({id: _UserRoleWrapper(role=temp_user.role)})
+    datetime_table.update({id: _Datetime(value=datetime.now())})
     user_table.update(
         {
             id: _User(

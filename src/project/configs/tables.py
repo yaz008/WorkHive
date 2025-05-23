@@ -28,6 +28,7 @@ class TableConfig:
     Role: _DBTable = _DBTable(database='userdata', table='role')
     State: _DBTable = _DBTable(database='userdata', table='state')
     Metadata: _DBTable = _DBTable(database='userdata', table='metadata')
+    Datetime: _DBTable = _DBTable(database='userdata', table='datetime')
 
     # Entities:
     Points: _DBTable = _DBTable(database='entities', table='points')

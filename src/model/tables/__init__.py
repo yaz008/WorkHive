@@ -1,4 +1,5 @@
 from model.tables.balance import _Balance, balance_table
+from model.tables.datetime import _Datetime, datetime_table
 from model.tables.metadata import _Metadata, metadata_table
 from model.tables.point import _Point, points_table
 from model.tables.responses import _Response, responses_table, response_map
@@ -30,6 +31,7 @@ __all__ = [
     'temp_users',
     'temp_points',
     '_VacancySimple',
+    '_Datetime',
     '_Point',
     'points_table',
     '_SearchResult',
@@ -43,4 +45,5 @@ __all__ = [
     'metadata_table',
     '_TGID',
     'tgid_table',
+    'datetime_table',
 ]
