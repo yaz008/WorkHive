@@ -1,5 +1,5 @@
 <b>Сессия завершена!</b>
 
-Подпишитесь на наш канал: <channel>@example_channel</channel>
-
 Нажмите /start, чтобы активировать бота
+
+<channel></channel>

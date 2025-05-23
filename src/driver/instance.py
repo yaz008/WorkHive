@@ -1,5 +1,5 @@
 from model.tables import user_table, workhive_id, temp_users, role_table
-from project.configs import TGDriverConfig
+from project.configs import TGDriverConfig, ChennelConfig
 from project.core.env import Env
 from project.libs.tgdraw import TGDriver
 from project.libs.tght import render_file
@@ -21,12 +21,15 @@ driver: TGDriver = TGDriver(
             ),
             state='driver-on-session-expiration',
             tag_handlers={
-                'channel': lambda placeholder: (
-                    f'{placeholder}_for_{(
-                        role_table[workhive_id[session.telegram_id].value].role
-                        if session.telegram_id not in temp_users
-                        else 'temp_user'
-                    )}s'
+                'channel': lambda _: (
+                    f'Подпишитесь на наш канал: {(
+                        ChennelConfig.WorkersChannelLink
+                        if role_table[workhive_id[session.telegram_id].value].role
+                        == 'worker'
+                        else ChennelConfig.OwnersChannelLink
+                    )}'
+                    if session.telegram_id not in temp_users
+                    else str()
                 )
             },
         ),

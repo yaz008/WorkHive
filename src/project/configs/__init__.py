@@ -1,5 +1,6 @@
 from project.configs.blacklist import BlacklistConfig
 from project.configs.buttons import ButtonConfig, WorkHiveButton
+from project.configs.channels import ChennelConfig
 from project.configs.db import DBConfig
 from project.configs.fsa import FSAConfig, FSAState, FSASymbol, FSAPipeline
 from project.configs.language import Language
@@ -33,4 +34,5 @@ __all__ = [
     'SearchConfig',
     'VacanciesSimpleConfig',
     'BlacklistConfig',
+    'ChennelConfig',
 ]

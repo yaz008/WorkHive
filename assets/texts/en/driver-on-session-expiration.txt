@@ -1,5 +1,5 @@
-<b>Session finished!</b>
+<b>Session ended!</b>
 
-Subscribe to our channel: <channel>@example_channel</channel>
+Press /start to activate the bot
 
-Click /start to activate the bot
+<channel></channel>

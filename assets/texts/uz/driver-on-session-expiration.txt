@@ -1,5 +1,5 @@
 <b>Sessiya yakunlandi!</b>
 
-Bizning kanalimizga obuna bo'ling: <channel>@example_channel</channel>
+Botni faollashtirish uchun /start tugmasini bosing
 
-Botni faollashtirish uchun /start ni bosing
+<channel></channel>

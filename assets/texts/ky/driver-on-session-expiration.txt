@@ -1,5 +1,5 @@
 <b>Сессия аяктады!</b>
 
-Биздин каналга жазылыңыз: <channel>@example_channel</channel>
+Ботту иштетүү үчүн /start басыңыз
 
-Ботту активдештирүү үчүн /start басыңыз
+<channel></channel>

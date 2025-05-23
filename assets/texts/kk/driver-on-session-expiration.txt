@@ -1,5 +1,5 @@
 <b>Сессия аяқталды!</b>
 
-Біздің арнаға жазылыңыз: <channel>@example_channel</channel>
-
 Ботты іске қосу үшін /start басыңыз
+
+<channel></channel>
