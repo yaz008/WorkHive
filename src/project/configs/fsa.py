@@ -60,7 +60,7 @@ class FSAState:
     OwnerAcceptedResponses: str = 'owner-accepted-responses'
     OwnerNoAcceptedResponses: str = 'owner-no-accepted-responses'
 
-    OwnerSubstription: str = 'owner-subscription'
+    OwnerSubscription: str = 'owner-subscription'
     OwnerPromocode: str = 'owner-promocode'
     OwnerCorrectPromocode: str = 'owner-correct-promocode'
     OwnerIncorrectPromocode: str = 'owner-incorrect-promocode'

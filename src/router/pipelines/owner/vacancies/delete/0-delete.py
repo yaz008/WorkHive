@@ -36,7 +36,7 @@ def delete_responses(owner: Owner, ids: list[UUID]) -> None:
         FSASymbol.Delete: FSAState.OwnerVacancyDelete,
     },
 )
-def owner_point_payload(
+def owner_vacancy_delete(
     owner: Owner, factory: ButtonFactoryClosure, index: str
 ) -> TGMessage:
     if index != str():

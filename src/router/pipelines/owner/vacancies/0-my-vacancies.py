@@ -16,7 +16,7 @@ from router.pipelines.utils import in_metadata, add_metadata
         FSASymbol.Delete: FSAState.OwnerVacancyDelete,
     },
 )
-def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_vacancies(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     if not in_metadata(owner, 'has-published-vacancy'):
         add_metadata(owner, 'has-published-vacancy')
     return TGMessage(

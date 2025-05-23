@@ -52,7 +52,7 @@ def get_current_response(responses: list[_Response], index: str) -> _Response | 
         FSASymbol.Delete: FSAState.WorkerResponds,
     },
 )
-def owner_point_payload(
+def worker_responses(
     worker: Worker, factory: ButtonFactoryClosure, action: str, index: str
 ) -> TGMessage:
     if not in_metadata(worker, 'has-opened-responses'):

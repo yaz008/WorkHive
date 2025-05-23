@@ -57,7 +57,7 @@ def change_status(response: _Response, new_status: str) -> None:
         FSASymbol.Ok: FSAState.OwnerMainMenu,
     },
 )
-def owner_settings(
+def owner_accepted_responses(
     owner: Owner, factory: ButtonFactoryClosure, action: str, index: str
 ) -> TGMessage:
     notification: _Response | None = get_notification(owner, index)

@@ -21,7 +21,7 @@ from router.instance import router
         FSASymbol.InputData: FSAState.WorkerLanguage,
     },
 )
-def owner_language(
+def worker_choose_language(
     worker: Worker, factory: ButtonFactoryClosure, language: str
 ) -> TGMessage:
     if language != str():

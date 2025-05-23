@@ -10,10 +10,10 @@ from router.instance import router
     pipeline=FSAPipeline.Owner,
     transitions={
         FSASymbol.Publish: FSAState.OwnerPublish,
-        FSASymbol.Ok: FSAState.OwnerSubstription,
+        FSASymbol.Ok: FSAState.OwnerSubscription,
     },
 )
-def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_correct_promocode(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,

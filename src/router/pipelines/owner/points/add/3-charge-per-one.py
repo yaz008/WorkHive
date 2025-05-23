@@ -19,7 +19,7 @@ from router.instance import router
     },
     accepts_types=('text',),
 )
-def owner_point_charge(
+def owner_point_charge_per_one(
     owner: Owner, factory: ButtonFactoryClosure, charge: str
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)

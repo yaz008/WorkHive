@@ -12,7 +12,7 @@ from router.instance import router
         FSASymbol.Back: FSAState.WorkerSettings,
     },
 )
-def owner_settings(user: User, factory: ButtonFactoryClosure) -> TGMessage:
+def worker_about_project(user: User, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=user.language,

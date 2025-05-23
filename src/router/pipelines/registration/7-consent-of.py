@@ -28,7 +28,7 @@ from router.pipelines.registration.utils import render_birth_date
         FSASymbol.InputData: FSAState.OfferConsent,
     },
 )
-def privacy_policy_concent(
+def offer_concent(
     user: TempUser, factory: ButtonFactoryClosure, concent: bool
 ) -> TGMessage:
     user.concent_of = concent

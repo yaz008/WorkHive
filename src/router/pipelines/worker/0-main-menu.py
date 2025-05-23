@@ -22,7 +22,7 @@ from router.pipelines.utils import in_metadata
         FSASymbol.AcceptedResponses: FSAState.WorkerAcceptedResponds,
     },
 )
-def register(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
+def worker_main_menu(user: User | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
     if isinstance(user, TempUser):
         user = create_user(user)
         temp_users.remove(user.telegram_id)

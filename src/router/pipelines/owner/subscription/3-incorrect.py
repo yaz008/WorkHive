@@ -12,7 +12,7 @@ from router.instance import router
         FSASymbol.Ok: FSAState.OwnerPromocode,
     },
 )
-def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_incorrect_promocode(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,

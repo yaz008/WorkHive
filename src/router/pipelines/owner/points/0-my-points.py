@@ -16,7 +16,7 @@ from router.pipelines.utils import in_metadata
         FSASymbol.MainMenu: FSAState.OwnerMainMenu,
     },
 )
-def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def handler(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,

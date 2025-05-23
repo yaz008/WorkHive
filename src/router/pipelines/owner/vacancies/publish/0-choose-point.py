@@ -14,7 +14,7 @@ from router.instance import router
         FSASymbol.Publish: FSAState.OwnerPublishDone,
     },
 )
-def owner_point_payload(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_publish(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,

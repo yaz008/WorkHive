@@ -11,13 +11,13 @@ from router.instance import router
     pipeline=FSAPipeline.Owner,
     transitions={
         FSASymbol.InputData: FSAState.OwnerPromocode,
-        FSASymbol.Back: FSAState.OwnerSubstription,
+        FSASymbol.Back: FSAState.OwnerSubscription,
         FSASymbol.Apply: FSAState.OwnerCorrectPromocode,
         FSASymbol.Error: FSAState.OwnerIncorrectPromocode,
     },
     accepts_types=('text',),
 )
-def owner_settings(
+def owner_promocode(
     owner: Owner, factory: ButtonFactoryClosure, promocode: str
 ) -> TGMessage:
     if promocode == 'WorkHive10' and promocode not in [

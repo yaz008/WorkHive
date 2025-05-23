@@ -13,7 +13,7 @@ from router.instance import router
         FSASymbol.Ok: FSAState.OwnerVacancies,
     },
 )
-def owner_point_payload(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_low_balance(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,

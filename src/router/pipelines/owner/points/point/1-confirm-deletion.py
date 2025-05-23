@@ -40,7 +40,7 @@ def delete_response(response: _Response) -> None:
         FSASymbol.No: FSAState.OwnerPoints,
     },
 )
-def owner_settings(
+def owner_point_deletion(
     owner: Owner, factory: ButtonFactoryClosure, index: str, delete: bool
 ) -> TGMessage:
     point: _Point | None = (

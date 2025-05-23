@@ -15,7 +15,7 @@ from router.instance import router
         FSASymbol.Ok: FSAState.OwnerVacancies,
     },
 )
-def owner_point_payload(
+def owner_publish_done(
     owner: Owner, factory: ButtonFactoryClosure, index: str
 ) -> TGMessage:
     point: _Point = list(owner.points.values())[int(index)]

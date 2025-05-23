@@ -31,10 +31,12 @@ def get_notifications(owner: Owner) -> list[_Response]:
         FSASymbol.Notifications: FSAState.OwnerNotifications,
         FSASymbol.AcceptedResponses: FSAState.OwnerAcceptedResponses,
         FSASymbol.Settings: FSAState.OwnerSettings,
-        FSASymbol.Subscription: FSAState.OwnerSubstription,
+        FSASymbol.Subscription: FSAState.OwnerSubscription,
     },
 )
-def register(owner: Owner | TempUser, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_main_menu(
+    owner: Owner | TempUser, factory: ButtonFactoryClosure
+) -> TGMessage:
     if isinstance(owner, TempUser):
         owner = cast(Owner, create_user(owner))
         temp_users.remove(owner.telegram_id)

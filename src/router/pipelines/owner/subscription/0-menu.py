@@ -6,14 +6,14 @@ from router.instance import router
 
 
 @router.add(
-    name=FSAState.OwnerSubstription,
+    name=FSAState.OwnerSubscription,
     pipeline=FSAPipeline.Owner,
     transitions={
         FSASymbol.MainMenu: FSAState.OwnerMainMenu,
         FSASymbol.Promocode: FSAState.OwnerPromocode,
     },
 )
-def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
+def owner_subsription(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=owner.language,

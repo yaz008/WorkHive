@@ -98,7 +98,7 @@ def update_index(worker: Worker, result: _SearchResult, arg: str) -> None:
         FSASymbol.MainMenu: FSAState.WorkerMainMenu,
     },
 )
-def owner_settings(
+def worker_search_results(
     worker: Worker, factory: ButtonFactoryClosure, arg: str
 ) -> TGMessage:
     if not in_metadata(worker, 'has-searched'):
