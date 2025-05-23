@@ -1,3 +1,4 @@
+from model.tables import simple_vacancies_table
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -24,7 +25,17 @@ def owner_point_payload(owner: Owner, factory: ButtonFactoryClosure) -> TGMessag
                 RowInfo(
                     factory.create(
                         symbol=FSASymbol.Publish,
-                        name=point.name,
+                        name=(
+                            f'⏱️ {point.name}'
+                            if any(
+                                vacancy.point_id == point.__sql_id__
+                                for vacancy in simple_vacancies_table[
+                                    owner.workhive_id
+                                ].values()
+                                if not vacancy.is_expired
+                            )
+                            else point.name
+                        ),
                         args=(list(owner.points.values()).index(point),),
                         load=False,
                     )

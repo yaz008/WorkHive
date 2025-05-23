@@ -38,6 +38,7 @@ def owner_settings(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
                                 for vacancy in simple_vacancies_table[
                                     owner.workhive_id
                                 ].values()
+                                if not vacancy.is_expired
                             )
                             else point.name
                         ),
