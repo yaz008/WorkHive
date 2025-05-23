@@ -17,7 +17,9 @@ from router.pipelines.utils import in_metadata, add_metadata
     },
 )
 def owner_vacancies(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
-    if not in_metadata(owner, 'has-published-vacancy'):
+    if in_metadata(owner, 'has-added-point') and not in_metadata(
+        owner, 'has-published-vacancy'
+    ):
         add_metadata(owner, 'has-published-vacancy')
     return TGMessage(
         text=render_file(
