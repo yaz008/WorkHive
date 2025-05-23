@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from model.tables import _VacancySimple, _Point, _Balance
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
@@ -20,6 +22,7 @@ def owner_point_payload(
     vacancy: _VacancySimple = _VacancySimple(
         point_id=point.__sql_id__,
         owner_id=owner.workhive_id,
+        __sql_id__=uuid4(),
     )
     owner.simple_vacancies |= {vacancy.__sql_id__: vacancy}
     owner.balance = _Balance(

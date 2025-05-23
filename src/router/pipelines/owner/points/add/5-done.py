@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from model.tables import temp_points, _Point
 from model.types import Owner, TempPoint
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
@@ -25,6 +27,7 @@ def owner_point_done(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
         payload=temp_point.payload,
         minimal_charge=temp_point.minimal_charge,
         charge_per_one=temp_point.charge_per_one,
+        __sql_id__=uuid4(),
     )
     owner.points |= {point.__sql_id__: point}
     add_metadata(owner, 'has-added-point')
