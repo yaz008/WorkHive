@@ -20,6 +20,11 @@ class _Point(Stackable):
     def __post_init__(self) -> None:
         self.creation_time = datetime.now()
 
+    @property
+    def expected_payment(self) -> str:
+        payment: int = self.charge_per_one * self.payload + self.minimal_charge * 100
+        return f'{payment // 100}.{'0' if payment % 100 < 10 else str()}{payment % 100}'
+
 
 points_table: CachedMultiTable[UUID, _Point] = CachedMultiTable(
     database=TableConfig.Points.database,

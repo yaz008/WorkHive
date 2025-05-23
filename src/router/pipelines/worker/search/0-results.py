@@ -112,7 +112,11 @@ def owner_settings(
     if vacancy is not None:
         if arg == 'respond':
             respond(vacancy, worker)
-        point: _Point = points_table[vacancy.owner_id][vacancy.point_id]
+    point: _Point | None = (
+        points_table[vacancy.owner_id][vacancy.point_id]
+        if vacancy is not None
+        else None
+    )
     return TGMessage(
         text=render_file(
             language=worker.language,
@@ -130,21 +134,14 @@ def owner_settings(
                     'payload': lambda _: str(point.payload),
                     'minimal-charge': lambda _: str(point.minimal_charge),
                     'charge-per-one': lambda _: (
-                        f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                        f'{point.charge_per_one // 100}.{(
+                            '0' if point.charge_per_one % 100 < 10 else str()
+                        )}{point.charge_per_one % 100}'
                     ),
-                    'expected-payment': lambda _: (
-                        f'{
-                            (
-                                payment := (
-                                    point.minimal_charge * 100 + (
-                                        point.charge_per_one * point.payload
-                                    )
-                                )
-                            ) // 100}.{payment % 100}'
-                    ),
+                    'expected-payment': lambda _: point.expected_payment,
                     'vacancy-id': lambda _: f'<i>{str(vacancy.__sql_id__)[:6]}</i>',
                 }
-                if vacancy is not None
+                if vacancy is not None and point is not None
                 else None
             ),
         ),

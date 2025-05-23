@@ -23,9 +23,14 @@ def owner_point_charge(
     owner: Owner, factory: ButtonFactoryClosure, charge: str
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)
-    if match(pattern=r'^\d\d?\.\d\d?$', string=charge):
-        rub, fr = charge.split(sep='.', maxsplit=1)
-        point.charge_per_one = int(rub) * 100 + int(fr)
+    if match(pattern=r'^\d+(?:\.\d\d?)?$', string=charge):
+        if '.' in charge:
+            rub, fr = charge.split(sep='.', maxsplit=1)
+            point.charge_per_one = int(rub) * 100 + int(
+                fr if len(fr) == 2 else f'{fr}0'
+            )
+        else:
+            point.charge_per_one = int(charge) * 100
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -37,7 +42,9 @@ def owner_point_charge(
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),
                 'charge-per-one': lambda _: (
-                    f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                    f'{point.charge_per_one // 100}.{(
+                        '0' if point.charge_per_one % 100 < 10 else str()
+                    )}{point.charge_per_one % 100}'
                 ),
                 'name': lambda placeholder: f'<code>{(
                     point.name if point.name != str() else placeholder

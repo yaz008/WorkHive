@@ -101,7 +101,9 @@ def owner_settings(
                     'payload': lambda _: str(point.payload),
                     'minimal-charge': lambda _: str(point.minimal_charge),
                     'charge-per-one': lambda _: (
-                        f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                        f'{point.charge_per_one // 100}.{(
+                            '0' if point.charge_per_one % 100 < 10 else str()
+                        )}{point.charge_per_one % 100}'
                     ),
                     'id': lambda _: f'<i>{str(notification.vacancy_id)[:6]}</i>',
                     'worker-name': lambda _: str(

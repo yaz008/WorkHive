@@ -76,7 +76,9 @@ def owner_settings(
                     'payload': lambda _: str(point.payload),
                     'minimal-charge': lambda _: str(point.minimal_charge),
                     'charge-per-one': lambda _: (
-                        f'{point.charge_per_one // 100}.{point.charge_per_one % 100}'
+                        f'{point.charge_per_one // 100}.{(
+                            '0' if point.charge_per_one % 100 < 10 else str()
+                        )}{point.charge_per_one % 100}'
                     ),
                     'point-name': lambda _: f'<b>{(point.name)}</b>',
                 }
