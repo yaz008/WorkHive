@@ -54,6 +54,7 @@ def create_temp_point(owner: Owner, point_id: UUID) -> None:
     transitions={
         FSASymbol.InputData: FSAState.OwnerPointAddressEdit,
         FSASymbol.Next: FSAState.OwnerPointPayloadEdit,
+        FSASymbol.Back: FSAState.OwnerPoint,
     },
     accepts_types=('text',),
 )
@@ -125,7 +126,13 @@ def owner_point_address(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Back),
+                factory.saved(
+                    WorkHiveButton.Back,
+                    args=(
+                        list(owner.points.values()).index(owner.points[UUID(point_id)]),
+                        False,
+                    ),
+                ),
                 factory.saved(WorkHiveButton.Next) if point.address != str() else None,
             ),
         ),
