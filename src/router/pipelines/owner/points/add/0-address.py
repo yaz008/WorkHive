@@ -1,3 +1,5 @@
+from re import match
+
 from telebot.types import LinkPreviewOptions
 
 from model.tables import temp_points
@@ -42,6 +44,21 @@ def owner_point_address(
             point.franchise, point.address, point.yandex_link = share_info.split(
                 sep='\n', maxsplit=2
             )
+            if not all(
+                [
+                    point.franchise.lower().replace('.', ' ')
+                    in ('wildberries', 'ozon', 'яндекс маркет', 'yandex market'),
+                    match(
+                        pattern=r'(?:[А-Я][а-я]+), [а-яА-Я0-9\., ]+',
+                        string=point.address,
+                    ),
+                    match(
+                        pattern=r'https://yandex.com/maps/[\w_/=?:\.]+',
+                        string=point.yandex_link,
+                    ),
+                ]
+            ):
+                raise ValueError
         except ValueError:
             is_error = True
     return TGMessage(

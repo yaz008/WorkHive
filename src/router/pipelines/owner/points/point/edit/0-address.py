@@ -1,3 +1,4 @@
+from re import match
 from uuid import UUID
 
 from telebot.types import LinkPreviewOptions
@@ -61,10 +62,29 @@ def owner_point_address(
 ) -> TGMessage:
     create_temp_point(owner, UUID(point_id))
     point: TempPoint = get_temp_point(owner.telegram_id)
+    is_error: bool = False
     if share_info != str():
-        point.franchise, point.address, point.yandex_link = share_info.split(
-            sep='\n', maxsplit=2
-        )
+        try:
+            point.franchise, point.address, point.yandex_link = share_info.split(
+                sep='\n', maxsplit=2
+            )
+            if not all(
+                [
+                    point.franchise.lower().replace('.', ' ')
+                    in ('wildberries', 'ozon', 'яндекс маркет', 'yandex market'),
+                    match(
+                        pattern=r'(?:[А-Я][а-я]+), [а-яА-Я0-9\., ]+',
+                        string=point.address,
+                    ),
+                    match(
+                        pattern=r'https://yandex.com/maps/[\w_/=?:\.]+',
+                        string=point.yandex_link,
+                    ),
+                ]
+            ):
+                raise ValueError
+        except ValueError:
+            is_error = True
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -85,6 +105,13 @@ def owner_point_address(
                 'name': lambda placeholder: f'<code>{(
                     point.name if point.name != str() else placeholder
                 )}</code>',
+                'on-error': lambda _: (
+                    render_file(
+                        language=owner.language, state='owner-point-address-error'
+                    )
+                    if is_error
+                    else str()
+                ),
             },
         ),
         tgmedia=(
