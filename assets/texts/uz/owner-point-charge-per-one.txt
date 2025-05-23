@@ -1,5 +1,5 @@
 <b>Buyurtmalarni berish punkti</b>
 
-1 ta shtrix-kod uchun toʻlovni <code>soʻm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code> — bu 1 soʻm 25 tiyin) va keyin "<i>↪️ Keyingi</i>" tugmasini bosing
+1 ta shtrix-kod uchun toʻlovni <code>soʻm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code> — bu 1 soʻm 25 tiyin) va keyin "↪️ Keyingi" tugmasini bosing
 
 Bir shtrix-kod uchun toʻlov: <charge-per-one>__.__</charge-per-one> soʻm.

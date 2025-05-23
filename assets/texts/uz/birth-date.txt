@@ -4,4 +4,4 @@ Botga tugʻilgan kuningizni <code>dd.mm.yyyy</code> formatida <b>matnli xabar</b
 
 <b>Tugʻilgan sanangiz:</b> <birth-date>__.__.____</birth-date>
 
-Tugʻilgan sana toʻgʻri kiritilganligiga ishonch hosil qiling va "<i>↪️ Keyingi</i>" tugmasini bosing.
+Tugʻilgan sana toʻgʻri kiritilganligiga ishonch hosil qiling va "↪️ Keyingi" tugmasini bosing.

@@ -1,5 +1,5 @@
 <b>Order Pickup Point</b>
 
-Enter the payment for coming to the location (e.g., <code>600</code>) and then press the "<i>↪️ Next</i>" button.
+Enter the payment for coming to the location (e.g., <code>600</code>) and then press the "↪️ Next" button.
 
 Payment for coming to the location: <minimal-charge>____</minimal-charge> rub.

@@ -1,5 +1,5 @@
 <b>Buyurtma berish punkti</b>
 
-Kuniga o'rtacha shtrix-kodlar sonini kiriting (masalan, <code>350</code>) va keyin "<i>↪️ Keyingi</i>" tugmasini bosing
+Kuniga o'rtacha shtrix-kodlar sonini kiriting (masalan, <code>350</code>) va keyin "↪️ Keyingi" tugmasini bosing
 
 O'rtacha shtrix-kodlar soni: <payload>____</payload> dona.

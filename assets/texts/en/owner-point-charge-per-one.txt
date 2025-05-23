@@ -1,5 +1,5 @@
 <b>Order Pickup Point</b>
 
-Enter the payment for 1 barcode in the format <code>rub.kop</code> (For example, <code>1.25</code> is 1 ruble 25 kopecks) and then press the "<i>↪️ Next</i>" button.
+Enter the payment for 1 barcode in the format <code>rub.kop</code> (For example, <code>1.25</code> is 1 ruble 25 kopecks) and then press the "↪️ Next" button.
 
 Payment per barcode: <charge-per-one>__.__</charge-per-one> ₽.

@@ -1,5 +1,5 @@
 <b>Order Pickup Point</b>
 
-Enter the average number of barcodes per day (e.g., <code>350</code>) and then press the "<i>↪️ Next</i>" button
+Enter the average number of barcodes per day (e.g., <code>350</code>) and then press the "↪️ Next" button
 
 Average number of barcodes: <payload>____</payload> pcs.

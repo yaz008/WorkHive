@@ -1,5 +1,5 @@
 <b>Buyurtmalarni berish punkti</b>
 
-Nuqtaga chiqish to'lovi kiriting (misol uchun, <code>600</code>) va keyin "<i>↪️ Keyingi</i>" tugmasini bosing.
+Nuqtaga chiqish to'lovi kiriting (misol uchun, <code>600</code>) va keyin "↪️ Keyingi" tugmasini bosing.
 
 Nuqtaga chiqish to'lovi: <minimal-charge>____</minimal-charge> so'm.

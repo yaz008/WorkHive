@@ -4,4 +4,4 @@ Enter your full name and send it to the bot as a <b>text message</b>.
 
 <b>Your Full Name:</b> <full-name>____</full-name>
 
-Make sure the full name is entered correctly and press the "<i>↪️ Next</i>" button.
+Make sure the full name is entered correctly and press the "↪️ Next" button.

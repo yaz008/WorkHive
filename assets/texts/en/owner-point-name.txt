@@ -1,5 +1,5 @@
 <b>Order Pickup Point</b>
 
-Enter the name of the point (For example, <code>WB on Pavlova</code>) — this name will only be visible to you, it's only needed for your convenience in managing your pickup points — and then press the "<i>↪️ Next</i>" button.
+Enter the name of the point (For example, <code>WB on Pavlova</code>) — this name will only be visible to you, it's only needed for your convenience in managing your pickup points — and then press the "↪️ Next" button.
 
 Point name: <name>____</name>

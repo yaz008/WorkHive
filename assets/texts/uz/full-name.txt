@@ -4,4 +4,4 @@ F.I.O.ingizni kiriting va botga <b>matnli xabar</b> orqali yuboring
 
 <b>F.I.O.ingiz:</b> <full-name>____</full-name>
 
-F.I.O. toʻgʻri kiritilganligiga ishonch hosil qiling va "<i>↪️ Keyingi</i>" tugmasini bosing
+F.I.O. toʻgʻri kiritilganligiga ishonch hosil qiling va "↪️ Keyingi" tugmasini bosing
