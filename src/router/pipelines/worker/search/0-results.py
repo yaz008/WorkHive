@@ -34,7 +34,11 @@ def search(workhive_id: UUID) -> _SearchResult:
             {
                 workhive_id: _SearchResult(
                     vacancies=tuple(
-                        chain(*map(lambda d: d.values(), simple_vacancies_table.values))
+                        vacancy
+                        for vacancy in chain(
+                            *map(lambda d: d.values(), simple_vacancies_table.values)
+                        )
+                        if not vacancy.is_expired
                     )
                 )
             }

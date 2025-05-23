@@ -36,6 +36,7 @@ def register(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
                         for index, vacancy in enumerate(
                             owner.simple_vacancies.values(), start=1
                         )
+                        if not vacancy.is_expired
                     )
                     if len(owner.simple_vacancies) > 0
                     else f'<i>{placeholder}</i>'
