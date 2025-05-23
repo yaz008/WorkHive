@@ -93,6 +93,7 @@ def full_name(user: TempUser, factory: ButtonFactoryClosure, name: str) -> TGMes
                                 data=serializer.serialize(
                                     state=FSAState.FullName,
                                     symbol=FSASymbol.Skip,
+                                    args=(user.concent_pp,),
                                 ),
                             )
                         )

@@ -6,11 +6,14 @@ from project.configs import (
     WorkHiveButton,
     WorkHiveDocument,
 )
+from project.libs.fsa import serializer
 from project.libs.tgdraw import (
     TGMessage,
     ButtonFactoryClosure,
     TGMedia,
     RowInfo,
+    ButtonInfo,
+    load_button,
     choice,
 )
 from project.libs.tght import render_file
@@ -23,6 +26,7 @@ from router.pipelines.registration.utils import render_birth_date
     pipeline=FSAPipeline.Registration,
     transitions={
         FSASymbol.Back: FSAState.BirthDate,
+        FSASymbol.Skip: FSAState.FullName,
         FSASymbol.Next: FSAState.AdvertisingConsent,
         FSASymbol.InputData: FSAState.PrivacyPolicyConsent,
     },
@@ -61,7 +65,20 @@ def privacy_policy_concent(
             (factory.saved(WorkHiveButton.Consent, args=(not user.concent_pp,)),),
             0 if user.concent_pp else None,
             RowInfo(
-                factory.saved(WorkHiveButton.Back),
+                (
+                    factory.saved(WorkHiveButton.Back)
+                    if user.role == 'worker'
+                    else ButtonInfo(
+                        text=load_button(
+                            name=WorkHiveButton.Back,
+                            language=user.language,
+                        ),
+                        data=serializer.serialize(
+                            state=FSAState.PrivacyPolicyConsent,
+                            symbol=FSASymbol.Skip,
+                        ),
+                    )
+                ),
                 (
                     factory.saved(WorkHiveButton.Next, args=(user.concent_ad,))
                     if user.concent_pp
