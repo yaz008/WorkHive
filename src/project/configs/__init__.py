@@ -1,3 +1,4 @@
+from project.configs.blacklist import BlacklistConfig
 from project.configs.buttons import ButtonConfig, WorkHiveButton
 from project.configs.db import DBConfig
 from project.configs.fsa import FSAConfig, FSAState, FSASymbol, FSAPipeline
@@ -31,4 +32,5 @@ __all__ = [
     'VerboseLevel',
     'SearchConfig',
     'VacanciesSimpleConfig',
+    'BlacklistConfig',
 ]

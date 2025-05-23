@@ -12,11 +12,8 @@ from project.libs.tgdraw import TGMessage
 from router import router
 
 
-BLACKLIST: str = 'blacklist/banned.json'
-
-
 @driver.message_handler(commands=['start'])
-@blacklist(path=BLACKLIST)
+@blacklist
 @delete_message
 @register
 def on_start(user: User | TempUser) -> None:
@@ -32,7 +29,7 @@ def on_start(user: User | TempUser) -> None:
 
 
 @driver.message_handler(content_types=['text'])
-@blacklist(path=BLACKLIST)
+@blacklist
 @delete_message
 @with_user
 def on_text(user: User | TempUser, message: Message) -> None:
@@ -68,7 +65,7 @@ def on_callback(user: User | TempUser, callback: CallbackQuery) -> None:
         'poll',
     ]
 )
-@blacklist(path=BLACKLIST)
+@blacklist
 @delete_message
 def _(_: Message) -> None:
     pass
