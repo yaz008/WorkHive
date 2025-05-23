@@ -1,4 +1,4 @@
-from project.core.config.manager import config
+from project.core.config.manager import config, JSON
 
 
-__all__ = ['config']
+__all__ = ['config', 'JSON']

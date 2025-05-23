@@ -1,6 +1,13 @@
 from model.tables import _Metadata, _Balance, balance_table
 from model.types import Owner
-from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
+from project.configs import (
+    FSAState,
+    FSASymbol,
+    FSAPipeline,
+    WorkHiveButton,
+    PromocodeConfig,
+    Promocode,
+)
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
 from router.instance import router
@@ -18,16 +25,23 @@ from router.instance import router
     accepts_types=('text',),
 )
 def owner_promocode(
-    owner: Owner, factory: ButtonFactoryClosure, promocode: str
+    owner: Owner, factory: ButtonFactoryClosure, promocode_string: str
 ) -> TGMessage:
-    if promocode == 'WorkHive10' and promocode not in [
-        metadata.value for metadata in owner.metadata.values()
-    ]:
-        owner.metadata |= {owner.workhive_id: _Metadata(promocode)}
+    promocode: Promocode | None = PromocodeConfig.Promocodes.get(promocode_string)
+    is_promocode_valid: bool = (
+        promocode is not None
+        and not promocode.is_expired
+        and promocode_string
+        not in [metadata.value for metadata in owner.metadata.values()]
+    )
+    if is_promocode_valid:
+        assert promocode is not None
+        owner.metadata |= {owner.workhive_id: _Metadata(promocode_string)}
         balance_table.update(
             {
                 owner.workhive_id: _Balance(
-                    owner.balance.publications + 10, owner.balance.tokens
+                    owner.balance.publications + promocode.vacancies,
+                    owner.balance.tokens + promocode.tokens,
                 )
             }
         )
@@ -37,14 +51,14 @@ def owner_promocode(
             state=owner.state,
             tag_handlers={
                 'promocode': lambda default: str(
-                    promocode if promocode != str() else default
+                    promocode_string if promocode_string != str() else default
                 ),
             },
         ),
         keyboard=keyboard(
             RowInfo(
                 factory.saved(WorkHiveButton.Apply)
-                if promocode == 'WorkHive10'
+                if is_promocode_valid
                 else factory.saved(WorkHiveButton.ApplyErr)
             ),
             RowInfo(factory.saved(WorkHiveButton.Back)),
