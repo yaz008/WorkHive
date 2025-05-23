@@ -1,3 +1,5 @@
+from uuid import UUID
+
 from model.tables import (
     _Point,
     _Response,
@@ -24,12 +26,18 @@ def get_responses(owner: Owner, point: _Point) -> list[_Response]:
     ]
 
 
-def delete_response(response: _Response) -> None:
-    responses_table.remove_one(response.owner_id, response.response_id)
-    responses_table.remove_one(response.vacancy_id, response.response_id)
-    # responses_table.remove_one(response.point_id, response.response_id)
-    responses_table.remove_one(response.worker_id, response.response_id)
-    response_map.remove(response.response_id)
+def delete_responses(owner: Owner, ids: list[UUID]) -> None:
+    responses: list[_Response] = [
+        response_map[id.__sql_id__]
+        for id in responses_table[owner.workhive_id].values()
+        if id.__sql_id__ in ids
+    ]
+    for response in responses:
+        responses_table.remove_one(response.owner_id, response.response_id)
+        responses_table.remove_one(response.vacancy_id, response.response_id)
+        # responses_table.remove_one(response.point_id, response.response_id)
+        responses_table.remove_one(response.worker_id, response.response_id)
+        response_map.remove(response.response_id)
 
 
 @router.add(
@@ -50,6 +58,12 @@ def owner_settings(
         for vacancy in owner.simple_vacancies.values():
             if vacancy.point_id == point.__sql_id__:
                 simple_vacancies_table.remove_one(owner.workhive_id, vacancy.__sql_id__)
+                response_ids: list[UUID] = [
+                    response_id
+                    for response_id in responses_table[owner.workhive_id]
+                    if response_map[response_id].vacancy_id == vacancy.__sql_id__
+                ]
+                delete_responses(owner, response_ids)
     return TGMessage(
         text=render_file(
             language=owner.language,
