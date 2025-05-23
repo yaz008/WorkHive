@@ -2,7 +2,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from uuid import UUID
 
-from project.configs import TableConfig
+from model.tables.vacancies import simple_vacancies_table
+from project.configs import TableConfig, VacanciesSimpleConfig
 from project.libs.orm import CachedSingleTable, CachedMultiTable, Stackable
 
 
@@ -21,6 +22,15 @@ class _Response:
 
     def __post_init__(self) -> None:
         self.creation_time = datetime.now()
+
+    @property
+    def is_expired(self) -> bool:
+        return (
+            simple_vacancies_table[self.owner_id][self.vacancy_id].creation_time
+            + VacanciesSimpleConfig.VacancyLifeTime
+            + VacanciesSimpleConfig.ResponseLifeTime
+            < datetime.now()
+        )
 
 
 response_map: CachedSingleTable[UUID, _Response] = CachedSingleTable(

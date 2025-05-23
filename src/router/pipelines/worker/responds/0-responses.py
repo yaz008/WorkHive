@@ -31,6 +31,7 @@ def get_responds(worker: Worker, index: str) -> _Response | None:
     responds: list[_Response] = [
         response_map[response.__sql_id__]
         for response in responses_table[worker.workhive_id].values()
+        if not response_map[response.__sql_id__].is_expired
     ]
     if index == str():
         index = '0'
@@ -63,9 +64,10 @@ def owner_point_payload(
     if action == 'delete':
         delete_response(worker, index)
     responses: list[_Response] = [
-        response_map[id.__sql_id__]
-        for id in responses_table[worker.workhive_id].values()
-        if response_map[id.__sql_id__].status == 'undefined'
+        response_map[response.__sql_id__]
+        for response in responses_table[worker.workhive_id].values()
+        if response_map[response.__sql_id__].status == 'undefined'
+        and not response_map[response.__sql_id__].is_expired
     ]
     response: _Response | None = get_current_response(responses, index)
     point: _Point | None = (

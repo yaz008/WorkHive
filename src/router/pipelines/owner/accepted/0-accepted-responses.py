@@ -21,6 +21,7 @@ def get_notification(owner: Owner, index: str) -> _Response | None:
         response_map[response.__sql_id__]
         for response in responses_table[owner.workhive_id].values()
         if response_map[response.__sql_id__].status == 'accepted'
+        and not response_map[response.__sql_id__].is_expired
     ]
     if index == str():
         index = '0'

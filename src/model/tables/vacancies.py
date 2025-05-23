@@ -17,7 +17,9 @@ class _VacancySimple(Stackable):
 
     @property
     def is_expired(self) -> bool:
-        return datetime.now() - self.creation_time > VacanciesSimpleConfig.LifeTime
+        return (
+            datetime.now() - self.creation_time > VacanciesSimpleConfig.VacancyLifeTime
+        )
 
 
 simple_vacancies_table: CachedMultiTable[UUID, _VacancySimple] = CachedMultiTable(

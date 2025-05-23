@@ -9,4 +9,5 @@ from project.core.config import config
     hooks={timedelta: lambda hours: timedelta(hours=cast(int, hours))},
 )
 class VacanciesSimpleConfig:
-    LifeTime: timedelta = timedelta(days=3)
+    VacancyLifeTime: timedelta = timedelta(days=3)
+    ResponseLifeTime: timedelta = timedelta(days=1)
