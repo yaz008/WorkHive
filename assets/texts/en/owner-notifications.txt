@@ -1,8 +1,8 @@
 <point-name>____</point-name>
-Address: <address>____</address>
+Link: <link>____</link>
 Average number of barcodes: <payload>____</payload> pcs.
-Minimum charge per location visit: <minimal-charge>____</minimal-charge> rub.
-Charge per barcode: <charge-per-one>_.__</charge-per-one> rub.
+On-site visit fee: <minimal-charge>____</minimal-charge> rub.
+Fee per barcode: <charge-per-one>_.__</charge-per-one> rub.
 
 id: <id>____</id>
 
@@ -10,4 +10,4 @@ id: <id>____</id>
 Name: <worker-name>____</worker-name>
 Date of birth: <birth-date>____</birth-date>
 
-Agree with the <mention>applicant</mention>, and then <b>accept</b> or <b>reject</b> their application
+Negotiate with the <mention>applicant</mention>, then <b>accept</b> or <b>reject</b> their application

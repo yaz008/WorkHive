@@ -1,5 +1,5 @@
 <point-name>____</point-name>
-Address: <address>____</address>
+Link: <link>____</link>
 Average number of barcodes: <payload>____</payload> pcs.
-Payment per shift: <minimal-charge>____</minimal-charge> rub.
-Payment per barcode: <charge-per-one>____</charge-per-one> rub.
+Minimum payout: <minimal-charge>____</minimal-charge> rub.
+Pay per barcode: <charge-per-one>____</charge-per-one> rub.

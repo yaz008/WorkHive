@@ -1,7 +1,7 @@
 <point-name>____</point-name>
-Адрас: <address>____</address>
+Спасылка: <link>____</link>
 Сярэдняя колькасць штрыхкодаў: <payload>____</payload> шт.
-Аплата за выхад на кропку: <minimal-charge>____</minimal-charge> р.
+Аплата за выхад на пункт: <minimal-charge>____</minimal-charge> р.
 Аплата за адзін штрыхкод: <charge-per-one>_.__</charge-per-one> р.
 
 id: <id>____</id>

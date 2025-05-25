@@ -1,5 +1,5 @@
 <franchise>____</franchise>
-Дарек: <address>____</address>
-Штрихкоддордун орточо саны: <payload>____</payload> даана.
+Шилтеме: <link>____</link>
+Штрих-коддордун орточо саны: <payload>____</payload> шт.
 Чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> сом.
-Бир штрихкод үчүн төлөм: <charge-per-one>____</charge-per-one> сом.
+Бир штрих-код үчүн төлөм: <charge-per-one>____</charge-per-one> сом.

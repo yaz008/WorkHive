@@ -1,7 +1,7 @@
-<b>Պատվերների հանձնման կետ</b>
+<b>Պատվերների Հանձնման Կետ</b>
 
-Կիսվե՛ք բոտի հետ ձեր ՊՀԿ-ով <a href="https://maps.yandex.com/">Yandex.Maps</a> հավելվածից և հետո սեղմե՛ք "↪️ Առաջ" կոճակը։
+Կիսվե՛ք բոտի հետ Ձեր ՊՀԿ-ով <a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Yandex.Maps</a> հավելվածից, այնուհետև սեղմե՛ք "↪️ Առաջ" կոճակը։
 
-<b>ՊՀԿ-ի հասցե՝</b> <address>____</address>
+<b>Հղումը ՊՀԿ-ին՝</b> <link>____</link>
 
 <on-error></on-error>

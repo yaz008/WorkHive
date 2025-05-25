@@ -1,4 +1,4 @@
-from re import match
+from re import findall
 
 from telebot.types import LinkPreviewOptions
 
@@ -24,6 +24,13 @@ def get_temp_point(telegram_id: int) -> TempPoint:
     return TempPoint(telegram_id, set_default=(not id_in_keys))
 
 
+def get_link(string: str) -> str | None:
+    links: list[str] = findall(
+        pattern=r'https://yandex.com/maps/[\w$%&?#@!\/\+\-\*\.]+', string=string
+    )
+    return links[0] if len(links) > 0 else None
+
+
 @router.add(
     name=FSAState.OwnerPointAddress,
     pipeline=FSAPipeline.Owner,
@@ -38,38 +45,16 @@ def owner_point_address(
     owner: Owner, factory: ButtonFactoryClosure, share_info: str
 ) -> TGMessage:
     point: TempPoint = get_temp_point(owner.telegram_id)
-    is_error: bool = False
-    if share_info != str():
-        try:
-            point.franchise, point.address, point.yandex_link = share_info.split(
-                sep='\n', maxsplit=2
-            )
-            if not all(
-                [
-                    point.franchise.lower().replace('.', ' ')
-                    in ('wildberries', 'ozon', 'яндекс маркет', 'yandex market'),
-                    match(
-                        pattern=r'(?:[А-Я][а-я]+), [а-яА-Я0-9\., ]+',
-                        string=point.address,
-                    ),
-                    match(
-                        pattern=r'https://yandex.com/maps/[\w_/=?:\.]+',
-                        string=point.yandex_link,
-                    ),
-                ]
-            ):
-                raise ValueError
-        except ValueError:
-            is_error = True
+    link: str | None = get_link(share_info)
+    if link is not None:
+        point.yandex_link = link
     return TGMessage(
         text=render_file(
             language=owner.language,
             state=owner.state,
             tag_handlers={
-                'address': lambda placeholder: (
-                    f'<a href=\"{point.yandex_link}\">{point.address}</a>'
-                    if point.address != str()
-                    else f'<code>{placeholder}</code>'
+                'link': lambda placeholder: (
+                    point.yandex_link if point.yandex_link is not None else placeholder
                 ),
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),
@@ -85,7 +70,7 @@ def owner_point_address(
                     render_file(
                         language=owner.language, state='owner-point-address-error'
                     )
-                    if is_error
+                    if link is None and share_info != str()
                     else str()
                 ),
             },
@@ -102,7 +87,11 @@ def owner_point_address(
         keyboard=keyboard(
             RowInfo(
                 factory.saved(WorkHiveButton.Back),
-                factory.saved(WorkHiveButton.Next) if point.address != str() else None,
+                (
+                    factory.saved(WorkHiveButton.Next)
+                    if point.yandex_link != str()
+                    else None
+                ),
             ),
         ),
         link_preview=(

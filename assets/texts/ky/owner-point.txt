@@ -1,5 +1,5 @@
 <point-name>____</point-name>
-Дареги: <address>____</address>
+Шилтеме: <link>____</link>
 Штрихкоддордун орточо саны: <payload>____</payload> даана.
 Чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> сом.
 Бир штрихкод үчүн төлөм: <charge-per-one>____</charge-per-one> сом.

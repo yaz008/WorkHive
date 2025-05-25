@@ -1,8 +1,8 @@
 <b>Тапсырыс беру пункті</b>
-👉Мекенжайы: <address>____</address>
+👉Сілтеме: <link>____</link>
 Штрихкодтардың орташа саны: <payload>____</payload> дана.
 Нүктеге шығу ақысы: <minimal-charge>____</minimal-charge> тг.
-Бір штрихкод үшін төлем: <charge-per-one>__.__</charge-per-one> тг.
+Бір штрихкодқа төлем: <charge-per-one>__.__</charge-per-one> тг.
 Нүктенің атауы: <name>____</name>
 
-Ботпен <a href="https://maps.yandex.com/">Яндекс.Карты</a> қосымшасынан өз ТБП-мен бөлісіңіз
+<a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Яндекс.Карталар</a> қосымшасынан өзіңіздің ТБП-ңызды ботпен бөлісіңіз

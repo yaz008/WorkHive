@@ -1,8 +1,8 @@
 <franchise>____</franchise>
-Հասցե՝ <address>____</address>
-Միջին քանակը շտրիխ կոդերի՝ <payload>____</payload> հատ։
-Վճար մեկ ելքի համար՝ <minimal-charge>____</minimal-charge> ռ.
-Վճար մեկ շտրիխ կոդի համար՝ <charge-per-one>____</charge-per-one> ռ.
+Հղում՝ <link>____</link>
+Միջին շտրիխ կոդերի քանակը՝ <payload>____</payload> հատ:
+Ելքի վճար՝ <minimal-charge>____</minimal-charge> ֏
+Վճար մեկ շտրիխ կոդի համար՝ <charge-per-one>____</charge-per-one> ֏
 
-Ակնկալվող վճար՝ <expected-payment>____</expected-payment> ռ.
+Սպասվող վճար՝ <expected-payment>____</expected-payment> ֏
 id՝ <vacancy-id>____</vacancy-id>

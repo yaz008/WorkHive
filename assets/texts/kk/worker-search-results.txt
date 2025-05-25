@@ -1,8 +1,8 @@
 <franchise>____</franchise>
-Мекенжайы: <address>____</address>
+Сілтеме: <link>____</link>
 Штрихкодтардың орташа саны: <payload>____</payload> дана.
 Шығу ақысы: <minimal-charge>____</minimal-charge> тг.
-Бір штрихкодтың ақысы: <charge-per-one>____</charge-per-one> тг.
+Штрихкод үшін төлем: <charge-per-one>____</charge-per-one> тг.
 
 Күтілетін төлем: <expected-payment>____</expected-payment> тг.
 id: <vacancy-id>____</vacancy-id>

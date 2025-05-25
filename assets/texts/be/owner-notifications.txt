@@ -1,8 +1,8 @@
 <point-name>____</point-name>
-Адрас: <address>____</address>
-Сярэдняя колькасць штрых-кодаў: <payload>____</payload> шт.
+Спасылка: <link>____</link>
+Сярэдняя колькасць штрыхкодаў: <payload>____</payload> шт.
 Аплата за выхад на пункт: <minimal-charge>____</minimal-charge> р.
-Аплата за адзін штрых-код: <charge-per-one>_.__</charge-per-one> р.
+Аплата за адзін штрыхкод: <charge-per-one>_.__</charge-per-one> р.
 
 id: <id>____</id>
 
@@ -10,4 +10,4 @@ id: <id>____</id>
 Імя: <worker-name>____</worker-name>
 Дата нараджэння: <birth-date>____</birth-date>
 
-Дамоўцеся з <mention>суіскальнікам</mention>, а затым <b>прыміце</b> ці <b>адхіліце</b> яго заяўку
+Дамоўцеся з <mention>суіскальнікам</mention>, а потым <b>прыміце</b> або <b>адхіліце</b> яго заяўку

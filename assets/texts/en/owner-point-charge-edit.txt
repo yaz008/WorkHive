@@ -1,5 +1,5 @@
 <b>Order Pickup Point</b>
-Address: <address>____</address>
+Link: <link>____</link>
 Average number of barcodes: <payload>____</payload> pcs.
 👉Payment per shift at the point: <minimal-charge>____</minimal-charge> rub.
 Payment per barcode: <charge-per-one>_.__</charge-per-one> rub.

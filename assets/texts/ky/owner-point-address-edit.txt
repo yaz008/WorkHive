@@ -1,8 +1,8 @@
-<b>Буйрутмаларды берүү пункту</b>
-👉Дареги: <address>____</address>
-Штрихкоддордун орточо саны: <payload>____</payload> шт.
-Точкага чыкканы үчүн төлөм: <minimal-charge>____</minimal-charge> р.
-Бир штрихкод үчүн төлөм: <charge-per-one>__.__</charge-per-one> р.
+<b>Заказ Берүү Пункту</b>
+👉Шилтеме: <link>____</link>
+Штрихкоддордун орточо саны: <payload>____</payload> даана.
+Бир точкага чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> сом.
+Бир штрихкод үчүн төлөм: <charge-per-one>__.__</charge-per-one> сом.
 Точканын аты: <name>____</name>
 
-Бот менен <a href="https://maps.yandex.com/">Яндекс.Карталар</a> тиркемесинен өзүңүздүн ББПңыз менен бөлүшүңүз
+<a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Яндекс.Карталар</a> тиркемесинен өзүңүздүн ЗБПны бот менен бөлүшүңүз

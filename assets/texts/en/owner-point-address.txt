@@ -1,7 +1,7 @@
 <b>Order Pickup Point</b>
 
-Share your pickup point (PVZ) from the <a href="https://maps.yandex.com/">Yandex Maps</a> app with the bot and then press the "↪️ Next" button.
+Share with the bot your OPP from the <a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Yandex Maps</a> app, and then click the "↪️ Next" button.
 
-<b>Pickup Point Address:</b> <address>____</address>
+<b>OPP Link:</b> <link>____</link>
 
 <on-error></on-error>

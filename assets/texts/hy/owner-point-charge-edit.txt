@@ -1,8 +1,8 @@
 <b>Պատվերների Հանձնման Կետ</b>
-Հասցե՝ <address>____</address>
-Միջին քանակը շտրիխկոդերի՝ <payload>____</payload> հատ։
-👉Վճար կետ դուրս գալու համար՝ <minimal-charge>____</minimal-charge> ռ․
-Վճար մեկ շտրիխկոդի համար՝ <charge-per-one>_.__</charge-per-one> ռ․
+Հղում՝ <link>____</link>
+Շտրիխկոդերի միջին քանակը՝ <payload>____</payload> հատ:
+👉Կետ դուրս գալու վճար՝ <minimal-charge>____</minimal-charge> ֏
+Մեկ շտրիխկոդի դիմաց վճար՝ <charge-per-one>_.__</charge-per-one> ֏
 Կետի անունը՝ <name>____</name>
 
-Մուտքագրեք վճարը կետ դուրս գալու համար
+Մուտքագրեք կետ դուրս գալու վճարը

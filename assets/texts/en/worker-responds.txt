@@ -1,5 +1,5 @@
 <franchise>____</franchise>
-Address: <address>____</address>
+Link: <link>____</link>
 Average number of barcodes: <payload>____</payload> pcs.
-Base fee: <minimal-charge>____</minimal-charge> rub.
-Fee per barcode: <charge-per-one>____</charge-per-one> rub.
+Minimum shift pay: <minimal-charge>____</minimal-charge> rub.
+Pay per barcode: <charge-per-one>____</charge-per-one> rub.

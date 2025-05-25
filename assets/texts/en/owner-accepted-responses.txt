@@ -1,13 +1,13 @@
 <point-name>____</point-name>
-Address: <address>____</address>
+Link: <link>____</link>
 Average number of barcodes: <payload>____</payload> pcs.
-Payment per visit to the point: <minimal-charge>____</minimal-charge> rub.
-Payment per barcode: <charge-per-one>_.__</charge-per-one> rub.
+Base pay per pickup point: <minimal-charge>____</minimal-charge> rub.
+Pay per barcode: <charge-per-one>_.__</charge-per-one> rub.
 
-id: <id>____</id>
+ID: <id>____</id>
 
 <b>Applicant:</b>
 Name: <worker-name>____</worker-name>
 Date of birth: <birth-date>____</birth-date>
 
-🔥 Response from the <mention>applicant</mention> has been accepted! 🔥
+🔥 Application from <mention>applicant</mention> accepted! 🔥

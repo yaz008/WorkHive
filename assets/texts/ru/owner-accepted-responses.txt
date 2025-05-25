@@ -1,5 +1,5 @@
 <point-name>____</point-name>
-Адрес: <address>____</address>
+Ссылка: <link>____</link>
 Среднее количество штрихкодов: <payload>____</payload> шт.
 Оплата за выход на точку: <minimal-charge>____</minimal-charge> р.
 Оплата за один штрихкод: <charge-per-one>_.__</charge-per-one> р.

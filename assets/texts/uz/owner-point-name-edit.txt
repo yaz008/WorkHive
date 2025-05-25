@@ -1,8 +1,8 @@
-<b>Buyurtma berish punkti</b>
-Manzil: <address>____</address>
-O'rtacha shtrixkodlar soni: <payload>____</payload> dona
-Nuqtaga chiqish to'lovi: <minimal-charge>____</minimal-charge> so'm.
-Bitta shtrixkod uchun to'lov: <charge-per-one>_.__</charge-per-one> so'm.
-👉Nuqta nomi: <name>____</name>
+<b>Buyurtmalarni berish пункти</b> (BBП)
+Ссылка: <link>____</link>
+Штрих-кодларнинг ўртача сони: <payload>____</payload> дона.
+Пунктга чиқиш учун тўлов: <minimal-charge>____</minimal-charge> сўм.
+Бир штрих-код учун тўлов: <charge-per-one>_.__</charge-per-one> сўм.
+👉Пункт номи: <name>____</name>
 
-Nuqta nomini kiriting (Masalan, <code>WB Pavlova ko'chasida</code>) - bu nom faqat sizga ko'rinadi
+Пункт номини киритинг (Масалан, <code>WB Павловда</code>) — бу ном фақат сизга кўринади

@@ -1,5 +1,5 @@
 <point-name>____</point-name>
-Manzil: <address>____</address>
-Shtrixkodlarning o'rtacha soni: <payload>____</payload> dona.
+Havola: <link>____</link>
+Shtrix-kodlarning o'rtacha soni: <payload>____</payload> dona.
 Chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
-Bitta shtrixkod uchun to'lov: <charge-per-one>____</charge-per-one> so'm.
+Har bir shtrix-kod uchun to'lov: <charge-per-one>____</charge-per-one> so'm.

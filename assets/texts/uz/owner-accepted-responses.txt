@@ -1,13 +1,13 @@
 <point-name>____</point-name>
-Manzil: <address>____</address>
-Oʻrtacha shtrixkodlar soni: <payload>____</payload> dona.
-Nuqtaga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
-Bitta shtrixkod uchun toʻlov: <charge-per-one>_.__</charge-per-one> so'm.
+Havola: <link>____</link>
+O'rtacha shtrix-kodlar soni: <payload>____</payload> dona.
+PVZga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
+Bitta shtrix-kod uchun to'lov: <charge-per-one>_.__</charge-per-one> so'm.
 
 id: <id>____</id>
 
-<b>Nomzod:</b>
+<b>Ish izlovchi:</b>
 Ismi: <worker-name>____</worker-name>
-Tug'ilgan sana: <birth-date>____</birth-date>
+Tug'ilgan sanasi: <birth-date>____</birth-date>
 
-🔥 <mention>Nomzodning</mention> arizasi qabul qilindi! 🔥
+🔥 <mention>Ish izlovchi</mention>dan javob qabul qilindi! 🔥

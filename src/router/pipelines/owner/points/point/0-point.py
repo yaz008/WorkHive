@@ -38,7 +38,7 @@ def delete_response(response: _Response) -> None:
     transitions={
         FSASymbol.Back: FSAState.OwnerPoints,
         FSASymbol.Delete: FSAState.OwnerPointDeletionConfirm,
-        FSASymbol.Edit: FSAState.OwnerPointAddressEdit,
+        FSASymbol.Edit: FSAState.OwnerPointPayloadEdit,
         FSASymbol.Publish: FSAState.OwnerPublishDone,
         FSASymbol.Error: FSAState.OwnerLowBalance,
     },
@@ -62,8 +62,10 @@ def owner_point(
             state=owner.state if not delete else FSAState.OwnerPointDeleted,
             tag_handlers=(
                 {
-                    'address': lambda _: (
-                        f'<a href=\"{point.yandex_link}\">{point.address}</a>'
+                    'link': lambda placeholder: (
+                        point.yandex_link
+                        if point.yandex_link is not None
+                        else placeholder
                     ),
                     'payload': lambda _: str(point.payload),
                     'minimal-charge': lambda _: str(point.minimal_charge),
@@ -88,7 +90,7 @@ def owner_point(
                 (
                     factory.saved(
                         WorkHiveButton.Edit,
-                        args=(str(point.__sql_id__), str()),
+                        args=(str(point.__sql_id__), point.payload),
                     )
                     if point is not None and not delete
                     else None

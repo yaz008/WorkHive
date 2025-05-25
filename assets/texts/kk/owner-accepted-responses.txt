@@ -1,13 +1,13 @@
 <point-name>____</point-name>
-Мекенжайы: <address>____</address>
-Штрих-кодтардың орташа саны: <payload>____</payload> дана.
-Нүктеге шығу ақысы: <minimal-charge>____</minimal-charge> тг.
-Бір штрих-код үшін төлем: <charge-per-one>_.__</charge-per-one> тг.
+Сілтеме: <link>____</link>
+Штрихкодтардың орташа саны: <payload>____</payload> дана.
+ПВЗ-ға шығу ақысы: <minimal-charge>____</minimal-charge> тг.
+Бір штрихкод үшін төлем: <charge-per-one>_.__</charge-per-one> тг.
 
 id: <id>____</id>
 
-<b>Іздеуші:</b>
+<b>Жұмыс іздеуші:</b>
 Аты-жөні: <worker-name>____</worker-name>
 Туған күні: <birth-date>____</birth-date>
 
-🔥 <mention>Іздеушінің</mention> өтінімі қабылданды! 🔥
+🔥 <mention>Жұмыс іздеушіден</mention> жауап қабылданды! 🔥

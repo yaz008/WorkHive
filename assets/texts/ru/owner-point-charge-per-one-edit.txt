@@ -1,5 +1,5 @@
 <b>Пункт Выдачи Заказов</b>
-Адрес: <address>____</address>
+Сслыка: <link>____</link>
 Среднее количество штрихкодов: <payload>____</payload> шт.
 Оплата за выход на точку: <minimal-charge>____</minimal-charge> р.
 👉Оплата за один штрихкод: <charge-per-one>__.__</charge-per-one> р.

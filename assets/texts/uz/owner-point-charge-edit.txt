@@ -1,8 +1,8 @@
-<b>Buyurtma berish punkti</b>
-Manzil: <address>____</address>
-O'rtacha shtrix-kodlar soni: <payload>____</payload> dona.
-👉Nuqtaga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
-Bitta shtrix-kod uchun to'lov: <charge-per-one>_.__</charge-per-one> so'm.
-Nuqta nomi: <name>____</name>
+<b>Buyurtma berish joyi</b>
+Havola: <link>____</link>
+O'rtacha shtrixkodlar soni: <payload>____</payload> dona.
+👉Joyga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
+Bitta shtrixkod uchun to'lov: <charge-per-one>_.__</charge-per-one> so'm.
+Joy nomi: <name>____</name>
 
-Nuqtaga chiqish uchun to'lovni kiriting
+Joyga chiqish uchun to'lovni kiriting

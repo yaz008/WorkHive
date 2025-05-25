@@ -1,13 +1,13 @@
 <point-name>____</point-name>
-Дареги: <address>____</address>
-Штрихкоддордун орточо саны: <payload>____</payload> шт.
-Бир пунктка чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> сом.
-Бир штрихкод үчүн төлөм: <charge-per-one>_.__</charge-per-one> сом.
+Шилтеме: <link>____</link>
+Штрих-коддордун орточо саны: <payload>____</payload> шт.
+ПВЗга чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> сом.
+Бир штрих-код үчүн төлөм: <charge-per-one>_.__</charge-per-one> сом.
 
 id: <id>____</id>
 
-<b>Талапкер:</b>
+<b>Ишке орношуучу:</b>
 Аты: <worker-name>____</worker-name>
 Туулган күнү: <birth-date>____</birth-date>
 
-🔥 <mention>Талапкердин</mention> жообу кабыл алынды! 🔥
+🔥 <mention>Ишке орношуучунун</mention> жообу кабыл алынды! 🔥

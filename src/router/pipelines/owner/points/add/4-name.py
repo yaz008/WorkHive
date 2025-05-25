@@ -28,8 +28,8 @@ def owner_point_name(
             language=owner.language,
             state=owner.state,
             tag_handlers={
-                'address': lambda _: (
-                    f'<a href=\"{point.yandex_link}\">{point.address}</a>'
+                'link': lambda placeholder: (
+                    point.yandex_link if point.yandex_link is not None else placeholder
                 ),
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),

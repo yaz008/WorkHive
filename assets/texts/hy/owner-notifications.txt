@@ -1,13 +1,13 @@
 <point-name>____</point-name>
-Հասցե: <address>____</address>
-Միջին քանակը շտրիխկոդների: <payload>____</payload> հատ։
-Վճար կետ գնալու համար: <minimal-charge>____</minimal-charge> ռ․
-Վճար մեկ շտրիխկոդի համար: <charge-per-one>_.__</charge-per-one> ռ․
+Հղում․ <link>____</link>
+Միջին քանակը շտրիխկոդերի․ <payload>____</payload> հատ։
+Վճարը կետ գնալու համար․ <minimal-charge>____</minimal-charge> ռ․
+Վճարը մեկ շտրիխկոդի համար․ <charge-per-one>_.__</charge-per-one> ռ․
 
 id: <id>____</id>
 
-<b>Հայցորդ:</b>
-Անուն: <worker-name>____</worker-name>
-Ծննդյան ամսաթիվ: <birth-date>____</birth-date>
+<b>Դիմորդ․</b>
+Անուն․ <worker-name>____</worker-name>
+Ծննդյան ամսաթիվ․ <birth-date>____</birth-date>
 
-Պայմանավորվեք <mention>հայցորդի</mention> հետ, այնուհետև <b>ընդունեք</b> կամ <b>մերժեք</b> նրա դիմումը
+Պայմանավորվեք <mention>դիմորդի</mention> հետ, իսկ հետո <b>ընդունեք</b> կամ <b>մերժեք</b> նրա հայտը

@@ -1,8 +1,8 @@
-<b>Buyurtma berish punkti</b>
-Manzil: <address>____</address>
-O'rtacha shtrixkodlar soni: <payload>____</payload> dona.
-Punktga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> so'm.
-👉Bitta shtrixkod uchun to'lov: <charge-per-one>__.__</charge-per-one> so'm.
-Punkt nomi: <name>____</name>
+<b>Buyurtmalarni berish punkti</b> (BBQP)
+Havola: <link>____</link>
+Shtrixkodlarning oʻrtacha soni: <payload>____</payload> dona.
+Nuqtaga chiqish uchun toʻlov: <minimal-charge>____</minimal-charge> soʻm.
+👉Bitta shtrixkod uchun toʻlov: <charge-per-one>__.__</charge-per-one> soʻm.
+Nuqta nomi: <name>____</name>
 
-1 ta shtrixkod uchun to'lovni <code>so'm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code>)
+1 shtrixkod uchun toʻlovni <code>soʻm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code>)
