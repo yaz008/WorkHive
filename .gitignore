@@ -8,6 +8,7 @@ __test__
 src/__test__.py
 configs/*.json
 database/*.db
+logs/*.jsonl
 blacklist/*.json
 notebooks/*.ipynb
 notebooks/prompts/*.txt

@@ -15,6 +15,7 @@ from project.libs.tgdraw import (
 )
 from project.libs.tght import render_file
 from router.instance import router
+from router.loggers import address_logger
 
 
 def get_temp_point(telegram_id: int) -> TempPoint:
@@ -42,6 +43,8 @@ def get_link(string: str) -> str | None:
 def owner_point_address(
     owner: Owner, factory: ButtonFactoryClosure, share_info: str
 ) -> TGMessage:
+    if share_info != str():
+        address_logger.write(message=share_info)
     point: TempPoint = get_temp_point(owner.telegram_id)
     link: str | None = get_link(share_info)
     if link is not None:
