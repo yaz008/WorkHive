@@ -5,6 +5,7 @@ from telebot.types import Message, CallbackQuery
 from driver import driver
 from model.blacklist import blacklist
 from model.deco import delete_message, register, with_user
+from model.loggers import measure_time
 from model.types import User, TempUser
 from project.configs import FSASymbol
 from project.libs.fsa import serializer
@@ -44,6 +45,7 @@ def on_text(user: User | TempUser, message: Message) -> None:
 
 
 @driver.callback_query_handler(func=None)
+@measure_time
 @with_user
 def on_callback(user: User | TempUser, callback: CallbackQuery) -> None:
     response: TGMessage = router.shift(user, cast(str, callback.data))
