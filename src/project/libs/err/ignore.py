@@ -2,7 +2,6 @@
 from typing import Callable, overload
 
 from project.libs.err.exceptions import MutuallyExclusiveArgumentsError
-from project.libs.err.logger import exception_logger
 
 
 @overload
@@ -42,11 +41,6 @@ def ignore_error[Error: Exception, **Args, Ret](
             try:
                 return func(*args, **kwargs)
             except error as e:
-                exception_logger.write(
-                    str(e),
-                    **{str(index): str(arg) for index, arg in enumerate(args)}
-                    | {name: str(value) for name, value in kwargs.items()},
-                )
                 return e if return_error else default
 
         return wrapper
