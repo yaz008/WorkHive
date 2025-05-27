@@ -29,6 +29,22 @@ def on_start(user: User | TempUser) -> None:
     driver.update(telegram_id=user.telegram_id, message=response)
 
 
+@driver.message_handler(commands=['about'])
+@blacklist
+@delete_message
+@register
+def on_about(user: User | TempUser) -> None:
+    response: TGMessage = router.shift(
+        user,
+        serializer.serialize(
+            state=user.state,
+            symbol=FSASymbol.AboutProject,
+            args=(user.language,),
+        ),
+    )
+    driver.update(telegram_id=user.telegram_id, message=response)
+
+
 @driver.message_handler(content_types=['text'])
 @blacklist
 @delete_message

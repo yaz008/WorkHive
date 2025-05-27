@@ -11,8 +11,14 @@ router: FSA[User | TempUser, TGMessage] = FSA(
     initial_transition_state=FSAConfig.InitialTransitionState,
     common_transitions={
         FSAPipeline.Registration: {FSASymbol.Start: FSAState.Register},
-        FSAPipeline.Owner: {FSASymbol.Start: FSAState.OwnerMainMenu},
-        FSAPipeline.Worker: {FSASymbol.Start: FSAState.WorkerMainMenu},
+        FSAPipeline.Owner: {
+            FSASymbol.Start: FSAState.OwnerMainMenu,
+            FSASymbol.AboutProject: FSAState.OwnerAboutProject,
+        },
+        FSAPipeline.Worker: {
+            FSASymbol.Start: FSAState.WorkerMainMenu,
+            FSASymbol.AboutProject: FSAState.WorkerAboutProject,
+        },
     },
 )
 
