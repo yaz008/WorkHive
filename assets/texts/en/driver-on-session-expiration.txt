@@ -3,3 +3,5 @@
 Press /start to activate the bot
 
 <channel></channel>
+
+📌 We also recommend pinning the bot so you don't lose it

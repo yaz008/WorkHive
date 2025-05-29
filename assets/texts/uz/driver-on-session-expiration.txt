@@ -3,3 +3,5 @@
 Botni faollashtirish uchun /start tugmasini bosing
 
 <channel></channel>
+
+📌 Botni yoʻqotib qoʻymaslik uchun uni mahkamlashni ham tavsiya etamiz
