@@ -1,7 +1,3 @@
-<b>Sessiya yakunlandi!</b>
+<b>Сессия якунланди!</b>
 
-Botni faollashtirish uchun /start tugmasini bosing
-
-<channel></channel>
-
-📌 Botni yoʻqotib qoʻymaslik uchun uni mahkamlashni ham tavsiya etamiz
+📌 Ботни сақлаб қўйишни тавсия этамиз, уни йўқотмаслигингиз учун
