@@ -11,3 +11,4 @@ from project.core.config import config
 class SessionConfig:
     ActiveLifeTime: timedelta = timedelta(minutes=10)
     MaxLifeTime: timedelta = timedelta(minutes=16 * 60)
+    OnExpirationMessageProbability: float = 0.3

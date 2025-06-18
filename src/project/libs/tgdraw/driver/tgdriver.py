@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
+from random import random
 from typing import Any, Callable, cast
 
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -159,6 +160,7 @@ class TGDriver(TeleBot):
         self.delete_message(chat_id=session.telegram_id, message_id=session.message_id)
         if is_expired and (
             session.telegram_id in temp_users
+            or SessionConfig.OnExpirationMessageProbability > random()
             or (
                 workhive_id[session.telegram_id].value in user_table
                 and 'has-start-message'
