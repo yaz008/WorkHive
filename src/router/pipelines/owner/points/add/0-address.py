@@ -26,7 +26,10 @@ def get_temp_point(telegram_id: int) -> TempPoint:
 
 
 def get_link(string: str) -> str | None:
-    links: list[str] = findall(pattern=r'https://[\w$%&?#@!\/\+\-\*\.]+', string=string)
+    links: list[str] = findall(
+        pattern=r'https://[\w=$%&?#@!\/\+\-\*\.]+',
+        string=string,
+    )
     return links[0] if len(links) > 0 else None
 
 
