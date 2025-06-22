@@ -15,9 +15,17 @@ router: FSA[User | TempUser, TGMessage] = FSA(
             FSASymbol.Start: FSAState.OwnerMainMenu,
             FSASymbol.AboutProject: FSAState.OwnerAboutProject,
         },
+        FSAPipeline.OwnerNoADConsent: {
+            FSASymbol.Start: FSAState.OwnerNoADConsent,
+            FSASymbol.AboutProject: FSAState.OwnerNoADConsent,
+        },
         FSAPipeline.Worker: {
             FSASymbol.Start: FSAState.WorkerMainMenu,
             FSASymbol.AboutProject: FSAState.WorkerAboutProject,
+        },
+        FSAPipeline.WorkerNoADConsent: {
+            FSASymbol.Start: FSAState.WorkerNoADConsent,
+            FSASymbol.AboutProject: FSAState.WorkerNoADConsent,
         },
     },
 )

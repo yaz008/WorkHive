@@ -18,8 +18,11 @@ class FSAState:
     OfferConsent: str = 'offer-consent'
 
     # Owner
+    OwnerNoADConsent: str = 'owner-no-ad-consent'
+
     OwnerMainMenu: str = 'owner-main-menu'
     OwnerSettings: str = 'owner-settings'
+    OwnerRevokeConsentConfirm: str = 'owner-revoke-concent-confirm'
     OwnerAboutProject: str = 'owner-about-project'
     OwnerVacancies: str = 'owner-vacancies'
     OwnerNotification: str = 'owner-notification'
@@ -66,10 +69,13 @@ class FSAState:
     OwnerIncorrectPromocode: str = 'owner-incorrect-promocode'
 
     # Worker
+    WorkerNoADConsent: str = 'worker-no-ad-consent'
+
     WorkerMainMenu: str = 'worker-main-menu'
 
     WorkerSettings: str = 'worker-settings'
     WorkerAboutProject: str = 'worker-about-project'
+    WorkerRevokeConsentConfirm: str = 'worker-revoke-concent-confirm'
     WorkerLanguage: str = 'worker-language'
 
     WorkerResponds: str = 'worker-responds'
@@ -122,6 +128,8 @@ class FSASymbol:
     Apply: str = 'apply'
     Skip: str = 'skip'
     Edit: str = 'edit'
+    Revoke: str = 'revoke'
+    Confirm: str = 'confirm'
 
 
 @config(filename='fsa')
@@ -135,4 +143,6 @@ class FSAConfig:
 class FSAPipeline:
     Registration: str = 'registration'
     Owner: str = 'owner'
+    OwnerNoADConsent: str = 'owner-no-ad-consent'
     Worker: str = 'worker'
+    WorkerNoADConsent: str = 'worker-no-ad-consent'

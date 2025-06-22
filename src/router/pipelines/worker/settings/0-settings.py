@@ -12,6 +12,7 @@ from router.instance import router
         FSASymbol.MainMenu: FSAState.WorkerMainMenu,
         FSASymbol.Language: FSAState.WorkerLanguage,
         FSASymbol.AboutProject: FSAState.WorkerAboutProject,
+        FSASymbol.Revoke: FSAState.WorkerRevokeConsentConfirm,
     },
 )
 def worker_settings(worker: Worker, factory: ButtonFactoryClosure) -> TGMessage:
@@ -23,6 +24,7 @@ def worker_settings(worker: Worker, factory: ButtonFactoryClosure) -> TGMessage:
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Language)),
             RowInfo(factory.saved(WorkHiveButton.AboutProject)),
+            RowInfo(factory.saved(WorkHiveButton.RevokeConsent)),
             RowInfo(factory.saved(WorkHiveButton.MainMenu)),
         ),
     )

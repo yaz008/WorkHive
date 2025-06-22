@@ -1,0 +1,3 @@
+Are you sure you want to revoke your <a href="https://workhive.ru/documents/chatbot-consent.html">Consent to receive advertisements</a>?
+
+❌ After this, using the bot will be impossible until you consent again.

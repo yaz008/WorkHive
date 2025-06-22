@@ -40,6 +40,8 @@ class WorkHiveButton:
     Apply: str = 'apply'
     ApplyErr: str = 'apply-err'
     Skip: str = 'skip'
+    RevokeConsent: str = 'revoke-consent'
+    YesIAmSure: str = 'yes-i-am-sure'
 
     # Menus:
     MainMenu: str = 'main-menu'

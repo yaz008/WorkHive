@@ -12,6 +12,7 @@ from router.instance import router
         FSASymbol.MainMenu: FSAState.OwnerMainMenu,
         FSASymbol.Language: FSAState.OwnerLanguage,
         FSASymbol.AboutProject: FSAState.OwnerAboutProject,
+        FSASymbol.Revoke: FSAState.OwnerRevokeConsentConfirm,
     },
 )
 def owner_settings(user: User, factory: ButtonFactoryClosure) -> TGMessage:
@@ -23,6 +24,7 @@ def owner_settings(user: User, factory: ButtonFactoryClosure) -> TGMessage:
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Language)),
             RowInfo(factory.saved(WorkHiveButton.AboutProject)),
+            RowInfo(factory.saved(WorkHiveButton.RevokeConsent)),
             RowInfo(factory.saved(WorkHiveButton.MainMenu)),
         ),
     )
