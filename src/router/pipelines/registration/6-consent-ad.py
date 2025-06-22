@@ -4,12 +4,10 @@ from project.configs import (
     FSASymbol,
     FSAPipeline,
     WorkHiveButton,
-    WorkHiveDocument,
 )
 from project.libs.tgdraw import (
     TGMessage,
     ButtonFactoryClosure,
-    TGMedia,
     RowInfo,
     choice,
 )
@@ -51,11 +49,6 @@ def advertisement_concent(
                 'consent-ad': lambda _: '✅' if user.concent_ad else '❌',
                 'consent-of': lambda _: '✅' if user.concent_of else '❌',
             },
-        ),
-        tgmedia=TGMedia(
-            name=WorkHiveDocument.AdvertisingConsent,
-            kind='Document',
-            language=user.language,
         ),
         keyboard=choice(
             (factory.saved(WorkHiveButton.Consent, args=(not user.concent_ad,)),),

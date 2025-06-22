@@ -4,13 +4,11 @@ from project.configs import (
     FSASymbol,
     FSAPipeline,
     WorkHiveButton,
-    WorkHiveDocument,
 )
 from project.libs.fsa import serializer
 from project.libs.tgdraw import (
     TGMessage,
     ButtonFactoryClosure,
-    TGMedia,
     RowInfo,
     ButtonInfo,
     load_button,
@@ -55,11 +53,6 @@ def privacy_policy_concent(
                 'consent-ad': lambda _: '✅' if user.concent_ad else '❌',
                 'consent-of': lambda _: '✅' if user.concent_of else '❌',
             },
-        ),
-        tgmedia=TGMedia(
-            name=WorkHiveDocument.PrivacyPolicy,
-            kind='Document',
-            language=user.language,
         ),
         keyboard=choice(
             (factory.saved(WorkHiveButton.Consent, args=(not user.concent_pp,)),),
