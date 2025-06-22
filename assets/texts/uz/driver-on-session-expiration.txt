@@ -1,3 +1,5 @@
-<b>Сессия якунланди!</b>
+<b>Sessiya yakunlandi!</b>
 
-📌 Ботни сақлаб қўйишни тавсия этамиз, уни йўқотмаслигингиз учун
+Botni faollashtirish uchun /start ni bosing
+
+📌 Botni yo'qotib qo'ymaslik uchun uni mahkamlashni tavsiya etamiz

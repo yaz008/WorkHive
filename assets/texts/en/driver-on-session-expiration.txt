@@ -1,3 +1,5 @@
-Session completed!
+<b>Session ended!</b>
+
+Press /start to activate the bot
 
 📌 We recommend pinning the bot so you don't lose it
