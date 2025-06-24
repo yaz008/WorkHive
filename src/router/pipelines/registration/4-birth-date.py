@@ -13,7 +13,7 @@ from router.pipelines.registration.utils import render_birth_date, is_birth_date
     pipeline=FSAPipeline.Registration,
     transitions={
         FSASymbol.Back: FSAState.FullName,
-        FSASymbol.Next: FSAState.PrivacyPolicyConsent,
+        FSASymbol.Next: FSAState.TermsOfUseConsent,
         FSASymbol.InputData: FSAState.BirthDate,
         FSASymbol.Error: FSAState.BirthDateErr,
     },
@@ -55,7 +55,7 @@ def birth_date(user: TempUser, factory: ButtonFactoryClosure, digit: str) -> TGM
                 factory.saved(WorkHiveButton.Back),
                 (
                     (
-                        factory.saved(WorkHiveButton.Next, args=(user.concent_pp,))
+                        factory.saved(WorkHiveButton.Next, args=(user.concent_of,))
                         if is_birth_date_valid(birth_date=to_datetime(user.birth_date))
                         else factory.saved(WorkHiveButton.NextErr)
                     )

@@ -1,3 +1,3 @@
-<a href="https://workhive.ru/documents/chatbot-consent.html">Жарнама алуға келісімнен</a> бас тартқыңыз келетініне сенімдісіз бе?
+Сіз <a href="https://workhive.ru/documents/chatbot-consent.html">Жарнама алуға келісіміңізді</a>, <a href="https://workhive.ru/documents/user-agreement.html">Пайдаланушы келісімімен</a> және <a href="https://workhive.ru/documents/privacy-policy.html">Құпиялылық саясатымен</a> келісіміңізді кері қайтарғыңыз келетініне сенімдісіз бе?
 
-❌ Осыдан кейін қайта келіскенге дейін ботты пайдалану мүмкін болмайды
+❌ Осыдан кейін қайтадан келісім бергенге дейін ботты пайдалану мүмкін болмайды

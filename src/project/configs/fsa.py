@@ -13,9 +13,10 @@ class FSAState:
     FullNameErr: str = 'full-name-err'
     BirthDate: str = 'birth-date'
     BirthDateErr: str = 'birth-date-err'
-    PrivacyPolicyConsent: str = 'privacy-policy-consent'
-    AdvertisingConsent: str = 'advertising-consent'
-    OfferConsent: str = 'offer-consent'
+    # PrivacyPolicyConsent: str = 'privacy-policy-consent'
+    # AdvertisingConsent: str = 'advertising-consent'
+    # OfferConsent: str = 'offer-consent'
+    TermsOfUseConsent: str = 'terms-of-use-consent'
 
     # Owner
     OwnerNoADConsent: str = 'owner-no-ad-consent'

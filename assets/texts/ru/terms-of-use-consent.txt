@@ -1,0 +1,5 @@
+<b>Регистрация</b>
+
+Чтобы продолжить, Вам необходимо дать своё <a href="https://workhive.ru/documents/chatbot-consent.html">Согласие на получение рекламы</a>, принять <a href="https://workhive.ru/documents/user-agreement.html">Пользовательское соглашение</a> и согласиться с <a href="https://workhive.ru/documents/privacy-policy.html">Политикой конфеденциальности</a>
+
+Затем нажмите кнопку "↪️ Далее", чтобы завершить регистрацию

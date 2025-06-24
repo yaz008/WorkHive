@@ -1,3 +1,3 @@
-Вы уверены, что хотите отозвать <a href="https://workhive.ru/documents/chatbot-consent.html">Согласие на получение рекламы</a>?
+Вы уверены, что хотите отозвать своё <a href="https://workhive.ru/documents/chatbot-consent.html">Согласие на получение рекламы</a>, согласие с <a href="https://workhive.ru/documents/user-agreement.html">Пользовательским соглашением</a> и <a href="https://workhive.ru/documents/privacy-policy.html">Политикой конфеденциальности</a>?
 
 ❌ После этого использование бота станет невозможным до момента повторного согласия

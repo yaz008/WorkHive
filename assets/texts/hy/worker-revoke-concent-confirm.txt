@@ -1,3 +1,3 @@
-Վստա՞հ եք, որ ցանկանում եք հետ կանչել <a href="https://workhive.ru/documents/chatbot-consent.html">Գովազդ ստանալու համաձայնությունը</a>:
+Վստա՞հ եք, որ ցանկանում եք հետ կանչել Ձեր <a href="https://workhive.ru/documents/chatbot-consent.html">Համաձայնությունը գովազդ ստանալու վերաբերյալ</a>, համաձայնությունը <a href="https://workhive.ru/documents/user-agreement.html">Օգտատիրոջ համաձայնագրի</a> և <a href="https://workhive.ru/documents/privacy-policy.html">Գաղտնիության քաղաքականության</a> հետ։
 
-❌ Դրանից հետո բոտի օգտագործումն անհնար կլինի մինչև կրկին համաձայնելը
+❌ Դրանից հետո բոտի օգտագործումը հնարավոր չի լինի մինչև կրկնակի համաձայնություն ստանալը:

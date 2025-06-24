@@ -17,18 +17,19 @@ from router.pipelines.registration.utils import render_birth_date
 
 
 @router.add(
-    name=FSAState.AdvertisingConsent,
+    name=FSAState.TermsOfUseConsent,
     pipeline=FSAPipeline.Registration,
     transitions={
-        FSASymbol.Back: FSAState.PrivacyPolicyConsent,
-        FSASymbol.Next: FSAState.OfferConsent,
-        FSASymbol.InputData: FSAState.AdvertisingConsent,
+        FSASymbol.Back: FSAState.BirthDate,
+        FSASymbol.Next: FSAState.OwnerMainMenu,
+        FSASymbol.Error: FSAState.WorkerMainMenu,
+        FSASymbol.InputData: FSAState.TermsOfUseConsent,
     },
 )
-def advertisement_concent(
+def terms_of_use_concent(
     user: TempUser, factory: ButtonFactoryClosure, concent: bool
 ) -> TGMessage:
-    user.concent_ad = concent
+    user.concent_of = concent
     return TGMessage(
         text=render_file(
             language=user.language,
@@ -51,13 +52,17 @@ def advertisement_concent(
             },
         ),
         keyboard=choice(
-            (factory.saved(WorkHiveButton.Consent, args=(not user.concent_ad,)),),
-            0 if user.concent_ad else None,
+            (factory.saved(WorkHiveButton.Consent, args=(not user.concent_of,)),),
+            0 if user.concent_of else None,
             RowInfo(
-                factory.saved(WorkHiveButton.Back, args=(user.concent_pp,)),
+                factory.saved(WorkHiveButton.Back),
                 (
-                    factory.saved(WorkHiveButton.Next, args=(user.concent_of,))
-                    if user.concent_ad
+                    factory.saved(
+                        WorkHiveButton.Next
+                        if user.role == 'owner'
+                        else WorkHiveButton.NextErr
+                    )
+                    if user.concent_of
                     else None
                 ),
             ),

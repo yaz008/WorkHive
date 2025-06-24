@@ -1,3 +1,3 @@
-Siz <a href="https://workhive.ru/documents/chatbot-consent.html">Reklama olishga rozilik</a>ni bekor qilmoqchiligingizga ishonchingiz komilmi?
+Siz <a href="https://workhive.ru/documents/chatbot-consent.html">Reklama olishga roziligingiz</a>ni, <a href="https://workhive.ru/documents/user-agreement.html">Foydalanuvchi shartnomasi</a>ga roziligingizni va <a href="https://workhive.ru/documents/privacy-policy.html">Maxfiylik siyosati</a>ga roziligingizni bekor qilmoqchi ekanligingizga ishonchingiz komilmi?
 
-❌ Shundan so'ng, qayta rozilik bermaguningizcha botdan foydalanish imkonsiz bo'ladi
+❌ Shundan so'ng botdan qayta rozilik bergunga qadar foydalanishning imkoni bo'lmaydi

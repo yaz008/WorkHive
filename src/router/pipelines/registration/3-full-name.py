@@ -48,7 +48,7 @@ def is_valid_name(normalized_name: str) -> bool:
         FSASymbol.Next: FSAState.BirthDate,
         FSASymbol.InputData: FSAState.FullName,
         FSASymbol.Error: FSAState.FullNameErr,
-        FSASymbol.Skip: FSAState.PrivacyPolicyConsent,
+        FSASymbol.Skip: FSAState.TermsOfUseConsent,
     },
     accepts_types=('text',),
 )

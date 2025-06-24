@@ -1,3 +1,3 @@
-<a href="https://workhive.ru/documents/chatbot-consent.html">Жарнама алууга макулдугуңузду</a> кайтарып алгыңыз келгенине ишенесизби?
+Сиз <a href="https://workhive.ru/documents/chatbot-consent.html">Жарнама алууга макулдугуңузду</a>, <a href="https://workhive.ru/documents/user-agreement.html">Колдонуучунун келишимине</a> жана <a href="https://workhive.ru/documents/privacy-policy.html">Купуялык саясатына</a> болгон макулдугуңузду кайтарып алгыңыз келгенине ишенесизби?
 
-❌ Андан кийин, кайрадан макулдук бергенге чейин ботту колдонуу мүмкүн болбой калат
+❌ Андан соң кайрадан макулдук бергенге чейин ботту колдонуу мүмкүн болбой калат
