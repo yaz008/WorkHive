@@ -1,0 +1,11 @@
+<b>Session ended!</b>
+
+Tap /start to activate the bot
+
+👋 Hi! I am a bot that will help you find employees for an Order Pickup Point
+
+📍 Works throughout Russia
+⚡ 24/7 application collection
+
+Shall we find candidates?
+👇 Choose what you want to do:

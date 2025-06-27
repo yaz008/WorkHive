@@ -1,0 +1,5 @@
+<b>Session completed!</b>
+
+Type /start to activate the bot and continue registration
+
+📌 We recommend pinning the bot so you don't lose it

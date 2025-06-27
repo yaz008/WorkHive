@@ -1,0 +1,5 @@
+Sessiya yakunlandi!
+
+Botni faollashtirish uchun /start bosing
+
+📌 Botni yo'qotmaslik uchun uni qadashni tavsiya etamiz.

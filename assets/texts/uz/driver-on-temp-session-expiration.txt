@@ -1,0 +1,5 @@
+<b>Sessiya yakunlandi!</b>
+
+Botni faollashtirish va roʻyxatdan oʻtishni davom ettirish uchun /start tugmasini bosing
+
+📌 Botni yoʻqotib qoʻymaslik uchun uni mahkamlashingizni tavsiya qilamiz

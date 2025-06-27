@@ -1,5 +1,0 @@
-<b>Sessiya yakunlandi!</b>
-
-Botni faollashtirish uchun /start ni bosing
-
-📌 Botni yo'qotib qo'ymaslik uchun uni mahkamlashni tavsiya etamiz
