@@ -14,4 +14,6 @@ class InlineTGButton(TGButton):
     @property
     @override
     def button(self) -> InlineKeyboardButton:
-        return InlineKeyboardButton(text=self.text, callback_data=self.data)
+        return InlineKeyboardButton(
+            text=self.text, callback_data=self.data, url=self.url
+        )
