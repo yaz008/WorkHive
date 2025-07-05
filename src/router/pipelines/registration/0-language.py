@@ -18,7 +18,7 @@ from router.instance import router
     pipeline=FSAPipeline.Registration,
     transitions={
         FSASymbol.InputData: FSAState.ChooseLanguage,
-        FSASymbol.Next: FSAState.Register,
+        FSASymbol.Next: FSAState.ChooseRole,
     },
 )
 def choose_language(
@@ -46,6 +46,7 @@ def choose_language(
                     data=serializer.serialize(
                         state=FSAState.ChooseLanguage,
                         symbol=FSASymbol.Next,
+                        args=(user.role,),
                     ),
                 ),
             ),

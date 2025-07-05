@@ -1,0 +1,11 @@
+⚙️ <b>How the bot works</b>
+
+1. You specify the city, schedule, and employee type
+2. We post the job opening in Telegram + partner chats
+3. Candidates apply → the bot filters them based on their applications
+4. You receive a list of suitable candidates with their contact details
+
+💡 This saves you up to 10–15 hours of manual searching per month
+
+Ready to try?
+👇 Click "Sign Up"!

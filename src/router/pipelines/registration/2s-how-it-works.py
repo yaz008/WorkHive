@@ -6,21 +6,21 @@ from router.instance import router
 
 
 @router.add(
-    name=FSAState.Register,
+    name=FSAState.HowItWorks,
     pipeline=FSAPipeline.Registration,
     transitions={
-        FSASymbol.Back: FSAState.ChooseLanguage,
-        FSASymbol.Next: FSAState.ChooseRole,
+        FSASymbol.Back: FSAState.Register,
+        FSASymbol.Next: FSAState.FullName,
     },
 )
 def register(user: TempUser, factory: ButtonFactoryClosure) -> TGMessage:
     return TGMessage(
         text=render_file(
             language=user.language,
-            state=user.state,
+            state=f'{user.state}-for-{user.role}s',
         ),
         keyboard=keyboard(
-            RowInfo(factory.saved(WorkHiveButton.Register, args=(user.role,))),
-            RowInfo(factory.saved(WorkHiveButton.Back, args=(user.language,))),
+            RowInfo(factory.saved(WorkHiveButton.Register)),
+            RowInfo(factory.saved(WorkHiveButton.Back)),
         ),
     )

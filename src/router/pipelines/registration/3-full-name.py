@@ -44,7 +44,7 @@ def is_valid_name(normalized_name: str) -> bool:
     name=FSAState.FullName,
     pipeline=FSAPipeline.Registration,
     transitions={
-        FSASymbol.Back: FSAState.ChooseRole,
+        FSASymbol.Back: FSAState.Register,
         FSASymbol.Next: FSAState.BirthDate,
         FSASymbol.InputData: FSAState.FullName,
         FSASymbol.Error: FSAState.FullNameErr,

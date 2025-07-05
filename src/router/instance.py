@@ -10,7 +10,7 @@ router: FSA[User | TempUser, TGMessage] = FSA(
     button_factory=button_factory,
     initial_transition_state=FSAConfig.InitialTransitionState,
     common_transitions={
-        FSAPipeline.Registration: {FSASymbol.Start: FSAState.Register},
+        FSAPipeline.Registration: {FSASymbol.Start: FSAState.ChooseLanguage},
         FSAPipeline.Owner: {
             FSASymbol.Start: FSAState.OwnerMainMenu,
             FSASymbol.AboutProject: FSAState.OwnerAboutProject,

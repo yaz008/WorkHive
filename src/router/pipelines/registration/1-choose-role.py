@@ -12,9 +12,9 @@ from router.pipelines.registration.utils import render_birth_date
     name=FSAState.ChooseRole,
     pipeline=FSAPipeline.Registration,
     transitions={
-        FSASymbol.Back: FSAState.Register,
+        FSASymbol.Back: FSAState.ChooseLanguage,
         FSASymbol.InputData: FSAState.ChooseRole,
-        FSASymbol.Next: FSAState.FullName,
+        FSASymbol.Next: FSAState.Register,
     },
 )
 def choose_role(user: TempUser, factory: ButtonFactoryClosure, role: str) -> TGMessage:
@@ -53,7 +53,7 @@ def choose_role(user: TempUser, factory: ButtonFactoryClosure, role: str) -> TGM
                 },
             ).get(user.role),
             RowInfo(
-                factory.saved(WorkHiveButton.Back),
+                factory.saved(WorkHiveButton.Back, args=(user.language,)),
                 (
                     factory.saved(WorkHiveButton.Next)
                     if user.role in ('worker', 'owner')

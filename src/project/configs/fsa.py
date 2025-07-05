@@ -6,17 +6,18 @@ class FSAState:
     Initial: str = 'initial'
 
     # Registration
-    ChooseLanguage: str = 'choose-language'
-    ChooseRole: str = 'choose-role'
-    Register: str = 'register'
-    FullName: str = 'full-name'
-    FullNameErr: str = 'full-name-err'
-    BirthDate: str = 'birth-date'
-    BirthDateErr: str = 'birth-date-err'
-    # PrivacyPolicyConsent: str = 'privacy-policy-consent'
-    # AdvertisingConsent: str = 'advertising-consent'
-    # OfferConsent: str = 'offer-consent'
-    TermsOfUseConsent: str = 'terms-of-use-consent'
+    ChooseLanguage: str = 'registration-choose-language'
+    Register: str = 'registration-register'
+    ChooseRole: str = 'registration-choose-role'
+    HowItWorks: str = 'registration-how-it-works'
+    FullName: str = 'registration-full-name'
+    FullNameErr: str = 'registration-full-name-err'
+    BirthDate: str = 'registration-birth-date'
+    BirthDateErr: str = 'registration-birth-date-err'
+    # PrivacyPolicyConsent: str = 'registration-privacy-policy-consent'
+    # AdvertisingConsent: str = 'registration-advertising-consent'
+    # OfferConsent: str = 'registration-offer-consent'
+    TermsOfUseConsent: str = 'registration-terms-of-use-consent'
 
     # Owner
     OwnerNoADConsent: str = 'owner-no-ad-consent'
@@ -115,6 +116,7 @@ class FSASymbol:
     AcceptedResponses: str = 'accepted-responses'
     Promocode: str = 'promocode'
     AboutProject: str = 'about-project'
+    HowItWorks: str = 'how-it-works'
 
     # Actions:
     Add: str = 'add'

@@ -1,0 +1,8 @@
+👋 Hi! I'm a bot that will help you find employees for your order pickup point.
+
+📍 Operates throughout Russia
+⚡ Collects applications 24/7
+🎯 Filtering by city, work schedule, and requirements
+
+Shall we find candidates?
+👇 Choose what you want to do:
