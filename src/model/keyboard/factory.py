@@ -38,6 +38,7 @@ button_factory.save(name=WorkHiveButton.ApplyErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Skip, symbol=FSASymbol.Skip)
 button_factory.save(name=WorkHiveButton.RevokeConsent, symbol=FSASymbol.Revoke)
 button_factory.save(name=WorkHiveButton.YesIAmSure, symbol=FSASymbol.Confirm)
+button_factory.save(name=WorkHiveButton.Contact, symbol=FSASymbol.Contact)
 
 # Menus:
 button_factory.save(name=WorkHiveButton.MainMenu, symbol=FSASymbol.MainMenu)

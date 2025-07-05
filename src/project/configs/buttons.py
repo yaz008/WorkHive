@@ -42,6 +42,7 @@ class WorkHiveButton:
     Skip: str = 'skip'
     RevokeConsent: str = 'revoke-consent'
     YesIAmSure: str = 'yes-i-am-sure'
+    Contact: str = 'contact'
 
     # Menus:
     MainMenu: str = 'main-menu'

@@ -131,6 +131,7 @@ class FSASymbol:
     Edit: str = 'edit'
     Revoke: str = 'revoke'
     Confirm: str = 'confirm'
+    Contact: str = 'contact'
 
 
 @config(filename='fsa')

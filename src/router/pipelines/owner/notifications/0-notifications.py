@@ -147,6 +147,12 @@ def owner_notifications(
                 else (
                     RowInfo(factory.saved(WorkHiveButton.MainMenu)),
                     RowInfo(
+                        factory.saved(
+                            WorkHiveButton.Contact,
+                            url=f'tg://user?id={notification.worker_telegram_id}',
+                        ),
+                    ),
+                    RowInfo(
                         factory.saved(WorkHiveButton.Accept, args=('accept', index)),
                         factory.saved(WorkHiveButton.Decline, args=('decline', index)),
                     ),
