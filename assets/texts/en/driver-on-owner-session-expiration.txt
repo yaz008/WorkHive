@@ -1,11 +1,8 @@
 <b>Session ended!</b>
+Type /start to activate the bot
 
-Tap /start to activate the bot
+📚 Want to know how to open and develop pickup points?
 
-👋 Hi! I am a bot that will help you find employees for an Order Pickup Point
+In our Telegram channel — revenue analytics, locations, hiring, taxes, and owner case studies.
 
-📍 Works throughout Russia
-⚡ 24/7 application collection
-
-Shall we find candidates?
-👇 Choose what you want to do:
+👇 Subscribe!
