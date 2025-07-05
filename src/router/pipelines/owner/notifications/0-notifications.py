@@ -1,5 +1,6 @@
 from telebot.types import LinkPreviewOptions
 
+from driver import driver
 from model.tables import (
     _Point,
     _Response,
@@ -8,6 +9,7 @@ from model.tables import (
     user_table,
     simple_vacancies_table,
     points_table,
+    tgid_table,
 )
 from model.types import Owner
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
@@ -69,6 +71,15 @@ def owner_notifications(
             # simple_vacancies_table.remove_one(
             #     owner.workhive_id, notification.vacancy_id
             # )
+            driver.notify(
+                target_id=tgid_table[notification.worker_id].value,
+                message=TGMessage(
+                    text=render_file(
+                        language=user_table[notification.worker_id].language,
+                        state=FSAState.DriverOnWorkerNewNotification,
+                    ),
+                ),
+            )
         case 'decline':
             assert notification is not None
             change_status(notification, 'declined')

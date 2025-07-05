@@ -1,20 +1,39 @@
+from random import random
 from typing import Literal, cast, assert_never
 
 from telebot.types import InlineKeyboardMarkup
 from telebot.util import quick_markup
 
-from model.tables import user_table, workhive_id, temp_users, role_table, state_table
-from project.configs import TGDriverConfig, ChennelConfig, FSAState
+from model.tables import (
+    user_table,
+    workhive_id,
+    temp_users,
+    role_table,
+    state_table,
+    response_map,
+    responses_table,
+    _Response,
+)
+from model.types import User, Owner, Worker
+from project.configs import (
+    TGDriverConfig,
+    ChennelConfig,
+    FSAState,
+    WorkHiveButton,
+    SessionConfig,
+)
 from project.core.env import Env
-from project.libs.tgdraw import TGDriver
+from project.libs.tgdraw import TGDriver, load_button
+from project.libs.tgdraw.driver.session import Session
 from project.libs.tght import render_file
 
 
 Role = Literal['worker', 'owner', 'temp']
+MessageKind = Literal['session-expiration', 'new-notification']
 
 
-def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
-    role: Role = cast(
+def get_user_role(telegram_id: int) -> Role:
+    return cast(
         Role,
         (
             role_table[workhive_id[telegram_id].value].role
@@ -22,22 +41,26 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
             else 'temp'
         ),
     )
+
+
+def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
+    role: Role = get_user_role(telegram_id)
     state: str = state_table[workhive_id[telegram_id].value].state
+    button_name: str = load_button(
+        WorkHiveButton.Subscribe,
+        language=user_table[workhive_id[telegram_id].value].language,
+    )
     if state in (FSAState.WorkerNoADConsent, FSAState.OwnerNoADConsent):
         return None
     match role:
         case 'worker':
             return quick_markup(
-                values={
-                    'Подпишись на наш канал!': {'url': ChennelConfig.WorkersChannelLink}
-                },
+                values={button_name: {'url': ChennelConfig.WorkersChannelLink}},
                 row_width=1,
             )
         case 'owner':
             return quick_markup(
-                values={
-                    'Подпишись на наш канал!': {'url': ChennelConfig.OwnersChannelLink},
-                },
+                values={button_name: {'url': ChennelConfig.OwnersChannelLink}},
                 row_width=1,
             )
         case 'temp':
@@ -46,14 +69,45 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
             assert_never(role)
 
 
-driver: TGDriver = TGDriver(
-    token=Env.TELEGRAM_BOT_TOKEN,
-    parse_mode=TGDriverConfig.DefaultParseMode,
-    skip_pending=TGDriverConfig.SkipPending,
-    threads=TGDriverConfig.Threads,
-    is_threaded=TGDriverConfig.IsThreaded,
-    on_session_expiration=lambda session: cast(
-        None,
+def get_notifications(user: User) -> list[_Response]:
+    return [
+        response_map[response.__sql_id__]
+        for response in responses_table[user.workhive_id].values()
+        if response_map[response.__sql_id__].status == 'undefined'
+    ]
+
+
+def get_message_kind(session: Session, role: Role) -> MessageKind:
+    return (
+        'session-expiration'
+        if (
+            role == 'temp'
+            or (
+                role == 'owner'
+                and not any(
+                    not notification.is_read_by_worker
+                    for notification in get_notifications(Owner(session.telegram_id))
+                )
+            )
+            or (
+                role == 'worker'
+                and not any(
+                    not notification.is_read_by_owner
+                    for notification in get_notifications(Worker(session.telegram_id))
+                )
+            )
+        )
+        else 'new-notification'
+    )
+
+
+def on_session_expiration(session: Session) -> None:
+    role: Role = get_user_role(session.telegram_id)
+    message_kind: MessageKind = get_message_kind(session, role)
+    if (
+        message_kind == 'new-notification'
+        or SessionConfig.OnExpirationMessageProbability > random()
+    ):
         driver.send_message(
             chat_id=session.telegram_id,
             text=render_file(
@@ -62,13 +116,21 @@ driver: TGDriver = TGDriver(
                     if session.telegram_id not in temp_users
                     else temp_users[session.telegram_id].value['language']
                 ),
-                state=f'driver-on-{(
-                    role_table[workhive_id[session.telegram_id].value].role
-                    if session.telegram_id not in temp_users
-                    else 'temp'
-                )}-session-expiration',
+                state=f'driver-on-{role}-{message_kind}',
             ),
-            reply_markup=get_keyboard(session.telegram_id),
-        ),
-    ),
+            reply_markup=(
+                get_keyboard(session.telegram_id)
+                if message_kind == 'session-expiration'
+                else None
+            ),
+        )
+
+
+driver: TGDriver = TGDriver(
+    token=Env.TELEGRAM_BOT_TOKEN,
+    parse_mode=TGDriverConfig.DefaultParseMode,
+    skip_pending=TGDriverConfig.SkipPending,
+    threads=TGDriverConfig.Threads,
+    is_threaded=TGDriverConfig.IsThreaded,
+    on_session_expiration=on_session_expiration,
 )

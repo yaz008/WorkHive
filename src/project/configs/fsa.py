@@ -92,6 +92,10 @@ class FSAState:
     WorkerSearchNoResults: str = 'worker-search-no-results'
     Respond: str = 'respond'
 
+    # Driver
+    DriverOnOwnerNewNotification: str = 'driver-on-owner-new-notification'
+    DriverOnWorkerNewNotification: str = 'driver-on-worker-new-notification'
+
 
 @config(filename='fsa-symbols')
 class FSASymbol:

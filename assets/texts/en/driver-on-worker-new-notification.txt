@@ -1,0 +1,3 @@
+<b>Your application has been accepted!</b>
+
+Press /start to view

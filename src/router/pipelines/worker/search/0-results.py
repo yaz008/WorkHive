@@ -15,6 +15,7 @@ from model.tables import (
     response_map,
     simple_vacancies_table,
     tgid_table,
+    user_table,
 )
 from model.types import Worker
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
@@ -66,11 +67,10 @@ def respond(vacancy: _VacancySimple, worker: Worker) -> None:
     driver.notify(
         target_id=tgid_table[response.owner_id].value,
         message=TGMessage(
-            text=f'Отклик на <code>{
-                points_table[vacancy.owner_id][vacancy.point_id].name
-            }</code> <i>({
-                str(vacancy.__sql_id__)[:6]
-            })</i>! Нажмите /start, чтобы посмотреть',
+            text=render_file(
+                language=user_table[vacancy.owner_id].language,
+                state=FSAState.DriverOnOwnerNewNotification,
+            ),
         ),
     )
 
