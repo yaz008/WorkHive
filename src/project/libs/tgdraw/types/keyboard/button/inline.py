@@ -9,6 +9,7 @@ from project.libs.tgdraw.types.keyboard.button.button import TGButton
 @dataclass(slots=True)
 class InlineTGButton(TGButton):
     data: str
+    url: str | None
 
     @property
     @override

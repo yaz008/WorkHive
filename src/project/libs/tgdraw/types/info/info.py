@@ -8,6 +8,7 @@ from project.libs.tgdraw.types.keyboard import InlineTGButton
 class ButtonInfo:
     text: str
     data: str
+    url: str | None = None
 
     def __iter__(self):
         return iter([self.text, self.data])

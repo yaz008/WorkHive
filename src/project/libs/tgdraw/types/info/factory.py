@@ -29,12 +29,14 @@ class ButtonFactory:
         symbol: str,
         info: str | LoadInfo,
         args: tuple[Any, ...] | None = None,
+        url: str | None = None,
     ) -> ButtonInfo:
         return ButtonInfo(
             text=(
                 info if isinstance(info, str) else load_button(info.name, info.language)
             ),
             data=self.serialize(state, symbol, args),
+            url=url,
         )
 
     def save(self, name: str, symbol: str) -> None:
@@ -52,6 +54,7 @@ class ButtonFactoryClosure:
         symbol: str,
         name: str,
         args: tuple[Any, ...] | None = None,
+        url: str | None = None,
         load: bool = True,
     ) -> ButtonInfo:
         return self.factory.create(
@@ -59,15 +62,18 @@ class ButtonFactoryClosure:
             symbol=symbol,
             info=LoadInfo(name=name, language=self.language) if load else name,
             args=args,
+            url=url,
         )
 
     def saved(
         self,
         name: str,
         args: tuple[Any, ...] | None = None,
+        url: str | None = None,
     ) -> ButtonInfo:
         return self.create(
             symbol=self.factory.saved_buttons[name],
             name=name,
             args=args,
+            url=url,
         )
