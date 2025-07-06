@@ -1,5 +1,5 @@
-<b>Order Pickup Point</b>
+<b>Adding a PUP (3/5)</b>
 
-Enter the payment for coming to the location (e.g., <code>600</code>) and then press the "↪️ Next" button.
+Enter the on-site payment (e.g., <code>600</code>) and then click the "↪️ Next" button.
 
-Payment for coming to the location: <minimal-charge>____</minimal-charge> rub.
+On-site payment: <minimal-charge>____</minimal-charge> rub.

@@ -1,7 +1,7 @@
-<b>Order Pickup Point</b>
+<b>Adding a Pick-up Point (PP) (1/5)</b>
 
-Share with the bot your OPP from the <a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Yandex Maps</a> app, and then click the "↪️ Next" button.
+Share your Pick-up Point (PP) with the bot from the <a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Yandex.Maps</a> app and then press the "↪️ Next" button
 
-<b>OPP Link:</b> <link>____</link>
+<b>Link to PP:</b> <link>____</link>
 
 <on-error></on-error>

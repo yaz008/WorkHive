@@ -1,5 +1,5 @@
-<b>Order Pickup Point</b>
+Adding a Pickup Point (5/5)
 
-Enter the name of the point (For example, <code>WB on Pavlova</code>) — this name will only be visible to you, it's only needed for your convenience in managing your pickup points — and then press the "↪️ Next" button.
+Enter the name of the location (For example, <code>WB on Pavlova</code>) — this name will only be visible to you, it is only for your convenience in managing your Pickup Points — and then press the "↪️ Next" button.
 
-Point name: <name>____</name>
+Location name: <name>____</name>

@@ -1,7 +1,7 @@
-<b>Buyurtma berish punktlari</b>
+<b>PVZ (Buyurtma tarqatish punkti) qo'shish (1/5)</b>
 
-Bot bilan <a href="https - FORBIDDEN - maps.yandex - FORBIDDEN - /">Yandex.Xaritalar</a> ilovasidan o'zingizning BBPlaringizni ulashing va keyin "↪️ Keyingi" tugmasini bosing
+Yandex.Xaritalar ilovasidan o'zingizning PVZ'ingizni botga yuboring va keyin "↪️ Keyingi" tugmasini bosing.
 
-<b>BBPga havola:</b> <link>____</link>
+<b>PVZ havolasi:</b> <link>____</link>
 
 <on-error></on-error>

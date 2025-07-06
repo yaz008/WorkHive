@@ -1,5 +1,5 @@
-<b>Buyurtmalarni berish punkti</b>
+<b>ПВЗ қўшиш (3/5)</b>
 
-Nuqtaga chiqish to'lovi kiriting (misol uchun, <code>600</code>) va keyin "↪️ Keyingi" tugmasini bosing.
+Nuqtaga chiqish uchun to'lovni kiriting (masalan, <code>600</code>) va keyin "↪️ Keyingisi" tugmasini bosing.
 
-Nuqtaga chiqish to'lovi: <minimal-charge>____</minimal-charge> so'm.
+Nuqtaga chiqish uchun to'lov: <minimal-charge>____</minimal-charge> р.

@@ -1,5 +1,5 @@
-<b>Buyurtma berish punkti</b>
+<b>PVZ qo'shish (2/5)</b>
 
-Kuniga o'rtacha shtrix-kodlar sonini kiriting (masalan, <code>350</code>) va keyin "↪️ Keyingi" tugmasini bosing
+Kuniga o'rtacha shtrix-kodlar miqdorini kiriting (masalan, <code>350</code>) va keyin "↪️ Keyingi" tugmasini bosing.
 
-O'rtacha shtrix-kodlar soni: <payload>____</payload> dona.
+O'rtacha shtrix-kodlar miqdori: <payload>____</payload> dona.
