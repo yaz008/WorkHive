@@ -31,7 +31,7 @@ def register(user: TempUser, factory: ButtonFactoryClosure) -> TGMessage:
             RowInfo(factory.saved(WorkHiveButton.HowItWorks)),
             RowInfo(
                 factory.saved(
-                    WorkHiveButton.Subscribe,
+                    WorkHiveButton.SubscribeToOurChannel,
                     url=(
                         ChennelConfig.OwnersChannelLink
                         if user.role == 'owner'

@@ -47,7 +47,7 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
     role: Role = get_user_role(telegram_id)
     state: str = state_table[workhive_id[telegram_id].value].state
     button_name: str = load_button(
-        WorkHiveButton.Subscribe,
+        WorkHiveButton.SubscribeToOurChannel,
         language=user_table[workhive_id[telegram_id].value].language,
     )
     if state in (FSAState.WorkerNoADConsent, FSAState.OwnerNoADConsent):

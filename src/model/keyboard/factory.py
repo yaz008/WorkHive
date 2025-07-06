@@ -28,7 +28,9 @@ button_factory.save(name=WorkHiveButton.Edit, symbol=FSASymbol.Edit)
 # button_factory.save(name=WorkHiveButton.ShowContact, symbol=None)
 button_factory.save(name=WorkHiveButton.Accept, symbol=FSASymbol.Accept)
 button_factory.save(name=WorkHiveButton.Decline, symbol=FSASymbol.Decline)
-button_factory.save(name=WorkHiveButton.Subscribe, symbol=FSASymbol.Subscription)
+button_factory.save(
+    name=WorkHiveButton.SubscribeToOurChannel, symbol=FSASymbol.Subscribe
+)
 button_factory.save(name=WorkHiveButton.Publish, symbol=FSASymbol.Publish)
 button_factory.save(name=WorkHiveButton.PublishErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)
