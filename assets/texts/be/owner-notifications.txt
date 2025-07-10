@@ -4,10 +4,6 @@
 Аплата за выхад на пункт: <minimal-charge>____</minimal-charge> р.
 Аплата за адзін штрыхкод: <charge-per-one>_.__</charge-per-one> р.
 
-id: <id>____</id>
-
-<b>Суіскальнік:</b>
-Імя: <worker-name>____</worker-name>
-Дата нараджэння: <birth-date>____</birth-date>
-
 Дамоўцеся з <mention>суіскальнікам</mention>, а потым <b>прыміце</b> або <b>адхіліце</b> яго заяўку
+
+id: <id>____</id>

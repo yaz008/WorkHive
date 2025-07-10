@@ -4,10 +4,6 @@
 Վճարը կետ գնալու համար․ <minimal-charge>____</minimal-charge> ռ․
 Վճարը մեկ շտրիխկոդի համար․ <charge-per-one>_.__</charge-per-one> ռ․
 
-id: <id>____</id>
-
-<b>Դիմորդ․</b>
-Անուն․ <worker-name>____</worker-name>
-Ծննդյան ամսաթիվ․ <birth-date>____</birth-date>
-
 Պայմանավորվեք <mention>դիմորդի</mention> հետ, իսկ հետո <b>ընդունեք</b> կամ <b>մերժեք</b> նրա հայտը
+
+id: <id>____</id>

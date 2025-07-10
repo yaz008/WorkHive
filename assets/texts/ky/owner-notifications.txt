@@ -4,10 +4,6 @@
 ПВЗга чыгуу үчүн төлөм: <minimal-charge>____</minimal-charge> р.
 Бир штрихкод үчүн төлөм: <charge-per-one>_.__</charge-per-one> р.
 
-id: <id>____</id>
-
-<b>Ишке орношуучу:</b>
-Аты: <worker-name>____</worker-name>
-Туулган күнү: <birth-date>____</birth-date>
-
 <mention>Ишке орношуучу</mention> менен сүйлөшүп, андан кийин анын өтүнмөсүн <b>кабыл алыңыз</b> же <b>четке кагыңыз</b>
+
+id: <id>____</id>

@@ -4,10 +4,6 @@ Shtrix-kodlarning oʻrtacha soni: <payload>____</payload> dona.
 Nuqtaga chiqish toʻlovi: <minimal-charge>____</minimal-charge> soʻm.
 Bitta shtrix-kod uchun toʻlov: <charge-per-one>_.__</charge-per-one> soʻm.
 
-id: <id>____</id>
-
-<b>Nomzod:</b>
-Ismi: <worker-name>____</worker-name>
-Tugʻilgan sanasi: <birth-date>____</birth-date>
-
 <mention>Nomzod</mention> bilan kelishib oling, keyin uning arizasini <b>qabul qiling</b> yoki <b>rad eting</b>
+
+id: <id>____</id>

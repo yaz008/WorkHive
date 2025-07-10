@@ -10,7 +10,7 @@ from router.instance import router
     pipeline=FSAPipeline.Registration,
     transitions={
         FSASymbol.Back: FSAState.Register,
-        FSASymbol.Next: FSAState.FullName,
+        FSASymbol.Next: FSAState.TermsOfUseConsent,
     },
 )
 def register(user: TempUser, factory: ButtonFactoryClosure) -> TGMessage:

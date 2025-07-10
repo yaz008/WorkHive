@@ -17,7 +17,7 @@ from router.instance import router
     transitions={
         FSASymbol.Back: FSAState.ChooseRole,
         FSASymbol.HowItWorks: FSAState.HowItWorks,
-        FSASymbol.Next: FSAState.FullName,
+        FSASymbol.Next: FSAState.TermsOfUseConsent,
     },
 )
 def register(user: TempUser, factory: ButtonFactoryClosure) -> TGMessage:

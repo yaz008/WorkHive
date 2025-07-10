@@ -4,10 +4,6 @@ Average number of barcodes: <payload>____</payload> pcs.
 On-site visit fee: <minimal-charge>____</minimal-charge> rub.
 Fee per barcode: <charge-per-one>_.__</charge-per-one> rub.
 
-id: <id>____</id>
-
-<b>Applicant:</b>
-Name: <worker-name>____</worker-name>
-Date of birth: <birth-date>____</birth-date>
-
 Negotiate with the <mention>applicant</mention>, then <b>accept</b> or <b>reject</b> their application
+
+id: <id>____</id>

@@ -20,7 +20,7 @@ from router.pipelines.registration.utils import render_birth_date
     name=FSAState.TermsOfUseConsent,
     pipeline=FSAPipeline.Registration,
     transitions={
-        FSASymbol.Back: FSAState.BirthDate,
+        FSASymbol.Back: FSAState.Register,
         FSASymbol.Next: FSAState.OwnerMainMenu,
         FSASymbol.Error: FSAState.WorkerMainMenu,
         FSASymbol.InputData: FSAState.TermsOfUseConsent,
