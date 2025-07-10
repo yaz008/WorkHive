@@ -157,18 +157,15 @@ class TGDriver(TeleBot):
     def revoke(self, session: Session, is_expired: bool = False) -> None:
         self.__session_table.remove(session.telegram_id)
         self.delete_message(chat_id=session.telegram_id, message_id=session.message_id)
-        if is_expired and (
-            session.telegram_id in temp_users
-            or (
+        if is_expired:
+            if session.telegram_id not in temp_users and (
                 workhive_id[session.telegram_id].value in user_table
                 and 'has-start-message'
                 not in map(
                     lambda m: m.value,
                     metadata_table[workhive_id[session.telegram_id].value].values(),
                 )
-            )
-        ):
-            if session.telegram_id not in temp_users:
+            ):
                 metadata_table.update(
                     {
                         workhive_id[session.telegram_id].value: _Metadata(

@@ -69,11 +69,11 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
             assert_never(role)
 
 
-def get_notifications(user: User) -> list[_Response]:
+def get_notifications(user: User, status: str) -> list[_Response]:
     return [
         response_map[response.__sql_id__]
         for response in responses_table[user.workhive_id].values()
-        if response_map[response.__sql_id__].status == 'undefined'
+        if response_map[response.__sql_id__].status == status
     ]
 
 
@@ -85,15 +85,21 @@ def get_message_kind(session: Session, role: Role) -> MessageKind:
             or (
                 role == 'owner'
                 and not any(
-                    not notification.is_read_by_worker
-                    for notification in get_notifications(Owner(session.telegram_id))
+                    not notification.is_read_by_owner
+                    for notification in get_notifications(
+                        Owner(session.telegram_id), status='undefined'
+                    )
+                    if not notification.is_expired
                 )
             )
             or (
                 role == 'worker'
                 and not any(
-                    not notification.is_read_by_owner
-                    for notification in get_notifications(Worker(session.telegram_id))
+                    not notification.is_read_by_worker
+                    for notification in get_notifications(
+                        Worker(session.telegram_id), status='accepted'
+                    )
+                    if not notification.is_expired
                 )
             )
         )
