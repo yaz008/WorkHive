@@ -1,16 +1,20 @@
-from typing import Callable, Any
+from typing import Callable
 
 
 def handle_error[Error: Exception, **Args, Ret](
     error: type[Error],
-    handler: Callable[[Error, tuple[Any, ...], dict[str, Any]], Ret | None],
-) -> Callable[[Callable[Args, Ret]], Callable[Args, Ret | None]]:
-    def decorator(func: Callable[Args, Ret]) -> Callable[Args, Ret | None]:
-        def wrapper(*args: Args.args, **kwargs: Args.kwargs) -> Ret | None:
+    routes: dict[Callable[[Error], bool], Callable[Args, Ret]],
+) -> Callable[[Callable[Args, Ret]], Callable[Args, Ret]]:
+    def decorator(func: Callable[Args, Ret]) -> Callable[Args, Ret]:
+        def wrapper(*args: Args.args, **kwargs: Args.kwargs) -> Ret:
             try:
                 return func(*args, **kwargs)
             except error as e:
-                return handler(e, args, kwargs)
+                for filter, handler in routes.items():
+                    if filter(e):
+                        return handler(*args, **kwargs)
+                else:
+                    raise e
 
         return wrapper
 
