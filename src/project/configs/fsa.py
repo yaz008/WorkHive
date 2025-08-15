@@ -139,6 +139,7 @@ class FSASymbol:
     Confirm: str = 'confirm'
     Contact: str = 'contact'
     Subscribe: str = 'subscribe'
+    FollowLink: str = 'follow-link'
 
 
 @config(filename='fsa')
