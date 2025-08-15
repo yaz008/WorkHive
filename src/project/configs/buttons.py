@@ -65,3 +65,4 @@ class WorkHiveButton:
     Owner: str = 'owner'
     Language: str = 'language'
     Subsrciption: str = 'subscription'
+    MoreVacancies: str = 'more-vacancies'

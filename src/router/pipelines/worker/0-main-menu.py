@@ -49,6 +49,7 @@ def worker_main_menu(user: User | TempUser, factory: ButtonFactoryClosure) -> TG
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Search)),
+            RowInfo(factory.saved(WorkHiveButton.MoreVacancies)),
             RowInfo(
                 factory.saved(WorkHiveButton.MyResponds, args=(str(), '0')),
                 factory.saved(
