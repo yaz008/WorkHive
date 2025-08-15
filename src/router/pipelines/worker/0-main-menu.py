@@ -49,7 +49,12 @@ def worker_main_menu(user: User | TempUser, factory: ButtonFactoryClosure) -> TG
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Search)),
-            RowInfo(factory.saved(WorkHiveButton.MoreVacancies)),
+            RowInfo(
+                factory.saved(
+                    name=WorkHiveButton.MoreVacancies,
+                    url='https://ppdu.ru/cea2ed86-b64a-4577-903f-b56d00657916',
+                )
+            ),
             RowInfo(
                 factory.saved(WorkHiveButton.MyResponds, args=(str(), '0')),
                 factory.saved(
