@@ -1,5 +1,7 @@
-Sessiya yakunlandi!
+<b>Seans yakunlandi!</b>
 
 Botni faollashtirish uchun /start bosing
 
-📌 Botni yo'qotmaslik uchun uni qadashni tavsiya etamiz.
+Ko'proq vakansiyalar xohlaysizmi? — <a href="https://ppdu.ru/cea2ed86-b64a-4577-903f-b56d00657916">saytga</a> o'ting
+
+📌 Botni yo'qotib qo'ymaslik uchun uni qadashni tavsiya qilamiz

@@ -1,5 +1,7 @@
-<b>Session ended!</b>
+Session completed!
 
-Press /start to activate the bot
+Click /start to activate the bot
 
-📌 We recommend pinning the bot so you don't lose it
+Looking for more job openings? — Visit the <a href="https://ppdu.ru/cea2ed86-b64a-4577-903f-b56d00657916">website</a>
+
+📌 We recommend pinning the bot so you don't lose it.
