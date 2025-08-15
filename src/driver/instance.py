@@ -1,7 +1,7 @@
 from random import random
 from typing import Literal, cast, assert_never
 
-from telebot.types import InlineKeyboardMarkup
+from telebot.types import InlineKeyboardMarkup, LinkPreviewOptions
 from telebot.util import quick_markup
 
 from model.tables import (
@@ -129,6 +129,7 @@ def on_session_expiration(session: Session) -> None:
                 if message_kind == 'session-expiration'
                 else None
             ),
+            link_preview_options=LinkPreviewOptions(is_disabled=True),
         )
 
 
