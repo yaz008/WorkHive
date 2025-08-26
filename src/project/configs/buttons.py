@@ -44,6 +44,7 @@ class WorkHiveButton:
     YesIAmSure: str = 'yes-i-am-sure'
     Contact: str = 'contact'
     SubscribeToOurChannel: str = 'subscribe-to-our-channel'
+    EasyTransition: str = 'easy-transition'
 
     # Menus:
     MainMenu: str = 'main-menu'

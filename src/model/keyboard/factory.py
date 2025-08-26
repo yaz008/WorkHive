@@ -31,6 +31,7 @@ button_factory.save(name=WorkHiveButton.Decline, symbol=FSASymbol.Decline)
 button_factory.save(
     name=WorkHiveButton.SubscribeToOurChannel, symbol=FSASymbol.Subscribe
 )
+button_factory.save(name=WorkHiveButton.EasyTransition, symbol=FSASymbol.FollowLink)
 button_factory.save(name=WorkHiveButton.Publish, symbol=FSASymbol.Publish)
 button_factory.save(name=WorkHiveButton.PublishErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)

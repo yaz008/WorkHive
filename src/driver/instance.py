@@ -1,5 +1,5 @@
 from random import random
-from typing import Literal, cast, assert_never
+from typing import Literal, Final, cast, assert_never
 
 from telebot.types import InlineKeyboardMarkup, LinkPreviewOptions
 from telebot.util import quick_markup
@@ -32,6 +32,13 @@ Role = Literal['worker', 'owner', 'temp']
 MessageKind = Literal['session-expiration', 'new-notification']
 
 
+TRANSITION_LINK: Final[str] = (
+    f'https://docs.google.com/presentation/d/{(
+        '14fs4QUIOpWyIOKRWORgS3m2TFnvta_0eSdKMQqIGkoI'
+    )}/edit?usp=sharing'
+)
+
+
 def get_user_role(telegram_id: int) -> Role:
     return cast(
         Role,
@@ -46,8 +53,12 @@ def get_user_role(telegram_id: int) -> Role:
 def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
     role: Role = get_user_role(telegram_id)
     state: str = state_table[workhive_id[telegram_id].value].state
-    button_name: str = load_button(
+    subsribe_button: str = load_button(
         WorkHiveButton.SubscribeToOurChannel,
+        language=user_table[workhive_id[telegram_id].value].language,
+    )
+    easy_transition: str = load_button(
+        WorkHiveButton.EasyTransition,
         language=user_table[workhive_id[telegram_id].value].language,
     )
     if state in (FSAState.WorkerNoADConsent, FSAState.OwnerNoADConsent):
@@ -55,12 +66,15 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
     match role:
         case 'worker':
             return quick_markup(
-                values={button_name: {'url': ChennelConfig.WorkersChannelLink}},
+                values={subsribe_button: {'url': ChennelConfig.WorkersChannelLink}},
                 row_width=1,
             )
         case 'owner':
             return quick_markup(
-                values={button_name: {'url': ChennelConfig.OwnersChannelLink}},
+                values={
+                    subsribe_button: {'url': ChennelConfig.OwnersChannelLink},
+                    easy_transition: {'url': TRANSITION_LINK},
+                },
                 row_width=1,
             )
         case 'temp':
