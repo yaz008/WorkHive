@@ -1,6 +1,7 @@
 from telebot.types import LinkPreviewOptions
 
 from model.types import Owner, TempPoint
+from model.utils import with_yandex_language
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
@@ -29,7 +30,12 @@ def owner_point_name(
             state=owner.state,
             tag_handlers={
                 'link': lambda placeholder: (
-                    point.yandex_link if point.yandex_link is not None else placeholder
+                    with_yandex_language(
+                        link=point.yandex_link,
+                        language_code=owner.language,
+                    )
+                    if point.yandex_link is not None
+                    else placeholder
                 ),
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),

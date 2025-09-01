@@ -18,6 +18,7 @@ from model.tables import (
     user_table,
 )
 from model.types import Worker
+from model.utils import with_yandex_language
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.orm import Stackable
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
@@ -129,7 +130,10 @@ def worker_search_results(
                 {
                     'franchise': lambda _: point.franchise,
                     'link': lambda placeholder: (
-                        point.yandex_link
+                        with_yandex_language(
+                            link=point.yandex_link,
+                            language_code=worker.language,
+                        )
                         if point.yandex_link is not None
                         else placeholder
                     ),

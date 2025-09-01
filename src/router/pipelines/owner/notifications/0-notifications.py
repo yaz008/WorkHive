@@ -12,6 +12,7 @@ from model.tables import (
     tgid_table,
 )
 from model.types import Owner
+from model.utils import with_yandex_language
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
@@ -121,7 +122,10 @@ def owner_notifications(
                 {
                     'point-name': lambda _: f'<b>{point.name}</b>',
                     'link': lambda placeholder: (
-                        point.yandex_link
+                        with_yandex_language(
+                            link=point.yandex_link,
+                            language_code=owner.language,
+                        )
                         if point.yandex_link is not None
                         else placeholder
                     ),

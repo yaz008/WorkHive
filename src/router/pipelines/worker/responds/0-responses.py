@@ -7,6 +7,7 @@ from model.tables import (
     response_map,
 )
 from model.types import Worker
+from model.utils import with_yandex_language
 from project.configs import FSAState, FSASymbol, FSAPipeline, WorkHiveButton
 from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboard
 from project.libs.tght import render_file
@@ -85,7 +86,10 @@ def worker_responses(
                 {
                     'franchise': lambda _: point.franchise,
                     'link': lambda placeholder: (
-                        point.yandex_link
+                        with_yandex_language(
+                            link=point.yandex_link,
+                            language_code=worker.language,
+                        )
                         if point.yandex_link is not None
                         else placeholder
                     ),
