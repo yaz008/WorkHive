@@ -7,4 +7,5 @@ temp_points: CachedSingleTable[int, TempValue] = CachedSingleTable(
     table=TableConfig.TempPoints.table,
     key_cls=int,
     value_cls=TempValue,
+    cache_size=TableConfig.TempPoints.cache_size,
 )

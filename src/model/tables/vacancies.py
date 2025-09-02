@@ -27,4 +27,5 @@ simple_vacancies_table: CachedMultiTable[UUID, _VacancySimple] = CachedMultiTabl
     table=TableConfig.VacanciesSimple.table,
     key_cls=UUID,
     value_cls=_VacancySimple,
+    cache_size=TableConfig.VacanciesSimple.cache_size,
 )

@@ -15,4 +15,5 @@ metadata_table: CachedMultiTable[UUID, _Metadata] = CachedMultiTable(
     table=TableConfig.Metadata.table,
     key_cls=UUID,
     value_cls=_Metadata,
+    cache_size=TableConfig.Metadata.cache_size,
 )

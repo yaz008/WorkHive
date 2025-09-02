@@ -46,4 +46,5 @@ responses_table: CachedMultiTable[UUID, Stackable] = CachedMultiTable(
     table=TableConfig.Responses.table,
     key_cls=UUID,
     value_cls=Stackable,
+    cache_size=TableConfig.Points.cache_size,
 )

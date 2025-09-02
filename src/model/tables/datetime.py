@@ -16,4 +16,5 @@ datetime_table: CachedSingleTable[UUID, _Datetime] = CachedSingleTable(
     table=TableConfig.Datetime.table,
     key_cls=UUID,
     value_cls=_Datetime,
+    cache_size=TableConfig.Datetime.cache_size,
 )

@@ -16,4 +16,5 @@ balance_table: CachedSingleTable[UUID, _Balance] = CachedSingleTable(
     table=TableConfig.Balance.table,
     key_cls=UUID,
     value_cls=_Balance,
+    cache_size=TableConfig.Balance.cache_size,
 )

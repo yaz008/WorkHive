@@ -7,4 +7,5 @@ temp_users: CachedSingleTable[int, TempValue] = CachedSingleTable(
     table=TableConfig.TempUsers.table,
     key_cls=int,
     value_cls=TempValue,
+    cache_size=TableConfig.TempUsers.cache_size,
 )

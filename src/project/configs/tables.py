@@ -8,15 +8,20 @@ from project.core.config import config
 class _DBTable:
     database: str
     table: str
+    cache_size: int = 1024
 
 
-def create_table(dct: dict[str, str]) -> _DBTable:
-    return _DBTable(database=dct['database'], table=dct['table'])
+def create_table(dct: dict[str, int | str]) -> _DBTable:
+    return _DBTable(
+        database=cast(str, dct['database']),
+        table=cast(str, dct['table']),
+        cache_size=cast(int, dct.get('cache_size', 1024)),
+    )
 
 
 @config(
     filename='tables',
-    hooks={_DBTable: lambda dct: create_table(dct=cast(dict[str, str], dct))},
+    hooks={_DBTable: lambda dct: create_table(dct=cast(dict[str, int | str], dct))},
 )
 class TableConfig:
     # With Lifetime:

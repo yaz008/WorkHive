@@ -31,4 +31,5 @@ points_table: CachedMultiTable[UUID, _Point] = CachedMultiTable(
     table=TableConfig.Points.table,
     key_cls=UUID,
     value_cls=_Point,
+    cache_size=TableConfig.Points.cache_size,
 )

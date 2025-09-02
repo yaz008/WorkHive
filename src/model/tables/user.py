@@ -18,4 +18,5 @@ user_table: CachedSingleTable[UUID, _User] = CachedSingleTable(
     table=TableConfig.Users.table,
     key_cls=UUID,
     value_cls=_User,
+    cache_size=TableConfig.Users.cache_size,
 )

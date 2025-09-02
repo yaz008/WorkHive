@@ -15,4 +15,5 @@ tgid_table: CachedSingleTable[UUID, _TGID] = CachedSingleTable(
     table=TableConfig.TGID.table,
     key_cls=UUID,
     value_cls=_TGID,
+    cache_size=TableConfig.TGID.cache_size,
 )
