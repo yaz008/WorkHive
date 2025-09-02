@@ -44,7 +44,6 @@ class WorkHiveButton:
     YesIAmSure: str = 'yes-i-am-sure'
     Contact: str = 'contact'
     SubscribeToOurChannel: str = 'subscribe-to-our-channel'
-    EasyTransition: str = 'easy-transition'
 
     # Menus:
     MainMenu: str = 'main-menu'
@@ -67,3 +66,7 @@ class WorkHiveButton:
     Language: str = 'language'
     Subsrciption: str = 'subscription'
     MoreVacancies: str = 'more-vacancies'
+
+    # PROMO:
+    PROMO_EasyTransition: str = '_promo_easy-transition'
+    PROMO_OzonVacancies: str = '_promo_ozon-vacancies'

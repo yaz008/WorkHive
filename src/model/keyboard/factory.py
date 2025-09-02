@@ -31,7 +31,6 @@ button_factory.save(name=WorkHiveButton.Decline, symbol=FSASymbol.Decline)
 button_factory.save(
     name=WorkHiveButton.SubscribeToOurChannel, symbol=FSASymbol.Subscribe
 )
-button_factory.save(name=WorkHiveButton.EasyTransition, symbol=FSASymbol.FollowLink)
 button_factory.save(name=WorkHiveButton.Publish, symbol=FSASymbol.Publish)
 button_factory.save(name=WorkHiveButton.PublishErr, symbol=FSASymbol.Error)
 button_factory.save(name=WorkHiveButton.Search, symbol=FSASymbol.Search)
@@ -70,3 +69,11 @@ button_factory.save(name=WorkHiveButton.Owner, symbol=FSASymbol.InputData)
 button_factory.save(name=WorkHiveButton.Language, symbol=FSASymbol.Language)
 button_factory.save(name=WorkHiveButton.Subsrciption, symbol=FSASymbol.Subscription)
 button_factory.save(name=WorkHiveButton.MoreVacancies, symbol=FSASymbol.FollowLink)
+
+# PROMO:
+button_factory.save(
+    name=WorkHiveButton.PROMO_EasyTransition, symbol=FSASymbol.FollowLink
+)
+button_factory.save(
+    name=WorkHiveButton.PROMO_OzonVacancies, symbol=FSASymbol.FollowLink
+)

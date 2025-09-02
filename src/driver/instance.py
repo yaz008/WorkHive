@@ -58,7 +58,7 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
         language=user_table[workhive_id[telegram_id].value].language,
     )
     easy_transition: str = load_button(
-        WorkHiveButton.EasyTransition,
+        WorkHiveButton.PROMO_EasyTransition,
         language=user_table[workhive_id[telegram_id].value].language,
     )
     if state in (FSAState.WorkerNoADConsent, FSAState.OwnerNoADConsent):

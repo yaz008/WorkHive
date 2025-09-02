@@ -1,3 +1,5 @@
+from typing import Final
+
 from model.tables import (
     _Response,
     temp_users,
@@ -10,6 +12,24 @@ from project.libs.tgdraw import TGMessage, ButtonFactoryClosure, RowInfo, keyboa
 from project.libs.tght import render_file
 from router.instance import router
 from router.pipelines.utils import in_metadata
+
+
+PAMPADU_LINK: Final[str] = 'https://forchampion.ru/cea2ed86-b64a-4577-903f-b56d00657916'
+OZON_LINK: Final[str] = (
+    f'https://recruitment.ozon.ru/predstavitel-bank/?{(
+        '&'.join(
+            [
+                'customer=fintech',
+                'vacancy=mobileAmbassador',
+                'channel=leadgens',
+                'source=liger',
+                'utm_source=liger',
+                'leadType=reply',
+                '__rr=1',
+            ]
+        )
+    )}'
+)
 
 
 @router.add(
@@ -49,11 +69,9 @@ def worker_main_menu(user: User | TempUser, factory: ButtonFactoryClosure) -> TG
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Search)),
+            RowInfo(factory.saved(name=WorkHiveButton.MoreVacancies, url=PAMPADU_LINK)),
             RowInfo(
-                factory.saved(
-                    name=WorkHiveButton.MoreVacancies,
-                    url='https://ppdu.ru/cea2ed86-b64a-4577-903f-b56d00657916',
-                )
+                factory.saved(name=WorkHiveButton.PROMO_OzonVacancies, url=OZON_LINK)
             ),
             RowInfo(
                 factory.saved(WorkHiveButton.MyResponds, args=(str(), '0')),
