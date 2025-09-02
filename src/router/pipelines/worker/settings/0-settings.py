@@ -23,7 +23,13 @@ def worker_settings(worker: Worker, factory: ButtonFactoryClosure) -> TGMessage:
         ),
         keyboard=keyboard(
             RowInfo(factory.saved(WorkHiveButton.Language)),
-            RowInfo(factory.saved(WorkHiveButton.AboutProject)),
+            RowInfo(
+                factory.saved(WorkHiveButton.AboutProject),
+                factory.saved(
+                    WorkHiveButton.Feedback,
+                    url='https://t.me/WorkHiveFeedbackBot',
+                ),
+            ),
             RowInfo(factory.saved(WorkHiveButton.RevokeConsent)),
             RowInfo(factory.saved(WorkHiveButton.MainMenu)),
         ),
