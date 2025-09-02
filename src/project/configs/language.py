@@ -32,7 +32,7 @@ class Language:
 
     @cache
     @staticmethod
-    def attrtuple(attrname: Literal['code', 'native_name']) -> tuple[str, ...]:
+    def attrtuple(attrname: Literal['code', 'native_name']) -> tuple[str, str]:
         return tuple(
             getattr(getattr(Language, lang), attrname)
             for lang in Language.__annotations__.keys()
