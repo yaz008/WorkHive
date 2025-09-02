@@ -43,7 +43,6 @@ class WorkHiveButton:
     RevokeConsent: str = 'revoke-consent'
     YesIAmSure: str = 'yes-i-am-sure'
     Contact: str = 'contact'
-    SubscribeToOurChannel: str = 'subscribe-to-our-channel'
 
     # Menus:
     MainMenu: str = 'main-menu'
@@ -66,6 +65,8 @@ class WorkHiveButton:
     Language: str = 'language'
     Subsrciption: str = 'subscription'
     MoreVacancies: str = 'more-vacancies'
+    SubscribeToOurChannel: str = 'subscribe-to-our-channel'
+    Feedback: str = 'feedback'
 
     # PROMO:
     PROMO_EasyTransition: str = '_promo_easy-transition'
