@@ -66,15 +66,15 @@ def get_keyboard(telegram_id: int) -> InlineKeyboardMarkup | None:
     match role:
         case 'worker':
             return quick_markup(
-                values={
-                    subsribe_button: {'url': ChennelConfig.WorkersChannelLink},
-                    easy_transition: {'url': TRANSITION_LINK},
-                },
+                values={subsribe_button: {'url': ChennelConfig.WorkersChannelLink}},
                 row_width=1,
             )
         case 'owner':
             return quick_markup(
-                values={subsribe_button: {'url': ChennelConfig.OwnersChannelLink}},
+                values={
+                    subsribe_button: {'url': ChennelConfig.OwnersChannelLink},
+                    easy_transition: {'url': TRANSITION_LINK},
+                },
                 row_width=1,
             )
         case 'temp':
