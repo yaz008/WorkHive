@@ -126,7 +126,8 @@ def on_session_expiration(session: Session) -> None:
     message_kind: MessageKind = get_message_kind(session, role)
     if (
         message_kind == 'new-notification'
-        or SessionConfig.OnExpirationMessageProbability > random()
+        or random() < SessionConfig.OnExpirationMessageProbability
+        or SessionConfig.OnExpirationMessageProbability == 1
     ):
         driver.send_message(
             chat_id=session.telegram_id,
@@ -144,6 +145,7 @@ def on_session_expiration(session: Session) -> None:
                 else None
             ),
             link_preview_options=LinkPreviewOptions(is_disabled=True),
+            disable_notification=True,
         )
 
 
