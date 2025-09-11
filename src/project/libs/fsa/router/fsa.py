@@ -47,7 +47,8 @@ class FSA[User: UserProtocol, Ret]:
         }
 
     def shift(self, __user: User, __transition_data: str, /) -> Ret:
-        expected_state, symbol, args = serializer.unpack(__transition_data)
+        expected_state_index, symbol, args = serializer.unpack(__transition_data)
+        expected_state: str = serializer.get_state(expected_state_index)
         if expected_state != __user.state:
             raise UnexpectedStateError(expected_state, __user.state)
         state: State = self.__states[__user.state]
@@ -67,6 +68,7 @@ class FSA[User: UserProtocol, Ret]:
         def decorator(func: Callable[..., Ret]) -> None:
             if name in self.__states:
                 raise DuplicateStateError(name)
+            serializer.add_state(name)
             if transitions is not None:
                 for symbol, state in transitions.items():
                     if state == FSAState.Initial:

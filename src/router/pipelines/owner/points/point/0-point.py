@@ -94,7 +94,7 @@ def owner_point(
                 (
                     factory.saved(
                         WorkHiveButton.Edit,
-                        args=(str(point.__sql_id__), point.payload),
+                        args=(point.__sql_id__.hex, point.payload),
                     )
                     if point is not None and not delete
                     else None

@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
 from typing import Callable, Any
 
+from bidict import bidict
+
 from project.configs import FSAConfig
 from project.libs.fsa.exceptions import InvalidMainDelimiterCountError
 
@@ -13,6 +15,13 @@ class FSASerializer:
     structure_hooks: dict[type, Callable[[str], Any]] = field(
         default_factory=dict, init=False
     )
+    __state_index: bidict[str, str] = field(default_factory=bidict, init=False)
+
+    def add_state(self, state: str) -> None:
+        self.__state_index.update({state: str(len(self.__state_index))})
+
+    def get_state(self, index: str) -> str:
+        return self.__state_index.inv[index]
 
     def register_unstructure_hook[Arg](
         self, type: type[Arg]
@@ -37,7 +46,7 @@ class FSASerializer:
     ) -> str:
         return FSAConfig.MainDelimiter.join(
             [
-                state,
+                self.__state_index[state],
                 symbol,
                 FSAConfig.ArgDelimiter.join(
                     self.unstructure_hooks.get(type(arg), lambda arg: str(arg))(arg)

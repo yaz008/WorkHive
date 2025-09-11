@@ -27,6 +27,7 @@ def owner_point_done(owner: Owner, factory: ButtonFactoryClosure) -> TGMessage:
         payload=temp_point.payload,
         minimal_charge=temp_point.minimal_charge,
         charge_per_one=temp_point.charge_per_one,
+        city=temp_point.city,
         __sql_id__=point_id,
     )
     owner.points |= {point_id: point}
