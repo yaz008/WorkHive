@@ -24,7 +24,9 @@ def city(user: TempUser, factory: ButtonFactoryClosure, city: str = str()) -> TG
             state=FSAState.City,
             tag_handlers={
                 'city': (
-                    lambda placeholder: user.city if user.city != str() else placeholder
+                    lambda placeholder: f'<code>{(
+                        user.city if user.city != str() else placeholder
+                    )}</code>'
                 )
             },
         ),

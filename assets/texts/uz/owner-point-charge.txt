@@ -1,4 +1,4 @@
-<b>ПВЗ қўшиш (3/5)</b>
+<b>ПВЗ қўшиш (4/6)</b>
 
 Nuqtaga chiqish uchun to'lovni kiriting (masalan, <code>600</code>) va keyin "↪️ Keyingisi" tugmasini bosing.
 

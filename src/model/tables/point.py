@@ -15,6 +15,7 @@ class _Point(Stackable):
     payload: int
     minimal_charge: int
     charge_per_one: int
+    city: str
     creation_time: datetime = field(init=False)
 
     def __post_init__(self) -> None:

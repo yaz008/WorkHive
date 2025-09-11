@@ -1,0 +1,5 @@
+<b>Adding a Pick-Up Point (2/6)</b>
+
+Enter the name of the city where the Pick-Up Point is located (for example, <code>Moscow</code>) and then click the '↪️ Next' button.
+
+Pick-Up Point City: <city>____</city>

@@ -1,4 +1,4 @@
-<b>Buyurtma berish punktini qo'shish (4/5)</b>
+<b>Buyurtma berish punktini qo'shish (5/6)</b>
 
 1 shtrix-kod uchun to'lovni <code>so'm.tiyin</code> formatida kiriting (Masalan, <code>1.25</code> — bu 1 so'm 25 tiyin) va keyin "↪️ Davom etish" tugmasini bosing
 

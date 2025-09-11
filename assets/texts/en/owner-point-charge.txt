@@ -1,4 +1,4 @@
-<b>Adding a PUP (3/5)</b>
+<b>Adding a PUP (4/6)</b>
 
 Enter the on-site payment (e.g., <code>600</code>) and then click the "↪️ Next" button.
 

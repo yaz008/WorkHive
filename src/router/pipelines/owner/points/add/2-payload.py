@@ -14,7 +14,7 @@ from router.instance import router
     name=FSAState.OwnerPointPayload,
     pipeline=FSAPipeline.Owner,
     transitions={
-        FSASymbol.Back: FSAState.OwnerPointAddress,
+        FSASymbol.Back: FSAState.OwnerPointCity,
         FSASymbol.InputData: FSAState.OwnerPointPayload,
         FSASymbol.Next: FSAState.OwnerPointCharge,
     },

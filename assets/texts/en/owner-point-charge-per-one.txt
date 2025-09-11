@@ -1,4 +1,4 @@
-<b>Adding a Pickup Point (4/5)</b>
+<b>Adding a Pickup Point (5/6)</b>
 
 Enter the fee for 1 barcode in rub.kop format (For example, 1.25 is 1 ruble 25 kopecks) and then click the '↪️ Next' button
 

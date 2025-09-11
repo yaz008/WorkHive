@@ -33,6 +33,7 @@ class FSAState:
     OwnerLanguage: str = 'owner-language'
 
     OwnerPointAddress: str = 'owner-point-address'
+    OwnerPointCity: str = 'owner-point-city'
     OwnerPointPayload: str = 'owner-point-payload'
     OwnerPointCharge: str = 'owner-point-charge'
     OwnerPointChargePerOne: str = 'owner-point-charge-per-one'

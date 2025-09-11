@@ -1,0 +1,5 @@
+BTP (Buyurtma topshirish punkti) qo'shish (2/6)
+
+BTP joylashgan shahar nomini kiriting (masalan, Moskva) va keyin "↪️ Keyingisi" tugmasini bosing
+
+BTP shahri: <city>____</city>

@@ -1,4 +1,4 @@
-<b>PVZ qo'shish (2/5)</b>
+<b>PVZ qo'shish (3/6)</b>
 
 Kuniga o'rtacha shtrix-kodlar miqdorini kiriting (masalan, <code>350</code>) va keyin "↪️ Keyingi" tugmasini bosing.
 

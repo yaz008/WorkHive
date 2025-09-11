@@ -1,4 +1,4 @@
-<b>Adding Pickup Point (2/5)</b>
+<b>Adding Pickup Point (3/6)</b>
 
 Enter the average number of barcodes per day (e.g., <code>350</code>) and then press the "↪️ Next" button
 

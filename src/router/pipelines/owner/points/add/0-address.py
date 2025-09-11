@@ -40,7 +40,7 @@ def get_link(string: str) -> str | None:
     transitions={
         FSASymbol.Back: FSAState.OwnerPoints,
         FSASymbol.InputData: FSAState.OwnerPointAddress,
-        FSASymbol.Next: FSAState.OwnerPointPayload,
+        FSASymbol.Next: FSAState.OwnerPointCity,
     },
     accepts_types=('text',),
 )
