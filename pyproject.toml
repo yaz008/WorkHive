@@ -9,6 +9,7 @@ dependencies = [
     "cattrs",
     "APScheduler",
     "python-Levenshtein",
+    "bidict",
 ]
 license = { file = "LICENSE.txt" }
 
