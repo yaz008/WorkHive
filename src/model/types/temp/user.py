@@ -17,6 +17,7 @@ class TempUser:
     concent_pp: bool = TempDescriptor('concent_pp')
     concent_ad: bool = TempDescriptor('concent_pd')
     concent_of: bool = TempDescriptor('concent_oa')
+    city: str = TempDescriptor('city')
     dct: dict[str, Any] = synced(temp_users, 'telegram_id', 'value')
 
     def __init__(self, telegram_id: int, set_default: bool = False) -> None:
@@ -30,3 +31,4 @@ class TempUser:
             self.concent_pp = False
             self.concent_ad = False
             self.concent_of = False
+            self.city = str()

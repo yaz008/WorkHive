@@ -1,4 +1,5 @@
 from model.tables.balance import _Balance, balance_table
+from model.tables.city import _City, city_table
 from model.tables.datetime import _Datetime, datetime_table
 from model.tables.metadata import _Metadata, metadata_table
 from model.tables.point import _Point, points_table
@@ -46,4 +47,6 @@ __all__ = [
     '_TGID',
     'tgid_table',
     'datetime_table',
+    '_City',
+    'city_table',
 ]

@@ -14,6 +14,7 @@ from model.tables import (
     metadata_table,
     tgid_table,
     datetime_table,
+    city_table,
     _UserRoleWrapper,
     _UserStateWrapper,
     _WorkHiveIDWrapper,
@@ -24,6 +25,7 @@ from model.tables import (
     _Metadata,
     _TGID,
     _Datetime,
+    _City,
 )
 from model.types.temp import TempUser
 from project.libs.orm import synced
@@ -66,6 +68,8 @@ class Owner(User):
 
 @dataclass
 class Worker(User):
+    city: str = synced(state_table, 'workhive_id', 'name')
+
     def __init__(self, telegram_id: int) -> None:
         self.telegram_id = telegram_id
 
@@ -92,6 +96,7 @@ def create_user(temp_user: TempUser) -> Worker | Owner:
     )
     match temp_user.role:
         case 'worker':
+            city_table.update({id: _City(city=temp_user.city)})
             return Worker(telegram_id=temp_user.telegram_id)
         case 'owner':
             balance_table.update({id: _Balance(publications=0, tokens=0)})

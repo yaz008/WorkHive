@@ -34,6 +34,7 @@ class TableConfig:
     State: _DBTable = _DBTable(database='userdata', table='state')
     Metadata: _DBTable = _DBTable(database='userdata', table='metadata')
     Datetime: _DBTable = _DBTable(database='userdata', table='datetime')
+    City: _DBTable = _DBTable(database='userdata', table='cities')
 
     # Entities:
     Points: _DBTable = _DBTable(database='entities', table='points')

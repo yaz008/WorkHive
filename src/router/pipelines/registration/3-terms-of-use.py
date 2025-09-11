@@ -22,7 +22,7 @@ from router.pipelines.registration.utils import render_birth_date
     transitions={
         FSASymbol.Back: FSAState.Register,
         FSASymbol.Next: FSAState.OwnerMainMenu,
-        FSASymbol.Error: FSAState.WorkerMainMenu,
+        FSASymbol.Error: FSAState.City,
         FSASymbol.InputData: FSAState.TermsOfUseConsent,
     },
 )

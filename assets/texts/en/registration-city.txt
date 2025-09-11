@@ -1,0 +1,2 @@
+What city are you looking for a job in? *(send the bot your city name as a text message)*
+City: <city>Not specified</city>

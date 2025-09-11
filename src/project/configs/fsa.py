@@ -18,6 +18,7 @@ class FSAState:
     # AdvertisingConsent: str = 'registration-advertising-consent'
     # OfferConsent: str = 'registration-offer-consent'
     TermsOfUseConsent: str = 'registration-terms-of-use-consent'
+    City: str = 'registration-city'
 
     # Owner
     OwnerNoADConsent: str = 'owner-no-ad-consent'
