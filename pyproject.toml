@@ -3,7 +3,13 @@ name = "WorkHive"
 version = "0.0.0"
 description = "Buzz in!"
 authors = [{ name = "Emelianov Artem", email = "polyfoam3758@proton.me" }]
-dependencies = ["pyTelegramBotAPI", "python-dotenv", "cattrs", "APScheduler"]
+dependencies = [
+    "pyTelegramBotAPI",
+    "python-dotenv",
+    "cattrs",
+    "APScheduler",
+    "python-Levenshtein",
+]
 license = { file = "LICENSE.txt" }
 
 [project.optional-dependencies]
