@@ -164,6 +164,10 @@ def owner_accepted_responses(
                 else None
             ),
         ),
-        link_preview=LinkPreviewOptions(is_disabled=True),
+        link_preview=(
+            LinkPreviewOptions(url=point.yandex_link, prefer_small_media=True)
+            if point is not None
+            else None
+        ),
     )
     return message
