@@ -19,7 +19,7 @@ from router.instance import router
     accepts_types=('text',),
 )
 def owner_point_name(
-    owner: Owner, factory: ButtonFactoryClosure, sql_id: str, name: str
+    owner: Owner, factory: ButtonFactoryClosure, name: str
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)
     if name != str():
@@ -51,7 +51,7 @@ def owner_point_name(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Back, args=(sql_id, point.charge_per_one)),
+                factory.saved(WorkHiveButton.Back, args=(point.charge_per_one,)),
                 factory.saved(WorkHiveButton.Next) if point.name != str() else None,
             ),
         ),

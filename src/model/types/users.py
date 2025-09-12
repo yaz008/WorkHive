@@ -68,7 +68,7 @@ class Owner(User):
 
 @dataclass
 class Worker(User):
-    city: str = synced(state_table, 'workhive_id', 'name')
+    city: str = synced(city_table, 'workhive_id', 'city')
 
     def __init__(self, telegram_id: int) -> None:
         self.telegram_id = telegram_id

@@ -21,7 +21,7 @@ from router.instance import router
     accepts_types=('text',),
 )
 def owner_point_charge(
-    owner: Owner, factory: ButtonFactoryClosure, sql_id: str, charge: str
+    owner: Owner, factory: ButtonFactoryClosure, charge: str
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)
     if match(pattern=r'[\d]+', string=charge):
@@ -53,11 +53,10 @@ def owner_point_charge(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Back, args=(sql_id, point.payload)),
+                factory.saved(WorkHiveButton.Back, args=(point.payload,)),
                 factory.saved(
                     WorkHiveButton.Next,
                     args=(
-                        sql_id,
                         (
                             f'{point.charge_per_one // 100}.{(
                                 '0' if point.charge_per_one % 100 < 10 else str()

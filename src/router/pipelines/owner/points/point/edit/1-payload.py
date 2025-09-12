@@ -14,6 +14,14 @@ from project.libs.tght import render_file
 from router.instance import router
 
 
+def is_valid_uuid(string: str) -> bool:
+    try:
+        _: UUID = UUID(string)
+        return True
+    except ValueError:
+        return False
+
+
 def get_temp_point(telegram_id: int) -> TempPoint:
     id_in_keys: bool = telegram_id in temp_points.keys
     if not id_in_keys:
@@ -55,12 +63,13 @@ def create_temp_point(owner: Owner, point_id: UUID) -> None:
     accepts_types=('text',),
 )
 def owner_point_payload(
-    owner: Owner, factory: ButtonFactoryClosure, point_id: str, payload: str
+    owner: Owner, factory: ButtonFactoryClosure, arg: str
 ) -> TGMessage:
-    create_temp_point(owner, UUID(point_id))
+    if is_valid_uuid(arg):
+        create_temp_point(owner, UUID(arg))
     point: TempPoint = get_temp_point(owner.telegram_id)
-    if match(pattern=r'[\d]+', string=payload):
-        point.payload = int(payload)
+    if match(pattern=r'^\d+$', string=arg):
+        point.payload = int(arg)
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -91,13 +100,15 @@ def owner_point_payload(
                 factory.saved(
                     WorkHiveButton.Back,
                     args=(
-                        list(owner.points.values()).index(owner.points[UUID(point_id)]),
+                        list(owner.points.values()).index(
+                            owner.points[UUID(point.point_id)]
+                        ),
                         False,
                     ),
                 ),
                 factory.saved(
                     WorkHiveButton.Next,
-                    args=(point_id, point.minimal_charge),
+                    args=(point.minimal_charge,),
                 ),
             ),
         ),

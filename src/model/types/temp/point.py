@@ -16,6 +16,7 @@ class TempPoint:
     minimal_charge: int = TempDescriptor('minimal_charge')
     charge_per_one: int = TempDescriptor('charge_per_one')
     city: str = TempDescriptor('city')
+    point_id: str = TempDescriptor('point_id')
     dct: dict[str, Any] = synced(temp_points, 'telegram_id', 'value')
 
     def __init__(self, telegram_id: int, /, set_default: bool = False) -> None:
@@ -29,3 +30,4 @@ class TempPoint:
             self.minimal_charge = 0
             self.charge_per_one = 0
             self.city = str()
+            self.point_id = str()
