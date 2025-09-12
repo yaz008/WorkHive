@@ -63,8 +63,8 @@ def owner_point_address(
                         link=point.yandex_link,
                         language_code=owner.language,
                     )
-                    if point.yandex_link is not None
-                    else placeholder
+                    if point.yandex_link != str()
+                    else f'<code>{placeholder}</code>'
                 ),
                 'payload': lambda _: str(point.payload),
                 'minimal-charge': lambda _: str(point.minimal_charge),
