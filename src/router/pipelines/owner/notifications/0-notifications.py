@@ -201,6 +201,16 @@ def owner_notifications(
                 else None
             ),
         ),
-        link_preview=LinkPreviewOptions(is_disabled=True),
+        link_preview=(
+            LinkPreviewOptions(
+                url=with_yandex_language(
+                    link=point.yandex_link,
+                    language_code=owner.language,
+                ),
+                prefer_small_media=True,
+            )
+            if point is not None
+            else None
+        ),
     )
     return message

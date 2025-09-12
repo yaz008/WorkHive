@@ -117,7 +117,13 @@ def owner_point(
             RowInfo(factory.saved(WorkHiveButton.Back)),
         ),
         link_preview=(
-            LinkPreviewOptions(url=point.yandex_link, prefer_small_media=True)
+            LinkPreviewOptions(
+                url=with_yandex_language(
+                    link=point.yandex_link,
+                    language_code=owner.language,
+                ),
+                prefer_small_media=True,
+            )
             if point is not None
             else None
         ),
