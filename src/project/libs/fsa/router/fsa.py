@@ -45,6 +45,7 @@ class FSA[User: UserProtocol, Ret]:
                 action=cast(Callable[[User, str], Ret], ()),
             )
         }
+        serializer.add_state(FSAState.Initial)
 
     def shift(self, __user: User, __transition_data: str, /) -> Ret:
         expected_state_index, symbol, args = serializer.unpack(__transition_data)
