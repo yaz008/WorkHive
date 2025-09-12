@@ -1,3 +1,5 @@
+from telebot.types import LinkPreviewOptions
+
 from model.tables import (
     _Point,
     _Response,
@@ -113,5 +115,10 @@ def owner_point(
                 else None
             ),
             RowInfo(factory.saved(WorkHiveButton.Back)),
+        ),
+        link_preview=(
+            LinkPreviewOptions(url=point.yandex_link, prefer_small_media=True)
+            if point is not None
+            else None
         ),
     )
