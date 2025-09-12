@@ -6,8 +6,4 @@ Bitta shtrix-kod uchun to'lov: <charge-per-one>_.__</charge-per-one> so'm.
 
 id: <id>____</id>
 
-<b>Ish izlovchi:</b>
-Ismi: <worker-name>____</worker-name>
-Tug'ilgan sanasi: <birth-date>____</birth-date>
-
 🔥 <mention>Ish izlovchi</mention>dan javob qabul qilindi! 🔥

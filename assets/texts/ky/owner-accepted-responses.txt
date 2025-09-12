@@ -6,8 +6,4 @@
 
 id: <id>____</id>
 
-<b>Ишке орношуучу:</b>
-Аты: <worker-name>____</worker-name>
-Туулган күнү: <birth-date>____</birth-date>
-
 🔥 <mention>Ишке орношуучунун</mention> жообу кабыл алынды! 🔥

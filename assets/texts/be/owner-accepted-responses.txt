@@ -6,8 +6,4 @@
 
 id: <id>____</id>
 
-<b>Сушукальнік:</b>
-Імя: <worker-name>____</worker-name>
-Дата нараджэння: <birth-date>____</birth-date>
-
 🔥 Водгук ад <mention>сушукальніка</mention> прыняты! 🔥

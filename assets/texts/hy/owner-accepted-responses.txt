@@ -6,8 +6,4 @@
 
 id։ <id>____</id>
 
-<b>Դիմորդ․</b>
-Անուն․ <worker-name>____</worker-name>
-Ծննդյան տարեթիվ․ <birth-date>____</birth-date>
-
 🔥 <mention>Դիմորդի</mention> արձագանքը ընդունված է։ 🔥

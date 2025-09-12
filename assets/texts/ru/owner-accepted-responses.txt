@@ -6,8 +6,4 @@
 
 id: <id>____</id>
 
-<b>Соискатель:</b>
-Имя: <worker-name>____</worker-name>
-Дата рождения: <birth-date>____</birth-date>
-
 🔥 Отклик от <mention>соискателя</mention> принят! 🔥

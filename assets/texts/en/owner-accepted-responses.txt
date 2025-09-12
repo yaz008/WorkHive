@@ -6,8 +6,4 @@ Pay per barcode: <charge-per-one>_.__</charge-per-one> rub.
 
 ID: <id>____</id>
 
-<b>Applicant:</b>
-Name: <worker-name>____</worker-name>
-Date of birth: <birth-date>____</birth-date>
-
 🔥 Application from <mention>applicant</mention> accepted! 🔥
