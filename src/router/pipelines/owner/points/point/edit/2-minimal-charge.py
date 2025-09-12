@@ -54,7 +54,17 @@ def owner_point_charge(
         keyboard=keyboard(
             RowInfo(
                 factory.saved(WorkHiveButton.Back, args=(sql_id, point.payload)),
-                factory.saved(WorkHiveButton.Next, args=(sql_id, point.charge_per_one)),
+                factory.saved(
+                    WorkHiveButton.Next,
+                    args=(
+                        sql_id,
+                        (
+                            f'{point.charge_per_one // 100}.{(
+                                '0' if point.charge_per_one % 100 < 10 else str()
+                            )}{point.charge_per_one % 100}'
+                        ),
+                    ),
+                ),
             ),
         ),
         link_preview=LinkPreviewOptions(is_disabled=True),

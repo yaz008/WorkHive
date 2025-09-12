@@ -35,6 +35,7 @@ def create_temp_point(owner: Owner, point_id: UUID) -> None:
                         'payload': point.payload,
                         'minimal_charge': point.minimal_charge,
                         'charge_per_one': point.charge_per_one,
+                        'city': point.city,
                         'point_id': str(point_id),
                     }
                 )
