@@ -27,7 +27,7 @@ from router import router
 from router.pipelines.utils import in_metadata, add_metadata
 
 
-def search(workhive_id: UUID) -> _SearchResult:
+def search(workhive_id: UUID, city: str) -> _SearchResult:
     if (
         workhive_id not in search_results_table.keys()
         or search_results_table[workhive_id].is_expired
@@ -40,7 +40,11 @@ def search(workhive_id: UUID) -> _SearchResult:
                         for vacancy in chain(
                             *map(lambda d: d.values(), simple_vacancies_table.values)
                         )
-                        if not vacancy.is_expired
+                        if (
+                            not vacancy.is_expired
+                            and points_table[vacancy.owner_id][vacancy.point_id].city
+                            == city
+                        )
                     )
                 )
             }
@@ -104,7 +108,7 @@ def worker_search_results(
 ) -> TGMessage:
     if not in_metadata(worker, 'has-searched'):
         add_metadata(worker, 'has-searched')
-    result: _SearchResult = search(worker.workhive_id)
+    result: _SearchResult = search(worker.workhive_id, worker.city)
     update_index(worker, result, arg)
     assert result.current_index is not None
     vacancy: _VacancySimple | None = (
