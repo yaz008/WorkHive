@@ -23,7 +23,7 @@ def owner_point_name(
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)
     if name != str():
-        point.name = name
+        point.name = name[:24]
     return TGMessage(
         text=render_file(
             language=owner.language,

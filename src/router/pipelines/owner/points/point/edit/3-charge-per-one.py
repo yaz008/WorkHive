@@ -59,8 +59,8 @@ def owner_point_charge_per_one(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Back, args=(point.minimal_charge,)),
-                factory.saved(WorkHiveButton.Next, args=(point.name,)),
+                factory.saved(WorkHiveButton.Back),
+                factory.saved(WorkHiveButton.Next),
             ),
         ),
         link_preview=LinkPreviewOptions(is_disabled=True),

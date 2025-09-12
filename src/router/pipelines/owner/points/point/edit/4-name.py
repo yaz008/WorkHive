@@ -23,7 +23,7 @@ def owner_point_name(
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)
     if name != str():
-        point.name = name
+        point.name = name[:24]
     return TGMessage(
         text=render_file(
             language=owner.language,
@@ -51,7 +51,7 @@ def owner_point_name(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Back, args=(point.charge_per_one,)),
+                factory.saved(WorkHiveButton.Back),
                 factory.saved(WorkHiveButton.Next) if point.name != str() else None,
             ),
         ),

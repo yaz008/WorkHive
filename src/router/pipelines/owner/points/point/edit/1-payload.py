@@ -106,10 +106,7 @@ def owner_point_payload(
                         False,
                     ),
                 ),
-                factory.saved(
-                    WorkHiveButton.Next,
-                    args=(point.minimal_charge,),
-                ),
+                factory.saved(WorkHiveButton.Next),
             ),
         ),
         link_preview=LinkPreviewOptions(is_disabled=True),

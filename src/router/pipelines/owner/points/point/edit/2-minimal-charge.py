@@ -24,7 +24,7 @@ def owner_point_charge(
     owner: Owner, factory: ButtonFactoryClosure, charge: str
 ) -> TGMessage:
     point: TempPoint = TempPoint(owner.telegram_id)
-    if match(pattern=r'[\d]+', string=charge):
+    if match(pattern=r'^[\d]+$', string=charge):
         point.minimal_charge = int(charge)
     return TGMessage(
         text=render_file(
@@ -53,7 +53,7 @@ def owner_point_charge(
         ),
         keyboard=keyboard(
             RowInfo(
-                factory.saved(WorkHiveButton.Back, args=(point.payload,)),
+                factory.saved(WorkHiveButton.Back),
                 factory.saved(
                     WorkHiveButton.Next,
                     args=(
